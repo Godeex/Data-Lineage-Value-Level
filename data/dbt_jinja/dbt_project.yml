@@ -1,0 +1,8 @@
+name: agentdb_demo
+version: '1.0.0'
+config-version: 2
+profile: agentdb_demo
+model-paths: ["models"]
+macro-paths: ["macros"]
+vars:
+  include_refunds: false

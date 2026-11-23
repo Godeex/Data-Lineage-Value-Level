@@ -1,0 +1,3 @@
+{% macro price_bucket(expr, threshold) -%}
+CASE WHEN {{ expr }} > {{ threshold }} THEN 'high' ELSE 'low' END
+{%- endmacro %}

@@ -1,0 +1,67 @@
+{
+ "n_queries_requested": 30,
+ "n_queries_with_edges": 19,
+ "n_failed": 9,
+ "mean_static_edges": 1.7894736842105263,
+ "mean_oracle_edges": 2.736842105263158,
+ "mean_coverage_of_static": 0.5263157894736842,
+ "n_queries_static_only_nonempty": 9,
+ "n_queries_oracle_only_nonempty": 9,
+ "failures": [
+  {
+   "idx": 16,
+   "db_id": "concert_singer",
+   "sql": "select max(capacity), average from stadium",
+   "error": "BinderException: Binder Error: column \"average\" must appear in the GROUP BY clause or must be part of an aggregate function.\nEither add it to the GROUP BY list, or use \"ANY_VALUE(average)\" if the exact value of \"average\" is not important.\n\nLINE 1: select max(capacity), average from stadium\n                              ^"
+  },
+  {
+   "idx": 20,
+   "db_id": "concert_singer",
+   "sql": "SELECT count(*) FROM concert WHERE YEAR  =  2014 OR YEAR  =  2015",
+   "error": "ConversionException: Conversion Error: Could not convert string 'v10_0' to INT32 when casting from source column Year\n\nLINE 1: SELECT count(*) FROM concert WHERE YEAR  =  2014 OR YEAR  =  2015\n                                           ^"
+  },
+  {
+   "idx": 21,
+   "db_id": "concert_singer",
+   "sql": "SELECT count(*) FROM concert WHERE YEAR  =  2014 OR YEAR  =  2015",
+   "error": "ConversionException: Conversion Error: Could not convert string 'v10_0' to INT32 when casting from source column Year\n\nLINE 1: SELECT count(*) FROM concert WHERE YEAR  =  2014 OR YEAR  =  2015\n                                           ^"
+  },
+  {
+   "idx": 22,
+   "db_id": "concert_singer",
+   "sql": "SELECT T2.name ,  count(*) FROM concert AS T1 JOIN stadium AS T2 ON T1.stadium_id  =  T2.stadium_id GROUP BY T1.stadium_id",
+   "error": "BinderException: Binder Error: column \"name\" must appear in the GROUP BY clause or must be part of an aggregate function.\nEither add it to the GROUP BY list, or use \"ANY_VALUE(name)\" if the exact value of \"name\" is not important.\n\nLINE 1: SELECT T2.name ,  count(*) FROM concert AS T1 JOIN stadium AS T2...\n               ^"
+  },
+  {
+   "idx": 23,
+   "db_id": "concert_singer",
+   "sql": "SELECT T2.name ,  count(*) FROM concert AS T1 JOIN stadium AS T2 ON T1.stadium_id  =  T2.stadium_id GROUP BY T1.stadium_id",
+   "error": "BinderException: Binder Error: column \"name\" must appear in the GROUP BY clause or must be part of an aggregate function.\nEither add it to the GROUP BY list, or use \"ANY_VALUE(name)\" if the exact value of \"name\" is not important.\n\nLINE 1: SELECT T2.name ,  count(*) FROM concert AS T1 JOIN stadium AS T2...\n               ^"
+  },
+  {
+   "idx": 24,
+   "db_id": "concert_singer",
+   "sql": "SELECT T2.name ,  T2.capacity FROM concert AS T1 JOIN stadium AS T2 ON T1.stadium_id  =  T2.stadium_id WHERE T1.year  >=  2014 GROUP BY T2.stadium_id ORDER BY count(*) DESC LIMIT 1",
+   "error": "BinderException: Binder Error: Cannot compare values of type VARCHAR and type INTEGER_LITERAL - an explicit cast is required\n\nLINE 1: ... AS T2 ON T1.stadium_id  =  T2.stadium_id WHERE T1.year  >=  2014 GROUP BY T2.stadium_id ORDER BY count(*) DESC LIMIT...\n                                                                    ^"
+  },
+  {
+   "idx": 25,
+   "db_id": "concert_singer",
+   "sql": "select t2.name ,  t2.capacity from concert as t1 join stadium as t2 on t1.stadium_id  =  t2.stadium_id where t1.year  >  2013 group by t2.stadium_id order by count(*) desc limit 1",
+   "error": "BinderException: Binder Error: Cannot compare values of type VARCHAR and type INTEGER_LITERAL - an explicit cast is required\n\nLINE 1: ... as t2 on t1.stadium_id  =  t2.stadium_id where t1.year  >  2013 group by t2.stadium_id order by count(*) desc limit...\n                                                                    ^"
+  },
+  {
+   "idx": 28,
+   "db_id": "concert_singer",
+   "sql": "SELECT name FROM stadium WHERE stadium_id NOT IN (SELECT stadium_id FROM concert)",
+   "error": "BinderException: Binder Error: Cannot compare values of type DOUBLE and VARCHAR in IN/ANY/ALL clause - an explicit cast is required\n\nLINE 1: SELECT name FROM stadium WHERE stadium_id NOT IN (SELECT stadium_id FROM concert)\n                                                  ^"
+  },
+  {
+   "idx": 29,
+   "db_id": "concert_singer",
+   "sql": "SELECT name FROM stadium WHERE stadium_id NOT IN (SELECT stadium_id FROM concert)",
+   "error": "BinderException: Binder Error: Cannot compare values of type DOUBLE and VARCHAR in IN/ANY/ALL clause - an explicit cast is required\n\nLINE 1: SELECT name FROM stadium WHERE stadium_id NOT IN (SELECT stadium_id FROM concert)\n                                                  ^"
+  }
+ ],
+ "out": "results/p0_spider.jsonl"
+}

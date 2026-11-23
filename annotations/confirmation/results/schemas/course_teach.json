@@ -1,0 +1,18 @@
+{
+ "course": [
+  "Course_ID",
+  "Staring_Date",
+  "Course"
+ ],
+ "teacher": [
+  "Teacher_ID",
+  "Name",
+  "Age",
+  "Hometown"
+ ],
+ "course_arrange": [
+  "Course_ID",
+  "Teacher_ID",
+  "Grade"
+ ]
+}

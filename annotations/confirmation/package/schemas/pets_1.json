@@ -1,0 +1,22 @@
+{
+ "Student": [
+  "StuID",
+  "LName",
+  "Fname",
+  "Age",
+  "Sex",
+  "Major",
+  "Advisor",
+  "city_code"
+ ],
+ "Has_Pet": [
+  "StuID",
+  "PetID"
+ ],
+ "Pets": [
+  "PetID",
+  "PetType",
+  "pet_age",
+  "weight"
+ ]
+}

@@ -1,0 +1,14 @@
+{
+ "literal_union_evolving_vs_literal": {
+  "n": 30,
+  "mean_a": 0.7808262108262108,
+  "mean_b": 0.7276262626262626,
+  "mean_diff": 0.05319994819994821,
+  "ci95": [
+   0.017459207459207465,
+   0.09608207070707073
+  ],
+  "p_two_sided": 0.002,
+  "note": "Audit-only comparison; not currently in Table 16."
+ }
+}

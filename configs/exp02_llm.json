@@ -1,0 +1,41 @@
+{
+ "frozen_plan_sha256": "c05273e9571ea7377fb6f076be721348768df6a32975fd8ba53afa60d509d295",
+ "seed": {
+  "role": "fixed_repro",
+  "value": 42
+ },
+ "data": {
+  "path": "data/fixtures/synthetic_pipelines.json",
+  "sha256": "8a13a71cb69ec01bc5b5842aa685c4c8f8e8cec7496fd1b364045d171ae5f403",
+  "source_revision": "synthetic-pipelines-v1",
+  "split_id": "fixture-v1"
+ },
+ "features": {
+  "baseline": [
+   "sqlglot_static"
+  ],
+  "candidate_additions": [
+   "llm_prompt"
+  ]
+ },
+ "evaluation": {
+  "unit": "pipeline_script",
+  "primary_metric": "macro_f1",
+  "folds": 2
+ },
+ "runtime": {
+  "device": "cpu",
+  "dtype": "float64",
+  "mixed_precision": false
+ },
+ "matrix_row": "EXP-02",
+ "model": {
+  "name": "qwen3:8b",
+  "hyperparameters": {
+   "model": "qwen3:8b",
+   "temperature": 0,
+   "seed": 42
+  },
+  "method": "llm"
+ }
+}

@@ -1,0 +1,43 @@
+{
+ "n_main": 90,
+ "n_stress": 28,
+ "main_by_category": {
+  "projection": 30,
+  "join": 30,
+  "aggregate": 30,
+  "cte": 0,
+  "case": 0
+ },
+ "stress_by_type": {
+  "empty": 8,
+  "limit": 8,
+  "case_untriggered": 0,
+  "aggregate": 8,
+  "fanout": 4
+ },
+ "build": {
+  "main": 90,
+  "stress": 28,
+  "error": 0,
+  "empty": 0,
+  "main_by_category": {
+   "aggregate": 30,
+   "projection": 30,
+   "join": 30
+  },
+  "stress_by_type": {
+   "empty": 8,
+   "aggregate": 8,
+   "limit": 8,
+   "fanout": 4
+  },
+  "train_fill": {
+   "main": 0,
+   "stress": 0,
+   "error": 7000,
+   "empty": 0,
+   "main_by_category": {},
+   "stress_by_type": {}
+  }
+ }
+}

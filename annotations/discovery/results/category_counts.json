@@ -1,0 +1,7 @@
+{
+ "aggregate": 6,
+ "projection": 6,
+ "join": 6,
+ "cte": 6,
+ "case": 6
+}

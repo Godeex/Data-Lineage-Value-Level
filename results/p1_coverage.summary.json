@@ -1,0 +1,284 @@
+{
+ "n_rows": 170,
+ "n_failed": 0,
+ "failures": [],
+ "category": {
+  "aggregate": {
+   "n": 57,
+   "mean_ref_edges": 1.736842105263158,
+   "mean_static_f1": 0.2198830409356725,
+   "b3_cell": {
+    "mean_coverage": 0.6074561403508771,
+    "mean_fn": 0.3925438596491228,
+    "mean_exec": 54.36842105263158
+   },
+   "b10_cell": {
+    "mean_coverage": 0.75,
+    "mean_fn": 0.25,
+    "mean_exec": 181.2280701754386
+   },
+   "b3_allcell": {
+    "mean_coverage": 0.6600877192982456,
+    "mean_fn": 0.3399122807017544,
+    "mean_exec": 108.73684210526316
+   },
+   "b10_allcell": {
+    "mean_coverage": 0.8026315789473685,
+    "mean_fn": 0.19736842105263158,
+    "mean_exec": 362.4561403508772
+   }
+  },
+  "projection": {
+   "n": 39,
+   "mean_ref_edges": 2.6666666666666665,
+   "mean_static_f1": 0.5076923076923077,
+   "b3_cell": {
+    "mean_coverage": 0.5245098039215685,
+    "mean_fn": 0.4754901960784314,
+    "mean_exec": 56.69230769230769
+   },
+   "b10_cell": {
+    "mean_coverage": 0.642156862745098,
+    "mean_fn": 0.35784313725490197,
+    "mean_exec": 188.97435897435898
+   },
+   "b3_allcell": {
+    "mean_coverage": 0.7941176470588235,
+    "mean_fn": 0.20588235294117646,
+    "mean_exec": 113.38461538461539
+   },
+   "b10_allcell": {
+    "mean_coverage": 0.8529411764705882,
+    "mean_fn": 0.14705882352941177,
+    "mean_exec": 377.94871794871796
+   }
+  },
+  "join": {
+   "n": 34,
+   "mean_ref_edges": 5.0588235294117645,
+   "mean_static_f1": 0.2803921568627451,
+   "b3_cell": {
+    "mean_coverage": 0.5892156862745098,
+    "mean_fn": 0.4107843137254902,
+    "mean_exec": 71.55882352941177
+   },
+   "b10_cell": {
+    "mean_coverage": 0.7705882352941176,
+    "mean_fn": 0.22941176470588234,
+    "mean_exec": 238.52941176470588
+   },
+   "b3_allcell": {
+    "mean_coverage": 0.6186274509803922,
+    "mean_fn": 0.3813725490196078,
+    "mean_exec": 143.11764705882354
+   },
+   "b10_allcell": {
+    "mean_coverage": 0.7999999999999999,
+    "mean_fn": 0.19999999999999998,
+    "mean_exec": 477.05882352941177
+   }
+  },
+  "cte": {
+   "n": 20,
+   "mean_ref_edges": 1.85,
+   "mean_static_f1": 0.48666666666666664,
+   "b3_cell": {
+    "mean_coverage": 0.7619047619047619,
+    "mean_fn": 0.2380952380952381,
+    "mean_exec": 63.0
+   },
+   "b10_cell": {
+    "mean_coverage": 0.7857142857142857,
+    "mean_fn": 0.21428571428571427,
+    "mean_exec": 210.0
+   },
+   "b3_allcell": {
+    "mean_coverage": 0.8333333333333333,
+    "mean_fn": 0.16666666666666669,
+    "mean_exec": 126.0
+   },
+   "b10_allcell": {
+    "mean_coverage": 0.8571428571428571,
+    "mean_fn": 0.14285714285714285,
+    "mean_exec": 420.0
+   }
+  },
+  "case": {
+   "n": 20,
+   "mean_ref_edges": 2.65,
+   "mean_static_f1": 0.3059523809523809,
+   "b3_cell": {
+    "mean_coverage": 0.5833333333333333,
+    "mean_fn": 0.41666666666666663,
+    "mean_exec": 58.8
+   },
+   "b10_cell": {
+    "mean_coverage": 0.7880952380952381,
+    "mean_fn": 0.2119047619047619,
+    "mean_exec": 196.0
+   },
+   "b3_allcell": {
+    "mean_coverage": 0.6666666666666667,
+    "mean_fn": 0.33333333333333337,
+    "mean_exec": 117.6
+   },
+   "b10_allcell": {
+    "mean_coverage": 0.8714285714285713,
+    "mean_fn": 0.12857142857142856,
+    "mean_exec": 392.0
+   }
+  }
+ },
+ "stress_type": {
+  "None": {
+   "n": 130,
+   "mean_ref_edges": 2.8692307692307693,
+   "mean_static_f1": 0.3798901098901099,
+   "b3_cell": {
+    "mean_coverage": 0.6189814814814815,
+    "mean_fn": 0.3810185185185185,
+    "mean_exec": 60.11538461538461
+   },
+   "b10_cell": {
+    "mean_coverage": 0.7774691358024691,
+    "mean_fn": 0.22253086419753085,
+    "mean_exec": 200.3846153846154
+   },
+   "b3_allcell": {
+    "mean_coverage": 0.7424382716049384,
+    "mean_fn": 0.25756172839506175,
+    "mean_exec": 120.23076923076923
+   },
+   "b10_allcell": {
+    "mean_coverage": 0.8824074074074074,
+    "mean_fn": 0.11759259259259258,
+    "mean_exec": 400.7692307692308
+   }
+  },
+  "empty": {
+   "n": 14,
+   "mean_ref_edges": 0.0,
+   "mean_static_f1": 0.0,
+   "b3_cell": {
+    "mean_coverage": 0.0,
+    "mean_fn": 0.0,
+    "mean_exec": 63.0
+   },
+   "b10_cell": {
+    "mean_coverage": 0.0,
+    "mean_fn": 0.0,
+    "mean_exec": 210.0
+   },
+   "b3_allcell": {
+    "mean_coverage": 0.0,
+    "mean_fn": 0.0,
+    "mean_exec": 126.0
+   },
+   "b10_allcell": {
+    "mean_coverage": 0.0,
+    "mean_fn": 0.0,
+    "mean_exec": 420.0
+   }
+  },
+  "aggregate": {
+   "n": 8,
+   "mean_ref_edges": 3.75,
+   "mean_static_f1": 0.0,
+   "b3_cell": {
+    "mean_coverage": 0.8541666666666666,
+    "mean_fn": 0.14583333333333331,
+    "mean_exec": 42.0
+   },
+   "b10_cell": {
+    "mean_coverage": 1.0,
+    "mean_fn": 0.0,
+    "mean_exec": 140.0
+   },
+   "b3_allcell": {
+    "mean_coverage": 0.8541666666666666,
+    "mean_fn": 0.14583333333333331,
+    "mean_exec": 84.0
+   },
+   "b10_allcell": {
+    "mean_coverage": 1.0,
+    "mean_fn": 0.0,
+    "mean_exec": 280.0
+   }
+  },
+  "limit": {
+   "n": 8,
+   "mean_ref_edges": 2.25,
+   "mean_static_f1": 0.5,
+   "b3_cell": {
+    "mean_coverage": 0.125,
+    "mean_fn": 0.875,
+    "mean_exec": 54.0
+   },
+   "b10_cell": {
+    "mean_coverage": 0.125,
+    "mean_fn": 0.875,
+    "mean_exec": 180.0
+   },
+   "b3_allcell": {
+    "mean_coverage": 0.125,
+    "mean_fn": 0.875,
+    "mean_exec": 108.0
+   },
+   "b10_allcell": {
+    "mean_coverage": 0.125,
+    "mean_fn": 0.875,
+    "mean_exec": 360.0
+   }
+  },
+  "fanout": {
+   "n": 4,
+   "mean_ref_edges": 7.0,
+   "mean_static_f1": 0.0,
+   "b3_cell": {
+    "mean_coverage": 0.275,
+    "mean_fn": 0.725,
+    "mean_exec": 84.0
+   },
+   "b10_cell": {
+    "mean_coverage": 0.4,
+    "mean_fn": 0.6,
+    "mean_exec": 280.0
+   },
+   "b3_allcell": {
+    "mean_coverage": 0.275,
+    "mean_fn": 0.725,
+    "mean_exec": 168.0
+   },
+   "b10_allcell": {
+    "mean_coverage": 0.4,
+    "mean_fn": 0.6,
+    "mean_exec": 560.0
+   }
+  },
+  "case_untriggered": {
+   "n": 6,
+   "mean_ref_edges": 2.6666666666666665,
+   "mean_static_f1": 0.7222222222222222,
+   "b3_cell": {
+    "mean_coverage": 0.6666666666666666,
+    "mean_fn": 0.3333333333333333,
+    "mean_exec": 63.0
+   },
+   "b10_cell": {
+    "mean_coverage": 0.6666666666666666,
+    "mean_fn": 0.3333333333333333,
+    "mean_exec": 210.0
+   },
+   "b3_allcell": {
+    "mean_coverage": 0.8333333333333334,
+    "mean_fn": 0.16666666666666666,
+    "mean_exec": 126.0
+   },
+   "b10_allcell": {
+    "mean_coverage": 0.8333333333333334,
+    "mean_fn": 0.16666666666666666,
+    "mean_exec": 420.0
+   }
+  }
+ }
+}

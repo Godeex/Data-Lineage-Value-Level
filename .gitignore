@@ -1,0 +1,30 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Large generated datasets
+data/tpch_sf01.sqlite
+data/spider/
+
+# LaTeX build products
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.blg
+paper/*.bbl
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.synctex.gz
+paper/_backup_*/
+paper/pages/
+paper/litsearch/
+paper/VLDB-Template-main/
+
+# Local archives and experiment scratch
+/*.zip
+runs/

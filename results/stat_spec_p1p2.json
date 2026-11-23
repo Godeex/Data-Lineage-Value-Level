@@ -1,0 +1,129 @@
+{
+ "project": "AgentDB-261102-P1P2",
+ "correction": "bh",
+ "comparisons_run": 9,
+ "comparisons_reported": 9,
+ "claims": [
+  {
+   "claim_id": "p1_main",
+   "text": "b10_allcell vs b3_cell coverage on main set",
+   "p": 0.0001,
+   "effect_size": 0.263,
+   "effect_kind": "coverage_diff",
+   "ci95": [
+    0.199,
+    0.329
+   ],
+   "n": 108,
+   "asserted_grade": "moderate",
+   "is_hypothesis": true,
+   "hypothesis_id": "H4"
+  },
+  {
+   "claim_id": "p1_projection",
+   "text": "coverage gain on projection",
+   "p": 0.0001,
+   "effect_size": 0.339,
+   "effect_kind": "coverage_diff",
+   "ci95": [
+    0.206,
+    0.481
+   ],
+   "n": 30,
+   "asserted_grade": "moderate"
+  },
+  {
+   "claim_id": "p1_join",
+   "text": "coverage gain on join",
+   "p": 0.0001,
+   "effect_size": 0.222,
+   "effect_kind": "coverage_diff",
+   "ci95": [
+    0.121,
+    0.333
+   ],
+   "n": 30,
+   "asserted_grade": "moderate"
+  },
+  {
+   "claim_id": "p1_aggregate",
+   "text": "coverage gain on aggregate",
+   "p": 0.0001,
+   "effect_size": 0.313,
+   "effect_kind": "coverage_diff",
+   "ci95": [
+    0.146,
+    0.496
+   ],
+   "n": 20,
+   "asserted_grade": "weak"
+  },
+  {
+   "claim_id": "p1_case",
+   "text": "coverage gain on case",
+   "p": 0.0001,
+   "effect_size": 0.288,
+   "effect_kind": "coverage_diff",
+   "ci95": [
+    0.114,
+    0.486
+   ],
+   "n": 14,
+   "asserted_grade": "weak"
+  },
+  {
+   "claim_id": "p1_cte",
+   "text": "coverage gain on cte",
+   "p": 0.0682,
+   "effect_size": 0.095,
+   "effect_kind": "coverage_diff",
+   "ci95": [
+    0.0,
+    0.202
+   ],
+   "n": 14,
+   "asserted_grade": "none"
+  },
+  {
+   "claim_id": "p2_val",
+   "text": "evolving vs fixed hybrid on val",
+   "p": 0.0001,
+   "effect_size": 0.212,
+   "effect_kind": "f1_diff",
+   "ci95": [
+    0.077,
+    0.37
+   ],
+   "n": 19,
+   "asserted_grade": "weak",
+   "is_hypothesis": true,
+   "hypothesis_id": "H1"
+  },
+  {
+   "claim_id": "p2_regression",
+   "text": "evolving vs fixed hybrid on regression",
+   "p": 0.0072,
+   "effect_size": 0.106,
+   "effect_kind": "f1_diff",
+   "ci95": [
+    0.029,
+    0.189
+   ],
+   "n": 17,
+   "asserted_grade": "weak"
+  },
+  {
+   "claim_id": "p2_test",
+   "text": "evolving vs fixed hybrid on held-out test",
+   "p": 0.0704,
+   "effect_size": 0.137,
+   "effect_kind": "f1_diff",
+   "ci95": [
+    0.0,
+    0.314
+   ],
+   "n": 17,
+   "asserted_grade": "none"
+  }
+ ]
+}

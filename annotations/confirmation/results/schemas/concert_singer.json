@@ -1,0 +1,31 @@
+{
+ "stadium": [
+  "Stadium_ID",
+  "Location",
+  "Name",
+  "Capacity",
+  "Highest",
+  "Lowest",
+  "Average"
+ ],
+ "singer": [
+  "Singer_ID",
+  "Name",
+  "Country",
+  "Song_Name",
+  "Song_release_year",
+  "Age",
+  "Is_male"
+ ],
+ "concert": [
+  "concert_ID",
+  "concert_Name",
+  "Theme",
+  "Stadium_ID",
+  "Year"
+ ],
+ "singer_in_concert": [
+  "concert_ID",
+  "Singer_ID"
+ ]
+}

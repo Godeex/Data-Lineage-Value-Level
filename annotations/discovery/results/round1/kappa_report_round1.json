@@ -1,0 +1,353 @@
+{
+ "files": {
+  "A": "round1\\annotation_A_round1.csv",
+  "B": "round1\\annotation_B_round1.csv",
+  "C": "round1\\annotation_C_round1.csv"
+ },
+ "n_queries_with_no_edges": {
+  "A": [
+   "synth-case-000",
+   "synth-case-001",
+   "synth-cte-001"
+  ],
+  "B": [
+   "synth-case-000",
+   "synth-case-001",
+   "synth-cte-001"
+  ],
+  "C": [
+   "synth-case-000",
+   "synth-case-001",
+   "synth-cte-001"
+  ]
+ },
+ "pairwise": [
+  {
+   "pair": "A vs B",
+   "n_a": 94,
+   "n_b": 95,
+   "n_common_listed": 93,
+   "n_union": 96,
+   "percent_agreement_binary_union": 0.8854,
+   "pabak_binary_union": 0.7708,
+   "binary_kappa_union": 0.2189,
+   "binary_kappa_intersection": 0.3086,
+   "three_class_kappa_intersection": 0.3187,
+   "four_class_kappa_union": 0.2403,
+   "confusion_binary_union": {
+    "POSITIVE": {
+     "POSITIVE": 83,
+     "OTHER": 9
+    },
+    "OTHER": {
+     "POSITIVE": 2,
+     "OTHER": 2
+    }
+   },
+   "confusion_three_class_intersection": {
+    "POSITIVE": {
+     "POSITIVE": 83,
+     "NEGATIVE": 0,
+     "UNKNOWN": 8
+    },
+    "NEGATIVE": {
+     "POSITIVE": 0,
+     "NEGATIVE": 2,
+     "UNKNOWN": 0
+    },
+    "UNKNOWN": {
+     "POSITIVE": 0,
+     "NEGATIVE": 0,
+     "UNKNOWN": 0
+    }
+   },
+   "confusion_four_class_union": {
+    "POSITIVE": {
+     "POSITIVE": 83,
+     "NEGATIVE": 0,
+     "UNKNOWN": 8,
+     "ABSENT": 1
+    },
+    "NEGATIVE": {
+     "POSITIVE": 0,
+     "NEGATIVE": 2,
+     "UNKNOWN": 0,
+     "ABSENT": 0
+    },
+    "UNKNOWN": {
+     "POSITIVE": 0,
+     "NEGATIVE": 0,
+     "UNKNOWN": 0,
+     "ABSENT": 0
+    },
+    "ABSENT": {
+     "POSITIVE": 2,
+     "NEGATIVE": 0,
+     "UNKNOWN": 0,
+     "ABSENT": 0
+    }
+   },
+   "edges_only_a": [
+    "validation-00174 | countryname <- car_makers.country"
+   ],
+   "edges_only_b": [
+    "synth-case-005 | count(*) <- singer.country",
+    "validation-00033 | theme <- singer_in_concert.concert_id"
+   ],
+   "decision_disagreements": [
+    {
+     "edge": "synth-case-007 | bucket <- stadium.capacity",
+     "A": "POSITIVE",
+     "B": "UNKNOWN"
+    },
+    {
+     "edge": "synth-cte-004 | avg(age) <- singer.age",
+     "A": "POSITIVE",
+     "B": "UNKNOWN"
+    },
+    {
+     "edge": "synth-cte-004 | max(age) <- singer.age",
+     "A": "POSITIVE",
+     "B": "UNKNOWN"
+    },
+    {
+     "edge": "synth-cte-004 | min(age) <- singer.age",
+     "A": "POSITIVE",
+     "B": "UNKNOWN"
+    },
+    {
+     "edge": "validation-00031 | name <- concert.stadium_id",
+     "A": "POSITIVE",
+     "B": "UNKNOWN"
+    },
+    {
+     "edge": "validation-00031 | name <- concert.year",
+     "A": "POSITIVE",
+     "B": "UNKNOWN"
+    },
+    {
+     "edge": "validation-00031 | name <- stadium.stadium_id",
+     "A": "POSITIVE",
+     "B": "UNKNOWN"
+    },
+    {
+     "edge": "validation-00174 | countryname <- countries.countryid",
+     "A": "POSITIVE",
+     "B": "UNKNOWN"
+    }
+   ]
+  },
+  {
+   "pair": "A vs C",
+   "n_a": 94,
+   "n_b": 96,
+   "n_common_listed": 94,
+   "n_union": 96,
+   "percent_agreement_binary_union": 0.8854,
+   "pabak_binary_union": 0.7708,
+   "binary_kappa_union": 0.2189,
+   "binary_kappa_intersection": 0.2818,
+   "three_class_kappa_intersection": 0.214,
+   "four_class_kappa_union": 0.1724,
+   "confusion_binary_union": {
+    "POSITIVE": {
+     "POSITIVE": 83,
+     "OTHER": 9
+    },
+    "OTHER": {
+     "POSITIVE": 2,
+     "OTHER": 2
+    }
+   },
+   "confusion_three_class_intersection": {
+    "POSITIVE": {
+     "POSITIVE": 83,
+     "NEGATIVE": 1,
+     "UNKNOWN": 8
+    },
+    "NEGATIVE": {
+     "POSITIVE": 0,
+     "NEGATIVE": 1,
+     "UNKNOWN": 1
+    },
+    "UNKNOWN": {
+     "POSITIVE": 0,
+     "NEGATIVE": 0,
+     "UNKNOWN": 0
+    }
+   },
+   "confusion_four_class_union": {
+    "POSITIVE": {
+     "POSITIVE": 83,
+     "NEGATIVE": 1,
+     "UNKNOWN": 8,
+     "ABSENT": 0
+    },
+    "NEGATIVE": {
+     "POSITIVE": 0,
+     "NEGATIVE": 1,
+     "UNKNOWN": 1,
+     "ABSENT": 0
+    },
+    "UNKNOWN": {
+     "POSITIVE": 0,
+     "NEGATIVE": 0,
+     "UNKNOWN": 0,
+     "ABSENT": 0
+    },
+    "ABSENT": {
+     "POSITIVE": 2,
+     "NEGATIVE": 0,
+     "UNKNOWN": 0,
+     "ABSENT": 0
+    }
+   },
+   "edges_only_a": [],
+   "edges_only_b": [
+    "synth-case-005 | count(*) <- singer.country",
+    "validation-00033 | theme <- singer_in_concert.concert_id"
+   ],
+   "decision_disagreements": [
+    {
+     "edge": "synth-case-005 | bucket <- singer.country",
+     "A": "POSITIVE",
+     "C": "NEGATIVE"
+    },
+    {
+     "edge": "synth-case-007 | bucket <- stadium.capacity",
+     "A": "POSITIVE",
+     "C": "UNKNOWN"
+    },
+    {
+     "edge": "synth-case-018 | bucket <- pets.pet_age",
+     "A": "NEGATIVE",
+     "C": "UNKNOWN"
+    },
+    {
+     "edge": "synth-cte-004 | avg(age) <- singer.age",
+     "A": "POSITIVE",
+     "C": "UNKNOWN"
+    },
+    {
+     "edge": "synth-cte-004 | max(age) <- singer.age",
+     "A": "POSITIVE",
+     "C": "UNKNOWN"
+    },
+    {
+     "edge": "synth-cte-004 | min(age) <- singer.age",
+     "A": "POSITIVE",
+     "C": "UNKNOWN"
+    },
+    {
+     "edge": "validation-00031 | name <- concert.stadium_id",
+     "A": "POSITIVE",
+     "C": "UNKNOWN"
+    },
+    {
+     "edge": "validation-00031 | name <- concert.year",
+     "A": "POSITIVE",
+     "C": "UNKNOWN"
+    },
+    {
+     "edge": "validation-00031 | name <- stadium.stadium_id",
+     "A": "POSITIVE",
+     "C": "UNKNOWN"
+    },
+    {
+     "edge": "validation-00174 | countryname <- countries.countryid",
+     "A": "POSITIVE",
+     "C": "UNKNOWN"
+    }
+   ]
+  },
+  {
+   "pair": "B vs C",
+   "n_a": 95,
+   "n_b": 96,
+   "n_common_listed": 95,
+   "n_union": 96,
+   "percent_agreement_binary_union": 0.9792,
+   "pabak_binary_union": 0.9583,
+   "binary_kappa_union": 0.8973,
+   "binary_kappa_intersection": 0.9465,
+   "three_class_kappa_intersection": 0.895,
+   "four_class_kappa_union": 0.8496,
+   "confusion_binary_union": {
+    "POSITIVE": {
+     "POSITIVE": 84,
+     "OTHER": 1
+    },
+    "OTHER": {
+     "POSITIVE": 1,
+     "OTHER": 10
+    }
+   },
+   "confusion_three_class_intersection": {
+    "POSITIVE": {
+     "POSITIVE": 84,
+     "NEGATIVE": 1,
+     "UNKNOWN": 0
+    },
+    "NEGATIVE": {
+     "POSITIVE": 0,
+     "NEGATIVE": 1,
+     "UNKNOWN": 1
+    },
+    "UNKNOWN": {
+     "POSITIVE": 0,
+     "NEGATIVE": 0,
+     "UNKNOWN": 8
+    }
+   },
+   "confusion_four_class_union": {
+    "POSITIVE": {
+     "POSITIVE": 84,
+     "NEGATIVE": 1,
+     "UNKNOWN": 0,
+     "ABSENT": 0
+    },
+    "NEGATIVE": {
+     "POSITIVE": 0,
+     "NEGATIVE": 1,
+     "UNKNOWN": 1,
+     "ABSENT": 0
+    },
+    "UNKNOWN": {
+     "POSITIVE": 0,
+     "NEGATIVE": 0,
+     "UNKNOWN": 8,
+     "ABSENT": 0
+    },
+    "ABSENT": {
+     "POSITIVE": 1,
+     "NEGATIVE": 0,
+     "UNKNOWN": 0,
+     "ABSENT": 0
+    }
+   },
+   "edges_only_a": [],
+   "edges_only_b": [
+    "validation-00174 | countryname <- car_makers.country"
+   ],
+   "decision_disagreements": [
+    {
+     "edge": "synth-case-005 | bucket <- singer.country",
+     "B": "POSITIVE",
+     "C": "NEGATIVE"
+    },
+    {
+     "edge": "synth-case-018 | bucket <- pets.pet_age",
+     "B": "NEGATIVE",
+     "C": "UNKNOWN"
+    }
+   ]
+  }
+ ],
+ "mean_binary_kappa_union": 0.445,
+ "min_binary_kappa_union": 0.2189,
+ "gate": {
+  "target_binary_kappa": 0.7,
+  "recalibration_threshold": 0.6,
+  "pass": false
+ }
+}

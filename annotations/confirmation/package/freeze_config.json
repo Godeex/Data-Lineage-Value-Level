@@ -1,0 +1,27 @@
+{
+ "frozen_on": "2026-11-18",
+ "selection": "one query per unique SQL template from the 78-query non-gold strict pool; 42 templates",
+ "literal_probe": {
+  "budget_rows_per_column": 3,
+  "families": [
+   "CELL_VALUE",
+   "VALUE_TO_NULL",
+   "NULL_TO_VALUE"
+  ],
+  "candidate_order": [
+   "type-compatible SQL literals",
+   "boundary values",
+   "current values"
+  ],
+  "dedup": true,
+  "budget_exhaustion": "UNKNOWN"
+ },
+ "source_hashes": {
+  "src/agentdb/sqlite_oracle.py": "2355adabf6512283c915e761eff64a15fbd46624976d52f024107d68fe924bc1",
+  "src/agentdb/spider.py": "98c7f038367d6d16e3515f653eb675249aec69eecfbfe1169d9fb947dd97bf88",
+  "src/agentdb/lineage.py": "3a2266c52fce481522b9f07578c0a457b2894d10a442f4b56900e3c763e13038",
+  "scripts/evaluate_gold.py": "bd27220f15def4ed0a897ef00e71b65379eb49acba138f6fc11e9c6c5028e248",
+  "paper/figures/make_all_figures.py": "4038417a2f87a0fef9e4bdb4b376a17821389a377aff872cd10bed455345acee"
+ },
+ "sealed_predictions_sha256": "bb53cdb24c3466c69deb023103aeeac507d0f5704bc128d3c5a64f5a26408b22"
+}

@@ -1,0 +1,197 @@
+{
+ "source": "30 human gold queries",
+ "per_category": {
+  "machine_reference": {
+   "aggregate": {
+    "n": 6,
+    "tp": 15,
+    "fn": 1,
+    "recall": 0.9375
+   },
+   "case": {
+    "n": 6,
+    "tp": 6,
+    "fn": 5,
+    "recall": 0.5454545454545454
+   },
+   "cte": {
+    "n": 6,
+    "tp": 8,
+    "fn": 4,
+    "recall": 0.6666666666666666
+   },
+   "join": {
+    "n": 6,
+    "tp": 30,
+    "fn": 1,
+    "recall": 0.967741935483871
+   },
+   "projection": {
+    "n": 6,
+    "tp": 17,
+    "fn": 0,
+    "recall": 1.0
+   }
+  },
+  "evolving": {
+   "aggregate": {
+    "n": 6,
+    "tp": 13,
+    "fn": 3,
+    "recall": 0.8125
+   },
+   "case": {
+    "n": 6,
+    "tp": 9,
+    "fn": 2,
+    "recall": 0.8181818181818182
+   },
+   "cte": {
+    "n": 6,
+    "tp": 8,
+    "fn": 4,
+    "recall": 0.6666666666666666
+   },
+   "join": {
+    "n": 6,
+    "tp": 24,
+    "fn": 7,
+    "recall": 0.7741935483870968
+   },
+   "projection": {
+    "n": 6,
+    "tp": 17,
+    "fn": 0,
+    "recall": 1.0
+   }
+  },
+  "literal_union_evolving": {
+   "aggregate": {
+    "n": 6,
+    "tp": 16,
+    "fn": 0,
+    "recall": 1.0
+   },
+   "case": {
+    "n": 6,
+    "tp": 10,
+    "fn": 1,
+    "recall": 0.9090909090909091
+   },
+   "cte": {
+    "n": 6,
+    "tp": 12,
+    "fn": 0,
+    "recall": 1.0
+   },
+   "join": {
+    "n": 6,
+    "tp": 25,
+    "fn": 6,
+    "recall": 0.8064516129032258
+   },
+   "projection": {
+    "n": 6,
+    "tp": 17,
+    "fn": 0,
+    "recall": 1.0
+   }
+  },
+  "literal_union_reference": {
+   "aggregate": {
+    "n": 6,
+    "tp": 16,
+    "fn": 0,
+    "recall": 1.0
+   },
+   "case": {
+    "n": 6,
+    "tp": 9,
+    "fn": 2,
+    "recall": 0.8181818181818182
+   },
+   "cte": {
+    "n": 6,
+    "tp": 12,
+    "fn": 0,
+    "recall": 1.0
+   },
+   "join": {
+    "n": 6,
+    "tp": 31,
+    "fn": 0,
+    "recall": 1.0
+   },
+   "projection": {
+    "n": 6,
+    "tp": 17,
+    "fn": 0,
+    "recall": 1.0
+   }
+  },
+  "static": {
+   "aggregate": {
+    "n": 6,
+    "tp": 3,
+    "fn": 13,
+    "recall": 0.1875
+   },
+   "case": {
+    "n": 6,
+    "tp": 6,
+    "fn": 5,
+    "recall": 0.5454545454545454
+   },
+   "cte": {
+    "n": 6,
+    "tp": 5,
+    "fn": 7,
+    "recall": 0.4166666666666667
+   },
+   "join": {
+    "n": 6,
+    "tp": 7,
+    "fn": 24,
+    "recall": 0.22580645161290322
+   },
+   "projection": {
+    "n": 6,
+    "tp": 4,
+    "fn": 13,
+    "recall": 0.23529411764705882
+   }
+  }
+ },
+ "overall": {
+  "machine_reference": {
+   "n_edges": 87,
+   "tp": 76,
+   "fn": 11,
+   "recall": 0.8735632183908046
+  },
+  "evolving": {
+   "n_edges": 87,
+   "tp": 71,
+   "fn": 16,
+   "recall": 0.8160919540229885
+  },
+  "literal_union_evolving": {
+   "n_edges": 87,
+   "tp": 80,
+   "fn": 7,
+   "recall": 0.9195402298850575
+  },
+  "literal_union_reference": {
+   "n_edges": 87,
+   "tp": 85,
+   "fn": 2,
+   "recall": 0.9770114942528736
+  },
+  "static": {
+   "n_edges": 87,
+   "tp": 25,
+   "fn": 62,
+   "recall": 0.28735632183908044
+  }
+ }
+}

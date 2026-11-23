@@ -1,0 +1,140 @@
+{
+ "engine": "ProvSQL where-provenance",
+ "version": "1.15.0-dev",
+ "n_control": 8,
+ "n_data": 7,
+ "control_recovered": 0,
+ "data_recovered": 6,
+ "queries": [
+  {
+   "qid": "q1",
+   "sql": "SELECT c_name FROM customer WHERE c_nationkey = 1",
+   "error": null,
+   "recovered_edges": [
+    [
+     "c_name",
+     "customer",
+     "c_name"
+    ]
+   ],
+   "control_recovered": [],
+   "data_recovered": [
+    [
+     "c_name",
+     "customer",
+     "c_name"
+    ]
+   ],
+   "control_total": 1,
+   "data_total": 1
+  },
+  {
+   "qid": "q2",
+   "sql": "SELECT c_name FROM customer WHERE c_mktsegment = 'BUILDING'",
+   "error": null,
+   "recovered_edges": [
+    [
+     "c_name",
+     "customer",
+     "c_name"
+    ]
+   ],
+   "control_recovered": [],
+   "data_recovered": [
+    [
+     "c_name",
+     "customer",
+     "c_name"
+    ]
+   ],
+   "control_total": 1,
+   "data_total": 1
+  },
+  {
+   "qid": "q3",
+   "sql": "SELECT o_orderkey, o_totalprice FROM orders WHERE o_orderdate >= DATE '1995-01-01'",
+   "error": null,
+   "recovered_edges": [
+    [
+     "o_orderkey",
+     "orders",
+     "o_orderkey"
+    ],
+    [
+     "o_totalprice",
+     "orders",
+     "o_totalprice"
+    ]
+   ],
+   "control_recovered": [],
+   "data_recovered": [
+    [
+     "o_orderkey",
+     "orders",
+     "o_orderkey"
+    ],
+    [
+     "o_totalprice",
+     "orders",
+     "o_totalprice"
+    ]
+   ],
+   "control_total": 2,
+   "data_total": 2
+  },
+  {
+   "qid": "q4",
+   "sql": "SELECT SUM(l_quantity) AS \"sum(l_quantity)\" FROM lineitem WHERE l_shipdate >= DATE '1995-01-01' AND l_partkey = 1",
+   "error": "ERROR:  ProvSQL: Where-provenance does not support gates of type one",
+   "recovered_edges": [],
+   "control_recovered": [],
+   "data_recovered": [],
+   "control_total": 2,
+   "data_total": 1
+  },
+  {
+   "qid": "q5",
+   "sql": "SELECT s_name FROM supplier WHERE s_acctbal > 5000",
+   "error": null,
+   "recovered_edges": [
+    [
+     "s_name",
+     "supplier",
+     "s_name"
+    ]
+   ],
+   "control_recovered": [],
+   "data_recovered": [
+    [
+     "s_name",
+     "supplier",
+     "s_name"
+    ]
+   ],
+   "control_total": 1,
+   "data_total": 1
+  },
+  {
+   "qid": "q6",
+   "sql": "SELECT p_name FROM part WHERE p_size = 15",
+   "error": null,
+   "recovered_edges": [
+    [
+     "p_name",
+     "part",
+     "p_name"
+    ]
+   ],
+   "control_recovered": [],
+   "data_recovered": [
+    [
+     "p_name",
+     "part",
+     "p_name"
+    ]
+   ],
+   "control_total": 1,
+   "data_total": 1
+  }
+ ]
+}

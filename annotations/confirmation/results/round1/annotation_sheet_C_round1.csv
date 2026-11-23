@@ -1,0 +1,493 @@
+qid,annotator,output_column,source_table,source_column,decision,confidence,evidence_type,note
+validation-00000,C,count(*),singer,age,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00000,C,count(*),singer,country,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00000,C,count(*),singer,is_male,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00000,C,count(*),singer,name,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00000,C,count(*),singer,singer_id,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00000,C,count(*),singer,song_name,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00000,C,count(*),singer,song_release_year,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00000,C,count(*),singer_in_concert,singer_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00000,C,count(*),stadium,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00004,C,avg(age),singer,age,UNKNOWN,2,,过滤 country='France' 在本实例上无匹配行，聚合恒为 NULL，单格改 age 不改变输出
+validation-00004,C,avg(age),singer,country,POSITIVE,3,CONTROL,
+validation-00004,C,min(age),singer,age,UNKNOWN,2,,同上：聚合在空集上求值
+validation-00004,C,min(age),singer,country,POSITIVE,3,CONTROL,
+validation-00004,C,max(age),singer,age,UNKNOWN,2,,同上：聚合在空集上求值
+validation-00004,C,max(age),singer,country,POSITIVE,3,CONTROL,
+validation-00010,C,Country,singer,age,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00010,C,Country,singer,country,POSITIVE,3,MIXED,
+validation-00010,C,Country,singer,is_male,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00010,C,Country,singer,name,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00010,C,Country,singer,singer_id,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00010,C,Country,singer,song_name,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00010,C,Country,singer,song_release_year,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00010,C,Country,singer_in_concert,singer_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00010,C,Country,stadium,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00010,C,count(*),singer,age,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00010,C,count(*),singer,country,POSITIVE,3,CONTROL,
+validation-00010,C,count(*),singer,is_male,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00010,C,count(*),singer,name,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00010,C,count(*),singer,singer_id,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00010,C,count(*),singer,song_name,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00010,C,count(*),singer,song_release_year,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00010,C,count(*),singer_in_concert,singer_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00010,C,count(*),stadium,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00016,C,max(capacity),stadium,average,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00016,C,max(capacity),stadium,capacity,POSITIVE,3,DATA,
+validation-00016,C,Average,stadium,average,POSITIVE,3,DATA,
+validation-00016,C,Average,stadium,capacity,UNKNOWN,2,,经由行数或派生计数的间接影响，未直接观测到值变化
+validation-00017,C,avg(capacity),stadium,capacity,POSITIVE,3,DATA,
+validation-00017,C,max(capacity),stadium,capacity,POSITIVE,3,DATA,
+validation-00026,C,Year,concert,concert_id,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00026,C,Year,concert,concert_name,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00026,C,Year,concert,stadium_id,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00026,C,Year,concert,theme,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00026,C,Year,concert,year,POSITIVE,3,MIXED,
+validation-00026,C,Year,singer_in_concert,concert_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00026,C,Year,stadium,stadium_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00043,C,count(*),concert,concert_id,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00043,C,count(*),concert,concert_name,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00043,C,count(*),concert,stadium_id,POSITIVE,3,CONTROL,
+validation-00043,C,count(*),concert,theme,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00043,C,count(*),concert,year,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00043,C,count(*),singer,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00043,C,count(*),singer_in_concert,concert_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00043,C,count(*),stadium,average,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00043,C,count(*),stadium,capacity,UNKNOWN,2,,子查询按 capacity 选 id，但本实例 concert.stadium_id 为文本、stadium.stadium_id 为数值，单格扰动未观测到变化
+validation-00043,C,count(*),stadium,highest,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00043,C,count(*),stadium,location,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00043,C,count(*),stadium,lowest,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00043,C,count(*),stadium,name,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00043,C,count(*),stadium,stadium_id,UNKNOWN,2,,同上：类型不一致导致比较失效
+validation-00049,C,max(weight),Pets,pettype,POSITIVE,3,CONTROL,
+validation-00049,C,max(weight),Pets,weight,POSITIVE,3,DATA,
+validation-00049,C,PetType,Pets,pettype,POSITIVE,3,MIXED,
+validation-00049,C,PetType,Pets,weight,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00053,C,count(*),Has_Pet,petid,UNKNOWN,2,,同上
+validation-00053,C,count(*),Has_Pet,stuid,UNKNOWN,2,,同上
+validation-00053,C,count(*),Pets,petid,UNKNOWN,2,,同上
+validation-00053,C,count(*),Pets,pettype,UNKNOWN,2,,同上：另一个合取条件未满足
+validation-00053,C,count(*),Student,sex,UNKNOWN,2,,WHERE sex='F' 与 pettype='dog' 为合取条件；实例上无行同时满足，单格扰动只能改一个条件
+validation-00053,C,count(*),Student,stuid,UNKNOWN,2,,连接键；合取过滤使结果恒为 0，单格改连接键不可观测
+validation-00071,C,avg(pet_age),Pets,pet_age,POSITIVE,3,DATA,
+validation-00071,C,avg(pet_age),Pets,pettype,POSITIVE,3,CONTROL,
+validation-00071,C,max(pet_age),Pets,pet_age,POSITIVE,3,DATA,
+validation-00071,C,max(pet_age),Pets,pettype,POSITIVE,3,CONTROL,
+validation-00071,C,PetType,Pets,pet_age,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00071,C,PetType,Pets,pettype,POSITIVE,3,MIXED,
+synth-case-002,C,name,singer,age,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-case-002,C,name,singer,country,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-case-002,C,name,singer,is_male,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-002,C,name,singer,name,POSITIVE,3,DATA,
+synth-case-002,C,name,singer,singer_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-002,C,name,singer,song_name,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-002,C,name,singer,song_release_year,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-002,C,name,singer_in_concert,singer_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-002,C,name,stadium,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-002,C,country,singer,age,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-case-002,C,country,singer,country,POSITIVE,3,DATA,
+synth-case-002,C,country,singer,is_male,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-002,C,country,singer,name,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-case-002,C,country,singer,singer_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-002,C,country,singer,song_name,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-002,C,country,singer,song_release_year,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-002,C,country,singer_in_concert,singer_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-002,C,country,stadium,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-002,C,age,singer,age,POSITIVE,3,DATA,
+synth-case-002,C,age,singer,country,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-case-002,C,age,singer,is_male,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-002,C,age,singer,name,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-case-002,C,age,singer,singer_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-002,C,age,singer,song_name,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-002,C,age,singer,song_release_year,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-002,C,age,singer_in_concert,singer_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-002,C,age,stadium,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-002,C,bucket,singer,age,POSITIVE,3,CONTROL,
+synth-case-002,C,bucket,singer,country,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-case-002,C,bucket,singer,is_male,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-002,C,bucket,singer,name,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-case-002,C,bucket,singer,singer_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-002,C,bucket,singer,song_name,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-002,C,bucket,singer,song_release_year,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-002,C,bucket,singer_in_concert,singer_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-002,C,bucket,stadium,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-006,C,max(capacity),concert,stadium_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-006,C,max(capacity),singer,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-006,C,max(capacity),stadium,average,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-case-006,C,max(capacity),stadium,capacity,POSITIVE,3,DATA,
+synth-case-006,C,max(capacity),stadium,highest,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-006,C,max(capacity),stadium,location,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-006,C,max(capacity),stadium,lowest,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-006,C,max(capacity),stadium,name,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-006,C,max(capacity),stadium,stadium_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-006,C,average,concert,stadium_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-006,C,average,singer,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-006,C,average,stadium,average,POSITIVE,3,DATA,
+synth-case-006,C,average,stadium,capacity,UNKNOWN,2,,经由行数或派生计数的间接影响，未直接观测到值变化
+synth-case-006,C,average,stadium,highest,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-006,C,average,stadium,location,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-006,C,average,stadium,lowest,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-006,C,average,stadium,name,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-006,C,average,stadium,stadium_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-006,C,bucket,concert,stadium_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-006,C,bucket,singer,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-006,C,bucket,stadium,average,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-case-006,C,bucket,stadium,capacity,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-case-006,C,bucket,stadium,highest,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-006,C,bucket,stadium,location,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-006,C,bucket,stadium,lowest,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-006,C,bucket,stadium,name,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-006,C,bucket,stadium,stadium_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-008,C,name,concert,stadium_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-008,C,name,singer,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-008,C,name,stadium,average,POSITIVE,3,CONTROL,
+synth-case-008,C,name,stadium,capacity,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-case-008,C,name,stadium,highest,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-008,C,name,stadium,location,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-008,C,name,stadium,lowest,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-008,C,name,stadium,name,POSITIVE,3,DATA,
+synth-case-008,C,name,stadium,stadium_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-008,C,capacity,concert,stadium_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-008,C,capacity,singer,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-008,C,capacity,stadium,average,POSITIVE,3,CONTROL,
+synth-case-008,C,capacity,stadium,capacity,POSITIVE,3,DATA,
+synth-case-008,C,capacity,stadium,highest,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-008,C,capacity,stadium,location,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-008,C,capacity,stadium,lowest,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-008,C,capacity,stadium,name,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-case-008,C,capacity,stadium,stadium_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-008,C,bucket,concert,stadium_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-008,C,bucket,singer,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-008,C,bucket,stadium,average,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-case-008,C,bucket,stadium,capacity,POSITIVE,3,CONTROL,
+synth-case-008,C,bucket,stadium,highest,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-008,C,bucket,stadium,location,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-008,C,bucket,stadium,lowest,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-008,C,bucket,stadium,name,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-case-008,C,bucket,stadium,stadium_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-012,C,concert_name,concert,concert_id,POSITIVE,3,MIXED,
+synth-case-012,C,concert_name,concert,concert_name,POSITIVE,3,DATA,
+synth-case-012,C,concert_name,concert,stadium_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-012,C,concert_name,concert,theme,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-case-012,C,concert_name,concert,year,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-012,C,concert_name,singer,singer_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-012,C,concert_name,singer_in_concert,concert_id,POSITIVE,3,CONTROL,
+synth-case-012,C,concert_name,singer_in_concert,singer_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-012,C,concert_name,stadium,stadium_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-012,C,theme,concert,concert_id,POSITIVE,3,MIXED,
+synth-case-012,C,theme,concert,concert_name,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-case-012,C,theme,concert,stadium_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-012,C,theme,concert,theme,POSITIVE,3,DATA,
+synth-case-012,C,theme,concert,year,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-012,C,theme,singer,singer_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-012,C,theme,singer_in_concert,concert_id,POSITIVE,3,CONTROL,
+synth-case-012,C,theme,singer_in_concert,singer_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-012,C,theme,stadium,stadium_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-012,C,count(*),concert,concert_id,POSITIVE,3,CONTROL,
+synth-case-012,C,count(*),concert,concert_name,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-case-012,C,count(*),concert,stadium_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-012,C,count(*),concert,theme,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-case-012,C,count(*),concert,year,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-012,C,count(*),singer,singer_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-012,C,count(*),singer_in_concert,concert_id,POSITIVE,3,CONTROL,
+synth-case-012,C,count(*),singer_in_concert,singer_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-012,C,count(*),stadium,stadium_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-012,C,bucket,concert,concert_id,UNKNOWN,2,,经由行数或派生计数的间接影响，未直接观测到值变化
+synth-case-012,C,bucket,concert,concert_name,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-case-012,C,bucket,concert,stadium_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-012,C,bucket,concert,theme,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-case-012,C,bucket,concert,year,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-012,C,bucket,singer,singer_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-012,C,bucket,singer_in_concert,concert_id,UNKNOWN,2,,经由行数或派生计数的间接影响，未直接观测到值变化
+synth-case-012,C,bucket,singer_in_concert,singer_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-012,C,bucket,stadium,stadium_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-014,C,count(*),concert,concert_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-014,C,count(*),concert,concert_name,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-014,C,count(*),concert,stadium_id,POSITIVE,3,CONTROL,
+synth-case-014,C,count(*),concert,theme,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-014,C,count(*),concert,year,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-014,C,count(*),singer,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-014,C,count(*),singer_in_concert,concert_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-014,C,count(*),stadium,average,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-014,C,count(*),stadium,capacity,UNKNOWN,2,,标量子查询决定参与比较的 id；本实例两侧类型不一致（TEXT 对 REAL），单格扰动未观测到变化
+synth-case-014,C,count(*),stadium,highest,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-014,C,count(*),stadium,location,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-014,C,count(*),stadium,lowest,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-014,C,count(*),stadium,name,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-014,C,count(*),stadium,stadium_id,UNKNOWN,2,,同上：子查询返回的 id 只能通过类型强制影响比较
+synth-case-014,C,bucket,concert,concert_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-014,C,bucket,concert,concert_name,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-014,C,bucket,concert,stadium_id,UNKNOWN,2,,经由行数或派生计数的间接影响，未直接观测到值变化
+synth-case-014,C,bucket,concert,theme,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-014,C,bucket,concert,year,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-014,C,bucket,singer,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-014,C,bucket,singer_in_concert,concert_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-case-014,C,bucket,stadium,average,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-014,C,bucket,stadium,capacity,UNKNOWN,2,,同上，且 bucket 由 count 派生
+synth-case-014,C,bucket,stadium,highest,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-014,C,bucket,stadium,location,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-014,C,bucket,stadium,lowest,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-014,C,bucket,stadium,name,NEGATIVE,3,,该列未出现在 SQL 中
+synth-case-014,C,bucket,stadium,stadium_id,UNKNOWN,2,,同上
+synth-case-016,C,count(*),Pets,weight,POSITIVE,3,CONTROL,
+synth-case-016,C,bucket,Pets,weight,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-cte-002,C,name,singer,age,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-cte-002,C,name,singer,country,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-cte-002,C,name,singer,is_male,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-002,C,name,singer,name,POSITIVE,3,DATA,
+synth-cte-002,C,name,singer,singer_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-002,C,name,singer,song_name,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-002,C,name,singer,song_release_year,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-002,C,name,singer_in_concert,singer_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-cte-002,C,name,stadium,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-cte-002,C,country,singer,age,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-cte-002,C,country,singer,country,POSITIVE,3,DATA,
+synth-cte-002,C,country,singer,is_male,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-002,C,country,singer,name,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-cte-002,C,country,singer,singer_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-002,C,country,singer,song_name,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-002,C,country,singer,song_release_year,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-002,C,country,singer_in_concert,singer_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-cte-002,C,country,stadium,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-cte-002,C,age,singer,age,POSITIVE,3,DATA,
+synth-cte-002,C,age,singer,country,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-cte-002,C,age,singer,is_male,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-002,C,age,singer,name,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-cte-002,C,age,singer,singer_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-002,C,age,singer,song_name,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-002,C,age,singer,song_release_year,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-002,C,age,singer_in_concert,singer_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-cte-002,C,age,stadium,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-cte-006,C,song_name,singer,age,POSITIVE,3,CONTROL,
+synth-cte-006,C,song_name,singer,country,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-006,C,song_name,singer,is_male,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-006,C,song_name,singer,name,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-006,C,song_name,singer,singer_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-006,C,song_name,singer,song_name,POSITIVE,3,DATA,
+synth-cte-006,C,song_name,singer,song_release_year,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-cte-006,C,song_name,singer_in_concert,singer_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-cte-006,C,song_name,stadium,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-cte-006,C,song_release_year,singer,age,POSITIVE,3,CONTROL,
+synth-cte-006,C,song_release_year,singer,country,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-006,C,song_release_year,singer,is_male,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-006,C,song_release_year,singer,name,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-006,C,song_release_year,singer,singer_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-006,C,song_release_year,singer,song_name,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-cte-006,C,song_release_year,singer,song_release_year,POSITIVE,3,DATA,
+synth-cte-006,C,song_release_year,singer_in_concert,singer_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-cte-006,C,song_release_year,stadium,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-cte-010,C,country,singer,age,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-010,C,country,singer,country,POSITIVE,3,MIXED,
+synth-cte-010,C,country,singer,is_male,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-010,C,country,singer,name,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-010,C,country,singer,singer_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-010,C,country,singer,song_name,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-010,C,country,singer,song_release_year,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-010,C,country,singer_in_concert,singer_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-cte-010,C,country,stadium,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-cte-010,C,count(*),singer,age,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-010,C,count(*),singer,country,POSITIVE,3,CONTROL,
+synth-cte-010,C,count(*),singer,is_male,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-010,C,count(*),singer,name,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-010,C,count(*),singer,singer_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-010,C,count(*),singer,song_name,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-010,C,count(*),singer,song_release_year,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-010,C,count(*),singer_in_concert,singer_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-cte-010,C,count(*),stadium,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-cte-012,C,song_name,singer,age,POSITIVE,3,CONTROL,
+synth-cte-012,C,song_name,singer,country,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-012,C,song_name,singer,is_male,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-012,C,song_name,singer,name,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-012,C,song_name,singer,singer_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-012,C,song_name,singer,song_name,POSITIVE,3,DATA,
+synth-cte-012,C,song_name,singer,song_release_year,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-012,C,song_name,singer_in_concert,singer_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-cte-012,C,song_name,stadium,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-cte-014,C,max(capacity),concert,stadium_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-cte-014,C,max(capacity),singer,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-cte-014,C,max(capacity),stadium,average,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+synth-cte-014,C,max(capacity),stadium,capacity,POSITIVE,3,DATA,
+synth-cte-014,C,max(capacity),stadium,highest,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-014,C,max(capacity),stadium,location,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-014,C,max(capacity),stadium,lowest,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-014,C,max(capacity),stadium,name,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-014,C,max(capacity),stadium,stadium_id,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-014,C,average,concert,stadium_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-cte-014,C,average,singer,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+synth-cte-014,C,average,stadium,average,POSITIVE,3,DATA,
+synth-cte-014,C,average,stadium,capacity,UNKNOWN,2,,经由行数或派生计数的间接影响，未直接观测到值变化
+synth-cte-014,C,average,stadium,highest,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-014,C,average,stadium,location,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-014,C,average,stadium,lowest,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-014,C,average,stadium,name,NEGATIVE,3,,该列未出现在 SQL 中
+synth-cte-014,C,average,stadium,stadium_id,NEGATIVE,3,,该列未出现在 SQL 中
+validation-00061,C,Major,Has_Pet,petid,UNKNOWN,2,,同上
+validation-00061,C,Major,Has_Pet,stuid,UNKNOWN,2,,同上
+validation-00061,C,Major,Pets,petid,UNKNOWN,2,,同上
+validation-00061,C,Major,Pets,pettype,POSITIVE,3,CONTROL,
+validation-00061,C,Major,Student,age,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00061,C,Major,Student,major,POSITIVE,3,DATA,
+validation-00061,C,Major,Student,stuid,UNKNOWN,2,,子查询因 pettype='cat' 无匹配而为空，连接键在单格扰动下不可观测
+validation-00061,C,Age,Has_Pet,petid,UNKNOWN,2,,同上
+validation-00061,C,Age,Has_Pet,stuid,UNKNOWN,2,,同上
+validation-00061,C,Age,Pets,petid,UNKNOWN,2,,同上
+validation-00061,C,Age,Pets,pettype,POSITIVE,3,CONTROL,
+validation-00061,C,Age,Student,age,POSITIVE,3,DATA,
+validation-00061,C,Age,Student,major,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00061,C,Age,Student,stuid,UNKNOWN,2,,同上
+validation-00063,C,StuID,Has_Pet,petid,UNKNOWN,2,,同上
+validation-00063,C,StuID,Has_Pet,stuid,UNKNOWN,2,,子查询因 cat 过滤为空，连接键不可观测
+validation-00063,C,StuID,Pets,petid,UNKNOWN,2,,同上
+validation-00063,C,StuID,Pets,pettype,POSITIVE,3,CONTROL,
+validation-00063,C,StuID,Student,stuid,POSITIVE,3,MIXED,
+validation-00075,C,Fname,Has_Pet,stuid,POSITIVE,3,CONTROL,
+validation-00075,C,Fname,Student,age,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00075,C,Fname,Student,fname,POSITIVE,3,DATA,
+validation-00075,C,Fname,Student,stuid,POSITIVE,3,CONTROL,
+validation-00075,C,Age,Has_Pet,stuid,POSITIVE,3,CONTROL,
+validation-00075,C,Age,Student,age,POSITIVE,3,DATA,
+validation-00075,C,Age,Student,fname,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00075,C,Age,Student,stuid,POSITIVE,3,CONTROL,
+validation-00095,C,Model,car_makers,id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00095,C,Model,car_names,makeid,POSITIVE,3,CONTROL,
+validation-00095,C,Model,car_names,model,POSITIVE,3,DATA,
+validation-00095,C,Model,cars_data,horsepower,POSITIVE,3,CONTROL,
+validation-00095,C,Model,cars_data,id,POSITIVE,3,CONTROL,
+validation-00095,C,Model,model_list,model,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00133,C,Model,car_makers,id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00133,C,Model,car_names,makeid,POSITIVE,3,CONTROL,
+validation-00133,C,Model,car_names,model,POSITIVE,3,DATA,
+validation-00133,C,Model,cars_data,id,POSITIVE,3,CONTROL,
+validation-00133,C,Model,cars_data,mpg,POSITIVE,3,CONTROL,
+validation-00133,C,Model,model_list,model,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00353,C,Template_Type_Description,Documents,template_id,POSITIVE,3,CONTROL,
+validation-00353,C,Template_Type_Description,Ref_Template_Types,template_type_code,POSITIVE,3,CONTROL,
+validation-00353,C,Template_Type_Description,Ref_Template_Types,template_type_description,POSITIVE,3,DATA,
+validation-00353,C,Template_Type_Description,Templates,template_id,POSITIVE,3,CONTROL,
+validation-00353,C,Template_Type_Description,Templates,template_type_code,POSITIVE,3,CONTROL,
+validation-00399,C,Name,course,course,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00399,C,Name,course,course_id,POSITIVE,3,CONTROL,
+validation-00399,C,Name,course_arrange,course_id,POSITIVE,3,CONTROL,
+validation-00399,C,Name,course_arrange,teacher_id,POSITIVE,3,CONTROL,
+validation-00399,C,Name,teacher,name,POSITIVE,3,DATA,
+validation-00399,C,Name,teacher,teacher_id,POSITIVE,3,CONTROL,
+validation-00399,C,Course,course,course,POSITIVE,3,DATA,
+validation-00399,C,Course,course,course_id,POSITIVE,3,CONTROL,
+validation-00399,C,Course,course_arrange,course_id,POSITIVE,3,CONTROL,
+validation-00399,C,Course,course_arrange,teacher_id,POSITIVE,3,CONTROL,
+validation-00399,C,Course,teacher,name,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00399,C,Course,teacher,teacher_id,POSITIVE,3,CONTROL,
+validation-00459,C,country_code,players,country_code,POSITIVE,3,DATA,
+validation-00459,C,country_code,players,first_name,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00459,C,country_code,players,player_id,POSITIVE,3,CONTROL,
+validation-00459,C,country_code,rankings,player_id,POSITIVE,3,CONTROL,
+validation-00459,C,country_code,rankings,tours,POSITIVE,3,CONTROL,
+validation-00459,C,first_name,players,country_code,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00459,C,first_name,players,first_name,POSITIVE,3,DATA,
+validation-00459,C,first_name,players,player_id,POSITIVE,3,CONTROL,
+validation-00459,C,first_name,rankings,player_id,POSITIVE,3,CONTROL,
+validation-00459,C,first_name,rankings,tours,POSITIVE,3,CONTROL,
+validation-00505,C,name,battle,bulgarian_commander,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00505,C,name,battle,id,UNKNOWN,2,,连接键；实例上没有 ship.location='English Channel'，右表恒空，单格改 id 不可观测
+validation-00505,C,name,battle,name,POSITIVE,3,DATA,
+validation-00505,C,name,battle,result,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00505,C,name,death,id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00505,C,name,ship,id,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00505,C,name,ship,location,POSITIVE,3,CONTROL,
+validation-00505,C,name,ship,lost_in_battle,UNKNOWN,2,,同上
+validation-00505,C,name,ship,name,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00505,C,result,battle,bulgarian_commander,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00505,C,result,battle,id,UNKNOWN,2,,同上
+validation-00505,C,result,battle,name,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00505,C,result,battle,result,POSITIVE,3,DATA,
+validation-00505,C,result,death,id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00505,C,result,ship,id,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00505,C,result,ship,location,POSITIVE,3,CONTROL,
+validation-00505,C,result,ship,lost_in_battle,UNKNOWN,2,,同上
+validation-00505,C,result,ship,name,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00505,C,bulgarian_commander,battle,bulgarian_commander,POSITIVE,3,DATA,
+validation-00505,C,bulgarian_commander,battle,id,UNKNOWN,2,,同上
+validation-00505,C,bulgarian_commander,battle,name,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00505,C,bulgarian_commander,battle,result,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00505,C,bulgarian_commander,death,id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00505,C,bulgarian_commander,ship,id,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00505,C,bulgarian_commander,ship,location,POSITIVE,3,CONTROL,
+validation-00505,C,bulgarian_commander,ship,lost_in_battle,UNKNOWN,2,,同上
+validation-00505,C,bulgarian_commander,ship,name,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00545,C,course_name,Courses,course_id,POSITIVE,3,CONTROL,
+validation-00545,C,course_name,Courses,course_name,POSITIVE,3,DATA,
+validation-00545,C,course_name,Sections,course_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00545,C,course_name,Student_Enrolment_Courses,course_id,POSITIVE,3,CONTROL,
+validation-00635,C,Country,Cartoon,channel,UNKNOWN,2,,同上
+validation-00635,C,Country,Cartoon,id,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00635,C,Country,Cartoon,written_by,POSITIVE,3,CONTROL,
+validation-00635,C,Country,TV_Channel,country,POSITIVE,3,MIXED,
+validation-00635,C,Country,TV_Channel,id,UNKNOWN,2,,连接键；实例上 written_by='Todd Casey' 无匹配，右表恒空，单格改 id 不可观测
+validation-00635,C,Country,TV_series,channel,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00635,C,Country,TV_series,id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00002,C,Name,singer,age,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00002,C,Name,singer,country,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00002,C,Name,singer,name,POSITIVE,3,DATA,
+validation-00002,C,Name,stadium,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00002,C,Country,singer,age,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00002,C,Country,singer,country,POSITIVE,3,DATA,
+validation-00002,C,Country,singer,name,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00002,C,Country,stadium,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00002,C,Age,singer,age,POSITIVE,3,DATA,
+validation-00002,C,Age,singer,country,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00002,C,Age,singer,name,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00002,C,Age,stadium,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00006,C,Song_Name,singer,age,POSITIVE,3,CONTROL,
+validation-00006,C,Song_Name,singer,song_name,POSITIVE,3,DATA,
+validation-00006,C,Song_Name,singer,song_release_year,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00006,C,Song_release_year,singer,age,POSITIVE,3,CONTROL,
+validation-00006,C,Song_release_year,singer,song_name,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00006,C,Song_release_year,singer,song_release_year,POSITIVE,3,DATA,
+validation-00008,C,Country,singer,age,POSITIVE,3,CONTROL,
+validation-00008,C,Country,singer,country,POSITIVE,3,MIXED,
+validation-00018,C,Name,singer,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00018,C,Name,stadium,average,POSITIVE,3,CONTROL,
+validation-00018,C,Name,stadium,capacity,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00018,C,Name,stadium,name,POSITIVE,3,DATA,
+validation-00018,C,Capacity,singer,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00018,C,Capacity,stadium,average,POSITIVE,3,CONTROL,
+validation-00018,C,Capacity,stadium,capacity,POSITIVE,3,DATA,
+validation-00018,C,Capacity,stadium,name,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00028,C,Name,concert,stadium_id,POSITIVE,3,CONTROL,
+validation-00028,C,Name,singer,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00028,C,Name,stadium,name,POSITIVE,3,DATA,
+validation-00028,C,Name,stadium,stadium_id,POSITIVE,3,CONTROL,
+validation-00067,C,PetType,Pets,pet_age,POSITIVE,3,CONTROL,
+validation-00067,C,PetType,Pets,pettype,POSITIVE,3,DATA,
+validation-00067,C,PetType,Pets,weight,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00067,C,weight,Pets,pet_age,POSITIVE,3,CONTROL,
+validation-00067,C,weight,Pets,pettype,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00067,C,weight,Pets,weight,POSITIVE,3,DATA,
+validation-00155,C,Horsepower,cars_data,accelerate,POSITIVE,3,CONTROL,
+validation-00155,C,Horsepower,cars_data,horsepower,POSITIVE,3,DATA,
+validation-00269,C,Manager_name,shop,district,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00269,C,Manager_name,shop,manager_name,POSITIVE,3,DATA,
+validation-00269,C,Manager_name,shop,number_products,POSITIVE,3,CONTROL,
+validation-00269,C,District,shop,district,POSITIVE,3,DATA,
+validation-00269,C,District,shop,manager_name,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00269,C,District,shop,number_products,POSITIVE,3,CONTROL,
+validation-00273,C,Name,employee,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00273,C,Name,shop,district,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00273,C,Name,shop,location,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00273,C,Name,shop,name,POSITIVE,3,DATA,
+validation-00273,C,Name,shop,number_products,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00273,C,Location,employee,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00273,C,Location,shop,district,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00273,C,Location,shop,location,POSITIVE,3,DATA,
+validation-00273,C,Location,shop,name,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00273,C,Location,shop,number_products,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00273,C,District,employee,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00273,C,District,shop,district,POSITIVE,3,DATA,
+validation-00273,C,District,shop,location,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00273,C,District,shop,name,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00273,C,District,shop,number_products,NEGATIVE,3,,不改变该输出列的值与行集（仅行序变化不算）
+validation-00281,C,Name,employee,employee_id,POSITIVE,3,CONTROL,
+validation-00281,C,Name,employee,name,POSITIVE,3,DATA,
+validation-00281,C,Name,evaluation,employee_id,POSITIVE,3,CONTROL,
+validation-00281,C,Name,hiring,employee_id,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中
+validation-00281,C,Name,shop,name,NEGATIVE,3,,源表不在查询的 FROM/JOIN 中

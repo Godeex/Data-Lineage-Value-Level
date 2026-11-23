@@ -1,0 +1,2334 @@
+{
+ "splits": {
+  "train": 65,
+  "val": 26,
+  "test": 18,
+  "regression": 21
+ },
+ "learned_policies": {
+  "aggregate": {
+   "families": [
+    "CELL_VALUE",
+    "VALUE_TO_NULL",
+    "NULL_TO_VALUE"
+   ],
+   "budget": 10
+  },
+  "case": {
+   "families": [
+    "CELL_VALUE",
+    "VALUE_TO_NULL",
+    "NULL_TO_VALUE"
+   ],
+   "budget": 10
+  },
+  "cte": {
+   "families": [
+    "CELL_VALUE",
+    "VALUE_TO_NULL",
+    "NULL_TO_VALUE"
+   ],
+   "budget": 1
+  },
+  "join": {
+   "families": [
+    "CELL_VALUE",
+    "VALUE_TO_NULL",
+    "NULL_TO_VALUE"
+   ],
+   "budget": 10
+  },
+  "projection": {
+   "families": [
+    "CELL_VALUE",
+    "VALUE_TO_NULL",
+    "NULL_TO_VALUE"
+   ],
+   "budget": 10
+  }
+ },
+ "learn_details": {
+  "aggregate": {
+   "policy": {
+    "families": [
+     "CELL_VALUE",
+     "VALUE_TO_NULL",
+     "NULL_TO_VALUE"
+    ],
+    "budget": 10
+   },
+   "train": {
+    "n_queries": 11,
+    "macro_f1": 0.9437229437229437,
+    "macro_precision": 0.9545454545454546,
+    "macro_recall": 0.9545454545454546,
+    "mean_fn_rate": 0.045454545454545456,
+    "abstention_rate": 0.0,
+    "mean_executions": 356.3636363636364,
+    "per_category": {
+     "aggregate": {
+      "n": 11,
+      "macro_f1": 0.9437229437229437,
+      "mean_fn_rate": 0.045454545454545456,
+      "mean_executions": 356.3636363636364
+     }
+    },
+    "per_query": [
+     {
+      "qid": "validation-00046",
+      "category": "aggregate",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 280
+     },
+     {
+      "qid": "validation-00033",
+      "category": "aggregate",
+      "f1": 0.8571428571428571,
+      "fn": 0.25,
+      "precision": 1.0,
+      "recall": 0.75,
+      "executions": 420
+     },
+     {
+      "qid": "validation-00055",
+      "category": "aggregate",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 280
+     },
+     {
+      "qid": "validation-00051",
+      "category": "aggregate",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 280
+     },
+     {
+      "qid": "validation-00012",
+      "category": "aggregate",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 420
+     },
+     {
+      "qid": "validation-00011",
+      "category": "aggregate",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 420
+     },
+     {
+      "qid": "validation-00026",
+      "category": "aggregate",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 420
+     },
+     {
+      "qid": "validation-00034",
+      "category": "aggregate",
+      "f1": 0.8571428571428571,
+      "fn": 0.25,
+      "precision": 1.0,
+      "recall": 0.75,
+      "executions": 420
+     },
+     {
+      "qid": "validation-00017",
+      "category": "aggregate",
+      "f1": 0.6666666666666666,
+      "fn": 0.0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "executions": 420
+     },
+     {
+      "qid": "validation-00072",
+      "category": "aggregate",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 280
+     },
+     {
+      "qid": "validation-00050",
+      "category": "aggregate",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 280
+     }
+    ]
+   }
+  },
+  "case": {
+   "policy": {
+    "families": [
+     "CELL_VALUE",
+     "VALUE_TO_NULL",
+     "NULL_TO_VALUE"
+    ],
+    "budget": 10
+   },
+   "train": {
+    "n_queries": 7,
+    "macro_f1": 0.8149659863945579,
+    "macro_precision": 0.7428571428571429,
+    "macro_recall": 0.9714285714285714,
+    "mean_fn_rate": 0.028571428571428574,
+    "abstention_rate": 0.0,
+    "mean_executions": 400.0,
+    "per_category": {
+     "case": {
+      "n": 7,
+      "macro_f1": 0.8149659863945579,
+      "mean_fn_rate": 0.028571428571428574,
+      "mean_executions": 400.0
+     }
+    },
+    "per_query": [
+     {
+      "qid": "synth-case-007",
+      "category": "case",
+      "f1": 0.5714285714285715,
+      "fn": 0.0,
+      "precision": 0.4,
+      "recall": 1.0,
+      "executions": 420
+     },
+     {
+      "qid": "synth-case-018",
+      "category": "case",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 280
+     },
+     {
+      "qid": "synth-case-005",
+      "category": "case",
+      "f1": 0.6666666666666666,
+      "fn": 0.0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "executions": 420
+     },
+     {
+      "qid": "synth-case-002",
+      "category": "case",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 420
+     },
+     {
+      "qid": "synth-case-013",
+      "category": "case",
+      "f1": 0.8000000000000002,
+      "fn": 0.2,
+      "precision": 0.8,
+      "recall": 0.8,
+      "executions": 420
+     },
+     {
+      "qid": "synth-case-006",
+      "category": "case",
+      "f1": 0.6666666666666666,
+      "fn": 0.0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "executions": 420
+     },
+     {
+      "qid": "synth-case-009",
+      "category": "case",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 420
+     }
+    ]
+   }
+  },
+  "cte": {
+   "policy": {
+    "families": [
+     "CELL_VALUE",
+     "VALUE_TO_NULL",
+     "NULL_TO_VALUE"
+    ],
+    "budget": 1
+   },
+   "train": {
+    "n_queries": 7,
+    "macro_f1": 0.9523809523809523,
+    "macro_precision": 0.9285714285714286,
+    "macro_recall": 1.0,
+    "mean_fn_rate": 0.0,
+    "abstention_rate": 0.0,
+    "mean_executions": 42.0,
+    "per_category": {
+     "cte": {
+      "n": 7,
+      "macro_f1": 0.9523809523809523,
+      "mean_fn_rate": 0.0,
+      "mean_executions": 42.0
+     }
+    },
+    "per_query": [
+     {
+      "qid": "synth-cte-016",
+      "category": "cte",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 42
+     },
+     {
+      "qid": "synth-cte-015",
+      "category": "cte",
+      "f1": 0.6666666666666666,
+      "fn": 0.0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "executions": 42
+     },
+     {
+      "qid": "synth-cte-009",
+      "category": "cte",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 42
+     },
+     {
+      "qid": "synth-cte-002",
+      "category": "cte",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 42
+     },
+     {
+      "qid": "synth-cte-006",
+      "category": "cte",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 42
+     },
+     {
+      "qid": "synth-cte-013",
+      "category": "cte",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 42
+     },
+     {
+      "qid": "synth-cte-011",
+      "category": "cte",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 42
+     }
+    ]
+   }
+  },
+  "join": {
+   "policy": {
+    "families": [
+     "CELL_VALUE",
+     "VALUE_TO_NULL",
+     "NULL_TO_VALUE"
+    ],
+    "budget": 10
+   },
+   "train": {
+    "n_queries": 15,
+    "macro_f1": 0.9185185185185184,
+    "macro_precision": 1.0,
+    "macro_recall": 0.8733333333333334,
+    "mean_fn_rate": 0.12666666666666665,
+    "abstention_rate": 0.0,
+    "mean_executions": 484.0,
+    "per_category": {
+     "join": {
+      "n": 15,
+      "macro_f1": 0.9185185185185184,
+      "mean_fn_rate": 0.12666666666666665,
+      "mean_executions": 484.0
+     }
+    },
+    "per_query": [
+     {
+      "qid": "validation-00174",
+      "category": "join",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 460
+     },
+     {
+      "qid": "validation-00345",
+      "category": "join",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 340
+     },
+     {
+      "qid": "validation-00487",
+      "category": "join",
+      "f1": 0.6666666666666666,
+      "fn": 0.5,
+      "precision": 1.0,
+      "recall": 0.5,
+      "executions": 860
+     },
+     {
+      "qid": "validation-00402",
+      "category": "join",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 200
+     },
+     {
+      "qid": "validation-00031",
+      "category": "join",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 420
+     },
+     {
+      "qid": "validation-00346",
+      "category": "join",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 340
+     },
+     {
+      "qid": "validation-00095",
+      "category": "join",
+      "f1": 0.6666666666666666,
+      "fn": 0.5,
+      "precision": 1.0,
+      "recall": 0.5,
+      "executions": 460
+     },
+     {
+      "qid": "validation-00353",
+      "category": "join",
+      "f1": 0.888888888888889,
+      "fn": 0.2,
+      "precision": 1.0,
+      "recall": 0.8,
+      "executions": 340
+     },
+     {
+      "qid": "validation-00545",
+      "category": "join",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 1120
+     },
+     {
+      "qid": "validation-00635",
+      "category": "join",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 500
+     },
+     {
+      "qid": "validation-00488",
+      "category": "join",
+      "f1": 0.6666666666666666,
+      "fn": 0.5,
+      "precision": 1.0,
+      "recall": 0.5,
+      "executions": 860
+     },
+     {
+      "qid": "validation-00064",
+      "category": "join",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 280
+     },
+     {
+      "qid": "validation-00133",
+      "category": "join",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 460
+     },
+     {
+      "qid": "validation-00354",
+      "category": "join",
+      "f1": 0.888888888888889,
+      "fn": 0.2,
+      "precision": 1.0,
+      "recall": 0.8,
+      "executions": 340
+     },
+     {
+      "qid": "validation-00063",
+      "category": "join",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 280
+     }
+    ]
+   }
+  },
+  "projection": {
+   "policy": {
+    "families": [
+     "CELL_VALUE",
+     "VALUE_TO_NULL",
+     "NULL_TO_VALUE"
+    ],
+    "budget": 10
+   },
+   "train": {
+    "n_queries": 15,
+    "macro_f1": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "mean_fn_rate": 0.0,
+    "abstention_rate": 0.0,
+    "mean_executions": 358.6666666666667,
+    "per_category": {
+     "projection": {
+      "n": 15,
+      "macro_f1": 1.0,
+      "mean_fn_rate": 0.0,
+      "mean_executions": 358.6666666666667
+     }
+    },
+    "per_query": [
+     {
+      "qid": "validation-00069",
+      "category": "projection",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 280
+     },
+     {
+      "qid": "validation-00262",
+      "category": "projection",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 340
+     },
+     {
+      "qid": "validation-00070",
+      "category": "projection",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 280
+     },
+     {
+      "qid": "validation-00048",
+      "category": "projection",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 280
+     },
+     {
+      "qid": "validation-00121",
+      "category": "projection",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 460
+     },
+     {
+      "qid": "validation-00257",
+      "category": "projection",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 260
+     },
+     {
+      "qid": "validation-00122",
+      "category": "projection",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 460
+     },
+     {
+      "qid": "validation-00019",
+      "category": "projection",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 420
+     },
+     {
+      "qid": "validation-00273",
+      "category": "projection",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 340
+     },
+     {
+      "qid": "validation-00156",
+      "category": "projection",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 460
+     },
+     {
+      "qid": "validation-00029",
+      "category": "projection",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 420
+     },
+     {
+      "qid": "validation-00067",
+      "category": "projection",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 280
+     },
+     {
+      "qid": "validation-00274",
+      "category": "projection",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 340
+     },
+     {
+      "qid": "validation-00003",
+      "category": "projection",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 420
+     },
+     {
+      "qid": "validation-00282",
+      "category": "projection",
+      "f1": 1.0,
+      "fn": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "executions": 340
+     }
+    ]
+   }
+  }
+ },
+ "test": {
+  "static": {
+   "n_queries": 17,
+   "macro_f1": 0.5186274509803921,
+   "macro_precision": 0.6470588235294118,
+   "macro_recall": 0.4617647058823529,
+   "mean_executions": 0.0,
+   "per_category": {
+    "aggregate": {
+     "n": 3,
+     "macro_f1": 0.5555555555555555
+    },
+    "projection": {
+     "n": 4,
+     "macro_f1": 0.41666666666666663
+    },
+    "join": {
+     "n": 4,
+     "macro_f1": 0.35
+    },
+    "cte": {
+     "n": 3,
+     "macro_f1": 0.7777777777777777
+    },
+    "case": {
+     "n": 3,
+     "macro_f1": 0.5833333333333334
+    }
+   },
+   "per_query": [
+    {
+     "qid": "validation-00071",
+     "category": "aggregate",
+     "f1": 0.0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "executions": 0
+    },
+    {
+     "qid": "validation-00010",
+     "category": "aggregate",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 0
+    },
+    {
+     "qid": "validation-00013",
+     "category": "aggregate",
+     "f1": 0.6666666666666666,
+     "precision": 1.0,
+     "recall": 0.5,
+     "executions": 0
+    },
+    {
+     "qid": "validation-00047",
+     "category": "projection",
+     "f1": 0.0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "executions": 0
+    },
+    {
+     "qid": "validation-00068",
+     "category": "projection",
+     "f1": 0.0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "executions": 0
+    },
+    {
+     "qid": "validation-00261",
+     "category": "projection",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 0
+    },
+    {
+     "qid": "validation-00009",
+     "category": "projection",
+     "f1": 0.6666666666666666,
+     "precision": 1.0,
+     "recall": 0.5,
+     "executions": 0
+    },
+    {
+     "qid": "validation-00032",
+     "category": "join",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 0
+    },
+    {
+     "qid": "validation-00061",
+     "category": "join",
+     "f1": 0.0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "executions": 0
+    },
+    {
+     "qid": "validation-00459",
+     "category": "join",
+     "f1": 0.4,
+     "precision": 1.0,
+     "recall": 0.25,
+     "executions": 0
+    },
+    {
+     "qid": "validation-00075",
+     "category": "join",
+     "f1": 0.0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "executions": 0
+    },
+    {
+     "qid": "synth-cte-010",
+     "category": "cte",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 0
+    },
+    {
+     "qid": "synth-cte-007",
+     "category": "cte",
+     "f1": 0.6666666666666666,
+     "precision": 1.0,
+     "recall": 0.5,
+     "executions": 0
+    },
+    {
+     "qid": "synth-cte-008",
+     "category": "cte",
+     "f1": 0.6666666666666666,
+     "precision": 1.0,
+     "recall": 0.5,
+     "executions": 0
+    },
+    {
+     "qid": "synth-case-003",
+     "category": "case",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 0
+    },
+    {
+     "qid": "synth-case-017",
+     "category": "case",
+     "f1": 0.0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "executions": 0
+    },
+    {
+     "qid": "synth-case-008",
+     "category": "case",
+     "f1": 0.7499999999999999,
+     "precision": 1.0,
+     "recall": 0.6,
+     "executions": 0
+    }
+   ]
+  },
+  "oracle_only": {
+   "n_queries": 17,
+   "macro_f1": 0.7703081232492998,
+   "macro_precision": 0.8235294117647058,
+   "macro_recall": 0.7441176470588236,
+   "mean_fn_rate": 0.25588235294117645,
+   "abstention_rate": 0.17647058823529413,
+   "mean_executions": 58.76470588235294,
+   "per_category": {
+    "aggregate": {
+     "n": 3,
+     "macro_f1": 1.0,
+     "mean_fn_rate": 0.0,
+     "mean_executions": 56.0
+    },
+    "projection": {
+     "n": 4,
+     "macro_f1": 0.5,
+     "mean_fn_rate": 0.5,
+     "mean_executions": 49.5
+    },
+    "join": {
+     "n": 4,
+     "macro_f1": 0.9166666666666666,
+     "mean_fn_rate": 0.125,
+     "mean_executions": 69.0
+    },
+    "cte": {
+     "n": 3,
+     "macro_f1": 0.6666666666666666,
+     "mean_fn_rate": 0.3333333333333333,
+     "mean_executions": 63.0
+    },
+    "case": {
+     "n": 3,
+     "macro_f1": 0.8095238095238096,
+     "mean_fn_rate": 0.2833333333333333,
+     "mean_executions": 56.0
+    }
+   },
+   "per_query": [
+    {
+     "qid": "validation-00071",
+     "category": "aggregate",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 42
+    },
+    {
+     "qid": "validation-00010",
+     "category": "aggregate",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 63
+    },
+    {
+     "qid": "validation-00013",
+     "category": "aggregate",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 63
+    },
+    {
+     "qid": "validation-00047",
+     "category": "projection",
+     "f1": 0.0,
+     "fn": 1.0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "executions": 42
+    },
+    {
+     "qid": "validation-00068",
+     "category": "projection",
+     "f1": 0.0,
+     "fn": 1.0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "executions": 42
+    },
+    {
+     "qid": "validation-00261",
+     "category": "projection",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 51
+    },
+    {
+     "qid": "validation-00009",
+     "category": "projection",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 63
+    },
+    {
+     "qid": "validation-00032",
+     "category": "join",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 63
+    },
+    {
+     "qid": "validation-00061",
+     "category": "join",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 42
+    },
+    {
+     "qid": "validation-00459",
+     "category": "join",
+     "f1": 0.6666666666666666,
+     "fn": 0.5,
+     "precision": 1.0,
+     "recall": 0.5,
+     "executions": 129
+    },
+    {
+     "qid": "validation-00075",
+     "category": "join",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 42
+    },
+    {
+     "qid": "synth-cte-010",
+     "category": "cte",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 63
+    },
+    {
+     "qid": "synth-cte-007",
+     "category": "cte",
+     "f1": 0.0,
+     "fn": 1.0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "executions": 63
+    },
+    {
+     "qid": "synth-cte-008",
+     "category": "cte",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 63
+    },
+    {
+     "qid": "synth-case-003",
+     "category": "case",
+     "f1": 0.8571428571428571,
+     "fn": 0.25,
+     "precision": 1.0,
+     "recall": 0.75,
+     "executions": 63
+    },
+    {
+     "qid": "synth-case-017",
+     "category": "case",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 42
+    },
+    {
+     "qid": "synth-case-008",
+     "category": "case",
+     "f1": 0.5714285714285715,
+     "fn": 0.6,
+     "precision": 1.0,
+     "recall": 0.4,
+     "executions": 63
+    }
+   ]
+  },
+  "fixed_hybrid": {
+   "n_queries": 17,
+   "macro_f1": 0.8543417366946778,
+   "macro_precision": 0.8823529411764706,
+   "macro_recall": 0.8382352941176471,
+   "mean_executions": 58.76470588235294,
+   "per_query": [
+    {
+     "qid": "validation-00071",
+     "category": "aggregate",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 42
+    },
+    {
+     "qid": "validation-00010",
+     "category": "aggregate",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 63
+    },
+    {
+     "qid": "validation-00013",
+     "category": "aggregate",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 63
+    },
+    {
+     "qid": "validation-00047",
+     "category": "projection",
+     "f1": 0.0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "executions": 42
+    },
+    {
+     "qid": "validation-00068",
+     "category": "projection",
+     "f1": 0.0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "executions": 42
+    },
+    {
+     "qid": "validation-00261",
+     "category": "projection",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 51
+    },
+    {
+     "qid": "validation-00009",
+     "category": "projection",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 63
+    },
+    {
+     "qid": "validation-00032",
+     "category": "join",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 63
+    },
+    {
+     "qid": "validation-00061",
+     "category": "join",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 42
+    },
+    {
+     "qid": "validation-00459",
+     "category": "join",
+     "f1": 0.8571428571428571,
+     "precision": 1.0,
+     "recall": 0.75,
+     "executions": 129
+    },
+    {
+     "qid": "validation-00075",
+     "category": "join",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 42
+    },
+    {
+     "qid": "synth-cte-010",
+     "category": "cte",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 63
+    },
+    {
+     "qid": "synth-cte-007",
+     "category": "cte",
+     "f1": 0.6666666666666666,
+     "precision": 1.0,
+     "recall": 0.5,
+     "executions": 63
+    },
+    {
+     "qid": "synth-cte-008",
+     "category": "cte",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 63
+    },
+    {
+     "qid": "synth-case-003",
+     "category": "case",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 63
+    },
+    {
+     "qid": "synth-case-017",
+     "category": "case",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 42
+    },
+    {
+     "qid": "synth-case-008",
+     "category": "case",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 63
+    }
+   ]
+  },
+  "evolving": {
+   "n_queries": 17,
+   "macro_f1": 0.9915966386554622,
+   "macro_precision": 1.0,
+   "macro_recall": 0.9852941176470589,
+   "mean_fn_rate": 0.014705882352941176,
+   "abstention_rate": 0.0,
+   "mean_executions": 325.05882352941177,
+   "per_category": {
+    "aggregate": {
+     "n": 3,
+     "macro_f1": 1.0,
+     "mean_fn_rate": 0.0,
+     "mean_executions": 373.3333333333333
+    },
+    "projection": {
+     "n": 4,
+     "macro_f1": 1.0,
+     "mean_fn_rate": 0.0,
+     "mean_executions": 330.0
+    },
+    "join": {
+     "n": 4,
+     "macro_f1": 0.9642857142857143,
+     "mean_fn_rate": 0.0625,
+     "mean_executions": 460.0
+    },
+    "cte": {
+     "n": 3,
+     "macro_f1": 1.0,
+     "mean_fn_rate": 0.0,
+     "mean_executions": 42.0
+    },
+    "case": {
+     "n": 3,
+     "macro_f1": 1.0,
+     "mean_fn_rate": 0.0,
+     "mean_executions": 373.3333333333333
+    }
+   },
+   "per_query": [
+    {
+     "qid": "validation-00071",
+     "category": "aggregate",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 280
+    },
+    {
+     "qid": "validation-00010",
+     "category": "aggregate",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 420
+    },
+    {
+     "qid": "validation-00013",
+     "category": "aggregate",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 420
+    },
+    {
+     "qid": "validation-00047",
+     "category": "projection",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 280
+    },
+    {
+     "qid": "validation-00068",
+     "category": "projection",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 280
+    },
+    {
+     "qid": "validation-00261",
+     "category": "projection",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 340
+    },
+    {
+     "qid": "validation-00009",
+     "category": "projection",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 420
+    },
+    {
+     "qid": "validation-00032",
+     "category": "join",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 420
+    },
+    {
+     "qid": "validation-00061",
+     "category": "join",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 280
+    },
+    {
+     "qid": "validation-00459",
+     "category": "join",
+     "f1": 0.8571428571428571,
+     "fn": 0.25,
+     "precision": 1.0,
+     "recall": 0.75,
+     "executions": 860
+    },
+    {
+     "qid": "validation-00075",
+     "category": "join",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 280
+    },
+    {
+     "qid": "synth-cte-010",
+     "category": "cte",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 42
+    },
+    {
+     "qid": "synth-cte-007",
+     "category": "cte",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 42
+    },
+    {
+     "qid": "synth-cte-008",
+     "category": "cte",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 42
+    },
+    {
+     "qid": "synth-case-003",
+     "category": "case",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 420
+    },
+    {
+     "qid": "synth-case-017",
+     "category": "case",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 280
+    },
+    {
+     "qid": "synth-case-008",
+     "category": "case",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 420
+    }
+   ]
+  }
+ },
+ "val": {
+  "oracle_only": {
+   "n_queries": 19,
+   "macro_f1": 0.5736842105263158,
+   "macro_precision": 0.6842105263157895,
+   "macro_recall": 0.5307017543859649,
+   "mean_fn_rate": 0.46929824561403516,
+   "abstention_rate": 0.3157894736842105,
+   "mean_executions": 64.10526315789474,
+   "per_category": {
+    "aggregate": {
+     "n": 3,
+     "macro_f1": 0.3333333333333333,
+     "mean_fn_rate": 0.6666666666666666,
+     "mean_executions": 49.0
+    },
+    "projection": {
+     "n": 6,
+     "macro_f1": 0.42777777777777776,
+     "mean_fn_rate": 0.6527777777777778,
+     "mean_executions": 57.0
+    },
+    "join": {
+     "n": 6,
+     "macro_f1": 0.7777777777777777,
+     "mean_fn_rate": 0.25,
+     "mean_executions": 86.5
+    },
+    "cte": {
+     "n": 2,
+     "macro_f1": 0.8333333333333333,
+     "mean_fn_rate": 0.25,
+     "mean_executions": 63.0
+    },
+    "case": {
+     "n": 2,
+     "macro_f1": 0.5,
+     "mean_fn_rate": 0.5,
+     "mean_executions": 42.0
+    }
+   },
+   "per_query": [
+    {
+     "qid": "validation-00056",
+     "category": "aggregate",
+     "f1": 0.0,
+     "fn": 1.0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "executions": 42
+    },
+    {
+     "qid": "validation-00027",
+     "category": "aggregate",
+     "f1": 0.0,
+     "fn": 1.0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "executions": 63
+    },
+    {
+     "qid": "validation-00045",
+     "category": "aggregate",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 42
+    },
+    {
+     "qid": "validation-00006",
+     "category": "projection",
+     "f1": 0.0,
+     "fn": 1.0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "executions": 63
+    },
+    {
+     "qid": "validation-00007",
+     "category": "projection",
+     "f1": 0.0,
+     "fn": 1.0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "executions": 63
+    },
+    {
+     "qid": "validation-00258",
+     "category": "projection",
+     "f1": 0.4,
+     "fn": 0.75,
+     "precision": 1.0,
+     "recall": 0.25,
+     "executions": 39
+    },
+    {
+     "qid": "validation-00018",
+     "category": "projection",
+     "f1": 0.6666666666666666,
+     "fn": 0.5,
+     "precision": 1.0,
+     "recall": 0.5,
+     "executions": 63
+    },
+    {
+     "qid": "validation-00008",
+     "category": "projection",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 63
+    },
+    {
+     "qid": "validation-00281",
+     "category": "projection",
+     "f1": 0.5,
+     "fn": 0.6666666666666666,
+     "precision": 1.0,
+     "recall": 0.3333333333333333,
+     "executions": 51
+    },
+    {
+     "qid": "validation-00173",
+     "category": "join",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 69
+    },
+    {
+     "qid": "validation-00062",
+     "category": "join",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 42
+    },
+    {
+     "qid": "validation-00546",
+     "category": "join",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 168
+    },
+    {
+     "qid": "validation-00460",
+     "category": "join",
+     "f1": 0.6666666666666666,
+     "fn": 0.5,
+     "precision": 1.0,
+     "recall": 0.5,
+     "executions": 129
+    },
+    {
+     "qid": "validation-00096",
+     "category": "join",
+     "f1": 0.0,
+     "fn": 1.0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "executions": 69
+    },
+    {
+     "qid": "validation-00076",
+     "category": "join",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 42
+    },
+    {
+     "qid": "synth-cte-003",
+     "category": "cte",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 63
+    },
+    {
+     "qid": "synth-cte-017",
+     "category": "cte",
+     "f1": 0.6666666666666666,
+     "fn": 0.5,
+     "precision": 1.0,
+     "recall": 0.5,
+     "executions": 63
+    },
+    {
+     "qid": "synth-case-019",
+     "category": "case",
+     "f1": 0.0,
+     "fn": 1.0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "executions": 42
+    },
+    {
+     "qid": "synth-case-016",
+     "category": "case",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 42
+    }
+   ]
+  },
+  "fixed_hybrid": {
+   "n_queries": 19,
+   "macro_f1": 0.76265664160401,
+   "macro_precision": 0.8947368421052632,
+   "macro_recall": 0.7149122807017543,
+   "mean_executions": 64.10526315789474,
+   "per_query": [
+    {
+     "qid": "validation-00056",
+     "category": "aggregate",
+     "f1": 0.0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "executions": 42
+    },
+    {
+     "qid": "validation-00027",
+     "category": "aggregate",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 63
+    },
+    {
+     "qid": "validation-00045",
+     "category": "aggregate",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 42
+    },
+    {
+     "qid": "validation-00006",
+     "category": "projection",
+     "f1": 0.6666666666666666,
+     "precision": 1.0,
+     "recall": 0.5,
+     "executions": 63
+    },
+    {
+     "qid": "validation-00007",
+     "category": "projection",
+     "f1": 0.6666666666666666,
+     "precision": 1.0,
+     "recall": 0.5,
+     "executions": 63
+    },
+    {
+     "qid": "validation-00258",
+     "category": "projection",
+     "f1": 0.4,
+     "precision": 1.0,
+     "recall": 0.25,
+     "executions": 39
+    },
+    {
+     "qid": "validation-00018",
+     "category": "projection",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 63
+    },
+    {
+     "qid": "validation-00008",
+     "category": "projection",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 63
+    },
+    {
+     "qid": "validation-00281",
+     "category": "projection",
+     "f1": 0.5,
+     "precision": 1.0,
+     "recall": 0.3333333333333333,
+     "executions": 51
+    },
+    {
+     "qid": "validation-00173",
+     "category": "join",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 69
+    },
+    {
+     "qid": "validation-00062",
+     "category": "join",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 42
+    },
+    {
+     "qid": "validation-00546",
+     "category": "join",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 168
+    },
+    {
+     "qid": "validation-00460",
+     "category": "join",
+     "f1": 0.8571428571428571,
+     "precision": 1.0,
+     "recall": 0.75,
+     "executions": 129
+    },
+    {
+     "qid": "validation-00096",
+     "category": "join",
+     "f1": 0.4,
+     "precision": 1.0,
+     "recall": 0.25,
+     "executions": 69
+    },
+    {
+     "qid": "validation-00076",
+     "category": "join",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 42
+    },
+    {
+     "qid": "synth-cte-003",
+     "category": "cte",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 63
+    },
+    {
+     "qid": "synth-cte-017",
+     "category": "cte",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 63
+    },
+    {
+     "qid": "synth-case-019",
+     "category": "case",
+     "f1": 0.0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "executions": 42
+    },
+    {
+     "qid": "synth-case-016",
+     "category": "case",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 42
+    }
+   ]
+  },
+  "evolving": {
+   "n_queries": 19,
+   "macro_f1": 0.9749373433583961,
+   "macro_precision": 1.0,
+   "macro_recall": 0.9605263157894737,
+   "mean_fn_rate": 0.039473684210526314,
+   "abstention_rate": 0.0,
+   "mean_executions": 387.57894736842104,
+   "per_category": {
+    "aggregate": {
+     "n": 3,
+     "macro_f1": 1.0,
+     "mean_fn_rate": 0.0,
+     "mean_executions": 326.6666666666667
+    },
+    "projection": {
+     "n": 6,
+     "macro_f1": 1.0,
+     "mean_fn_rate": 0.0,
+     "mean_executions": 380.0
+    },
+    "join": {
+     "n": 6,
+     "macro_f1": 0.9206349206349206,
+     "mean_fn_rate": 0.125,
+     "mean_executions": 576.6666666666666
+    },
+    "cte": {
+     "n": 2,
+     "macro_f1": 1.0,
+     "mean_fn_rate": 0.0,
+     "mean_executions": 42.0
+    },
+    "case": {
+     "n": 2,
+     "macro_f1": 1.0,
+     "mean_fn_rate": 0.0,
+     "mean_executions": 280.0
+    }
+   },
+   "per_query": [
+    {
+     "qid": "validation-00056",
+     "category": "aggregate",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 280
+    },
+    {
+     "qid": "validation-00027",
+     "category": "aggregate",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 420
+    },
+    {
+     "qid": "validation-00045",
+     "category": "aggregate",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 280
+    },
+    {
+     "qid": "validation-00006",
+     "category": "projection",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 420
+    },
+    {
+     "qid": "validation-00007",
+     "category": "projection",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 420
+    },
+    {
+     "qid": "validation-00258",
+     "category": "projection",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 260
+    },
+    {
+     "qid": "validation-00018",
+     "category": "projection",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 420
+    },
+    {
+     "qid": "validation-00008",
+     "category": "projection",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 420
+    },
+    {
+     "qid": "validation-00281",
+     "category": "projection",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 340
+    },
+    {
+     "qid": "validation-00173",
+     "category": "join",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 460
+    },
+    {
+     "qid": "validation-00062",
+     "category": "join",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 280
+    },
+    {
+     "qid": "validation-00546",
+     "category": "join",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 1120
+    },
+    {
+     "qid": "validation-00460",
+     "category": "join",
+     "f1": 0.8571428571428571,
+     "fn": 0.25,
+     "precision": 1.0,
+     "recall": 0.75,
+     "executions": 860
+    },
+    {
+     "qid": "validation-00096",
+     "category": "join",
+     "f1": 0.6666666666666666,
+     "fn": 0.5,
+     "precision": 1.0,
+     "recall": 0.5,
+     "executions": 460
+    },
+    {
+     "qid": "validation-00076",
+     "category": "join",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 280
+    },
+    {
+     "qid": "synth-cte-003",
+     "category": "cte",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 42
+    },
+    {
+     "qid": "synth-cte-017",
+     "category": "cte",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 42
+    },
+    {
+     "qid": "synth-case-019",
+     "category": "case",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 280
+    },
+    {
+     "qid": "synth-case-016",
+     "category": "case",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 280
+    }
+   ]
+  }
+ },
+ "regression": {
+  "fixed_hybrid": {
+   "n_queries": 17,
+   "macro_f1": 0.8344620201021584,
+   "macro_precision": 0.9243697478991596,
+   "macro_recall": 0.8117647058823527,
+   "mean_executions": 53.470588235294116,
+   "per_query": [
+    {
+     "qid": "validation-00016",
+     "category": "aggregate",
+     "f1": 0.8571428571428571,
+     "precision": 0.75,
+     "recall": 1.0,
+     "executions": 63
+    },
+    {
+     "qid": "validation-00052",
+     "category": "aggregate",
+     "f1": 0.8,
+     "precision": 1.0,
+     "recall": 0.6666666666666666,
+     "executions": 42
+    },
+    {
+     "qid": "validation-00049",
+     "category": "aggregate",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 42
+    },
+    {
+     "qid": "validation-00269",
+     "category": "projection",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 51
+    },
+    {
+     "qid": "validation-00002",
+     "category": "projection",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 63
+    },
+    {
+     "qid": "validation-00270",
+     "category": "projection",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 51
+    },
+    {
+     "qid": "validation-00028",
+     "category": "projection",
+     "f1": 0.5,
+     "precision": 1.0,
+     "recall": 0.3333333333333333,
+     "executions": 63
+    },
+    {
+     "qid": "validation-00155",
+     "category": "projection",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 69
+    },
+    {
+     "qid": "validation-00399",
+     "category": "join",
+     "f1": 0.7499999999999999,
+     "precision": 1.0,
+     "recall": 0.6,
+     "executions": 30
+    },
+    {
+     "qid": "validation-00134",
+     "category": "join",
+     "f1": 0.6666666666666666,
+     "precision": 1.0,
+     "recall": 0.5,
+     "executions": 69
+    },
+    {
+     "qid": "validation-00400",
+     "category": "join",
+     "f1": 0.7499999999999999,
+     "precision": 1.0,
+     "recall": 0.6,
+     "executions": 30
+    },
+    {
+     "qid": "validation-00401",
+     "category": "join",
+     "f1": 0.7499999999999999,
+     "precision": 1.0,
+     "recall": 0.6,
+     "executions": 30
+    },
+    {
+     "qid": "validation-00505",
+     "category": "join",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 54
+    },
+    {
+     "qid": "synth-cte-012",
+     "category": "cte",
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 63
+    },
+    {
+     "qid": "synth-cte-014",
+     "category": "cte",
+     "f1": 0.8571428571428571,
+     "precision": 0.75,
+     "recall": 1.0,
+     "executions": 63
+    },
+    {
+     "qid": "synth-case-004",
+     "category": "case",
+     "f1": 0.6666666666666666,
+     "precision": 0.5,
+     "recall": 1.0,
+     "executions": 63
+    },
+    {
+     "qid": "synth-case-012",
+     "category": "case",
+     "f1": 0.588235294117647,
+     "precision": 0.7142857142857143,
+     "recall": 0.5,
+     "executions": 63
+    }
+   ]
+  },
+  "evolving": {
+   "n_queries": 17,
+   "macro_f1": 0.9406162464985994,
+   "macro_precision": 0.9245098039215687,
+   "macro_recall": 0.968627450980392,
+   "mean_fn_rate": 0.03137254901960784,
+   "abstention_rate": 0.0,
+   "mean_executions": 312.0,
+   "per_category": {
+    "aggregate": {
+     "n": 3,
+     "macro_f1": 0.9523809523809524,
+     "mean_fn_rate": 0.0,
+     "mean_executions": 326.6666666666667
+    },
+    "projection": {
+     "n": 5,
+     "macro_f1": 1.0,
+     "mean_fn_rate": 0.0,
+     "mean_executions": 396.0
+    },
+    "join": {
+     "n": 5,
+     "macro_f1": 1.0,
+     "mean_fn_rate": 0.0,
+     "mean_executions": 284.0
+    },
+    "cte": {
+     "n": 2,
+     "macro_f1": 0.8333333333333333,
+     "mean_fn_rate": 0.16666666666666666,
+     "mean_executions": 42.0
+    },
+    "case": {
+     "n": 2,
+     "macro_f1": 0.7333333333333334,
+     "mean_fn_rate": 0.1,
+     "mean_executions": 420.0
+    }
+   },
+   "per_query": [
+    {
+     "qid": "validation-00016",
+     "category": "aggregate",
+     "f1": 0.8571428571428571,
+     "fn": 0.0,
+     "precision": 0.75,
+     "recall": 1.0,
+     "executions": 420
+    },
+    {
+     "qid": "validation-00052",
+     "category": "aggregate",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 280
+    },
+    {
+     "qid": "validation-00049",
+     "category": "aggregate",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 280
+    },
+    {
+     "qid": "validation-00269",
+     "category": "projection",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 340
+    },
+    {
+     "qid": "validation-00002",
+     "category": "projection",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 420
+    },
+    {
+     "qid": "validation-00270",
+     "category": "projection",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 340
+    },
+    {
+     "qid": "validation-00028",
+     "category": "projection",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 420
+    },
+    {
+     "qid": "validation-00155",
+     "category": "projection",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 460
+    },
+    {
+     "qid": "validation-00399",
+     "category": "join",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 200
+    },
+    {
+     "qid": "validation-00134",
+     "category": "join",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 460
+    },
+    {
+     "qid": "validation-00400",
+     "category": "join",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 200
+    },
+    {
+     "qid": "validation-00401",
+     "category": "join",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 200
+    },
+    {
+     "qid": "validation-00505",
+     "category": "join",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 360
+    },
+    {
+     "qid": "synth-cte-012",
+     "category": "cte",
+     "f1": 1.0,
+     "fn": 0.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "executions": 42
+    },
+    {
+     "qid": "synth-cte-014",
+     "category": "cte",
+     "f1": 0.6666666666666666,
+     "fn": 0.3333333333333333,
+     "precision": 0.6666666666666666,
+     "recall": 0.6666666666666666,
+     "executions": 42
+    },
+    {
+     "qid": "synth-case-004",
+     "category": "case",
+     "f1": 0.6666666666666666,
+     "fn": 0.0,
+     "precision": 0.5,
+     "recall": 1.0,
+     "executions": 420
+    },
+    {
+     "qid": "synth-case-012",
+     "category": "case",
+     "f1": 0.8000000000000002,
+     "fn": 0.2,
+     "precision": 0.8,
+     "recall": 0.8,
+     "executions": 420
+    }
+   ]
+  }
+ },
+ "regression_gap": -0.10615422639644101,
+ "accepted": true
+}

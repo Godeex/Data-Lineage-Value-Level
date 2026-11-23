@@ -1,0 +1,9 @@
+{
+ "n_records": 8,
+ "raw_static_parsed": 4,
+ "raw_static_errors": 4,
+ "expanded_static_parsed": 8,
+ "mean_expanded_static_f1": 0.8795546558704453,
+ "mean_base_coverage": 0.9444444444444444,
+ "mean_allcell_coverage": 1.0
+}

@@ -1,0 +1,255 @@
+{
+ "n_queries": 40,
+ "positives": 145,
+ "machine_tp": 127,
+ "machine_fn": 18,
+ "by_category": {
+  "aggregate": {
+   "pos": 20,
+   "ref_tp": 12,
+   "ref_fn": 8
+  },
+  "case": {
+   "pos": 25,
+   "ref_tp": 23,
+   "ref_fn": 2
+  },
+  "cte": {
+   "pos": 14,
+   "ref_tp": 13,
+   "ref_fn": 1
+  },
+  "join": {
+   "pos": 54,
+   "ref_tp": 47,
+   "ref_fn": 7
+  },
+  "projection": {
+   "pos": 32,
+   "ref_tp": 32,
+   "ref_fn": 0
+  }
+ },
+ "missed_by_type_bucket": {
+  "CONTROL": {
+   "WHERE/HAVING/JOIN": 10
+  },
+  "MIXED": {
+   "GROUP BY": 5,
+   "WHERE/HAVING/JOIN": 3
+  }
+ },
+ "transitions": {
+  "FN_TP": 22,
+  "FN_FN": 28,
+  "TP_TP": 70,
+  "TP_FN": 25
+ },
+ "transition_types": {
+  "FN_TP/CONTROL": 20,
+  "FN_TP/MIXED": 2,
+  "TP_FN/CONTROL": 1,
+  "TP_FN/DATA": 21,
+  "TP_FN/MIXED": 3
+ },
+ "missed_edges": [
+  {
+   "qid": "validation-00004",
+   "category": "aggregate",
+   "edge": [
+    "avg(age)",
+    "singer",
+    "country"
+   ],
+   "type": "CONTROL",
+   "bucket": "WHERE/HAVING/JOIN"
+  },
+  {
+   "qid": "validation-00004",
+   "category": "aggregate",
+   "edge": [
+    "max(age)",
+    "singer",
+    "country"
+   ],
+   "type": "CONTROL",
+   "bucket": "WHERE/HAVING/JOIN"
+  },
+  {
+   "qid": "validation-00004",
+   "category": "aggregate",
+   "edge": [
+    "min(age)",
+    "singer",
+    "country"
+   ],
+   "type": "CONTROL",
+   "bucket": "WHERE/HAVING/JOIN"
+  },
+  {
+   "qid": "validation-00010",
+   "category": "aggregate",
+   "edge": [
+    "count(*)",
+    "singer",
+    "country"
+   ],
+   "type": "MIXED",
+   "bucket": "GROUP BY"
+  },
+  {
+   "qid": "validation-00043",
+   "category": "aggregate",
+   "edge": [
+    "count(*)",
+    "concert",
+    "stadium_id"
+   ],
+   "type": "MIXED",
+   "bucket": "WHERE/HAVING/JOIN"
+  },
+  {
+   "qid": "validation-00049",
+   "category": "aggregate",
+   "edge": [
+    "max(weight)",
+    "pets",
+    "pettype"
+   ],
+   "type": "MIXED",
+   "bucket": "GROUP BY"
+  },
+  {
+   "qid": "validation-00071",
+   "category": "aggregate",
+   "edge": [
+    "max(pet_age)",
+    "pets",
+    "pettype"
+   ],
+   "type": "MIXED",
+   "bucket": "GROUP BY"
+  },
+  {
+   "qid": "validation-00071",
+   "category": "aggregate",
+   "edge": [
+    "avg(pet_age)",
+    "pets",
+    "pettype"
+   ],
+   "type": "MIXED",
+   "bucket": "GROUP BY"
+  },
+  {
+   "qid": "synth-case-014",
+   "category": "case",
+   "edge": [
+    "bucket",
+    "concert",
+    "stadium_id"
+   ],
+   "type": "MIXED",
+   "bucket": "WHERE/HAVING/JOIN"
+  },
+  {
+   "qid": "synth-case-014",
+   "category": "case",
+   "edge": [
+    "count(*)",
+    "concert",
+    "stadium_id"
+   ],
+   "type": "MIXED",
+   "bucket": "WHERE/HAVING/JOIN"
+  },
+  {
+   "qid": "synth-cte-010",
+   "category": "cte",
+   "edge": [
+    "count(*)",
+    "singer",
+    "country"
+   ],
+   "type": "MIXED",
+   "bucket": "GROUP BY"
+  },
+  {
+   "qid": "validation-00061",
+   "category": "join",
+   "edge": [
+    "major",
+    "pets",
+    "pettype"
+   ],
+   "type": "CONTROL",
+   "bucket": "WHERE/HAVING/JOIN"
+  },
+  {
+   "qid": "validation-00061",
+   "category": "join",
+   "edge": [
+    "age",
+    "pets",
+    "pettype"
+   ],
+   "type": "CONTROL",
+   "bucket": "WHERE/HAVING/JOIN"
+  },
+  {
+   "qid": "validation-00063",
+   "category": "join",
+   "edge": [
+    "stuid",
+    "pets",
+    "pettype"
+   ],
+   "type": "CONTROL",
+   "bucket": "WHERE/HAVING/JOIN"
+  },
+  {
+   "qid": "validation-00505",
+   "category": "join",
+   "edge": [
+    "name",
+    "ship",
+    "location"
+   ],
+   "type": "CONTROL",
+   "bucket": "WHERE/HAVING/JOIN"
+  },
+  {
+   "qid": "validation-00505",
+   "category": "join",
+   "edge": [
+    "result",
+    "ship",
+    "location"
+   ],
+   "type": "CONTROL",
+   "bucket": "WHERE/HAVING/JOIN"
+  },
+  {
+   "qid": "validation-00505",
+   "category": "join",
+   "edge": [
+    "bulgarian_commander",
+    "ship",
+    "location"
+   ],
+   "type": "CONTROL",
+   "bucket": "WHERE/HAVING/JOIN"
+  },
+  {
+   "qid": "validation-00635",
+   "category": "join",
+   "edge": [
+    "country",
+    "cartoon",
+    "written_by"
+   ],
+   "type": "CONTROL",
+   "bucket": "WHERE/HAVING/JOIN"
+  }
+ ]
+}

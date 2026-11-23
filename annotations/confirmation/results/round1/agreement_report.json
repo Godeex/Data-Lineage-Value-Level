@@ -1,0 +1,44 @@
+{
+ "pairwise": {
+  "A-B": {
+   "n_common": 492,
+   "binary_positive_vs_other": {
+    "n": 492,
+    "agreement": 0.9248,
+    "kappa": 0.8316
+   },
+   "three_class": {
+    "n": 492,
+    "agreement": 0.9248,
+    "kappa": 0.8466
+   }
+  },
+  "A-C": {
+   "n_common": 492,
+   "binary_positive_vs_other": {
+    "n": 492,
+    "agreement": 0.9126,
+    "kappa": 0.8029
+   },
+   "three_class": {
+    "n": 492,
+    "agreement": 0.9126,
+    "kappa": 0.8233
+   }
+  },
+  "B-C": {
+   "n_common": 492,
+   "binary_positive_vs_other": {
+    "n": 492,
+    "agreement": 0.9878,
+    "kappa": 0.9703
+   },
+   "three_class": {
+    "n": 492,
+    "agreement": 0.9878,
+    "kappa": 0.9759
+   }
+  }
+ },
+ "pairwise_mean_binary_kappa": 0.8683
+}

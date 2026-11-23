@@ -1,0 +1,149 @@
+[
+ {
+  "qid": "q1",
+  "expected_control": [
+   [
+    "c_name",
+    "customer",
+    "c_nationkey"
+   ]
+  ],
+  "cell_recovered": [
+   [
+    "c_name",
+    "customer",
+    "c_nationkey"
+   ]
+  ],
+  "literal_recovered": [
+   [
+    "c_name",
+    "customer",
+    "c_nationkey"
+   ]
+  ],
+  "cell_exec": 63,
+  "literal_exec": 474
+ },
+ {
+  "qid": "q2",
+  "expected_control": [
+   [
+    "c_name",
+    "customer",
+    "c_mktsegment"
+   ]
+  ],
+  "cell_recovered": [
+   [
+    "c_name",
+    "customer",
+    "c_mktsegment"
+   ]
+  ],
+  "literal_recovered": [
+   [
+    "c_name",
+    "customer",
+    "c_mktsegment"
+   ]
+  ],
+  "cell_exec": 63,
+  "literal_exec": 474
+ },
+ {
+  "qid": "q3",
+  "expected_control": [
+   [
+    "o_orderkey",
+    "orders",
+    "o_orderdate"
+   ],
+   [
+    "o_totalprice",
+    "orders",
+    "o_orderdate"
+   ]
+  ],
+  "cell_recovered": [],
+  "literal_recovered": [
+   [
+    "o_orderkey",
+    "orders",
+    "o_orderdate"
+   ],
+   [
+    "o_totalprice",
+    "orders",
+    "o_orderdate"
+   ]
+  ],
+  "cell_exec": 63,
+  "literal_exec": 474
+ },
+ {
+  "qid": "q4",
+  "expected_control": [
+   [
+    "sum(l_quantity)",
+    "lineitem",
+    "l_partkey"
+   ],
+   [
+    "sum(l_quantity)",
+    "lineitem",
+    "l_shipdate"
+   ]
+  ],
+  "cell_recovered": [],
+  "literal_recovered": [
+   [
+    "sum(l_quantity)",
+    "lineitem",
+    "l_partkey"
+   ]
+  ],
+  "cell_exec": 63,
+  "literal_exec": 474
+ },
+ {
+  "qid": "q5",
+  "expected_control": [
+   [
+    "s_name",
+    "supplier",
+    "s_acctbal"
+   ]
+  ],
+  "cell_recovered": [],
+  "literal_recovered": [
+   [
+    "s_name",
+    "supplier",
+    "s_acctbal"
+   ]
+  ],
+  "cell_exec": 63,
+  "literal_exec": 474
+ },
+ {
+  "qid": "q6",
+  "expected_control": [
+   [
+    "p_name",
+    "part",
+    "p_size"
+   ]
+  ],
+  "cell_recovered": [],
+  "literal_recovered": [
+   [
+    "p_name",
+    "part",
+    "p_size"
+   ]
+  ],
+  "cell_exec": 63,
+  "literal_exec": 474
+ }
+]

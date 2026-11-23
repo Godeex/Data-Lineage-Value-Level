@@ -1,0 +1,998 @@
+[
+ {
+  "model": "stg_orders",
+  "variant": {
+   "include_refunds": false
+  },
+  "expanded_sql": "SELECT order_id, customer_id, amount, refunded\nFROM raw_orders",
+  "raw_static_status": "parsed",
+  "raw_static_edges": [
+   [
+    "amount",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "customer_id",
+    "raw_orders",
+    "customer_id"
+   ],
+   [
+    "order_id",
+    "raw_orders",
+    "order_id"
+   ],
+   [
+    "refunded",
+    "raw_orders",
+    "refunded"
+   ]
+  ],
+  "expanded_static_status": "parsed",
+  "expanded_static_edges": [
+   [
+    "amount",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "customer_id",
+    "raw_orders",
+    "customer_id"
+   ],
+   [
+    "order_id",
+    "raw_orders",
+    "order_id"
+   ],
+   [
+    "refunded",
+    "raw_orders",
+    "refunded"
+   ]
+  ],
+  "n_ref": 4,
+  "ref_edges": [
+   [
+    "amount",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "customer_id",
+    "raw_orders",
+    "customer_id"
+   ],
+   [
+    "order_id",
+    "raw_orders",
+    "order_id"
+   ],
+   [
+    "refunded",
+    "raw_orders",
+    "refunded"
+   ]
+  ],
+  "expanded_static_precision": 1.0,
+  "expanded_static_recall": 1.0,
+  "expanded_static_f1": 1.0,
+  "base_coverage": 1.0,
+  "allcell_coverage": 1.0,
+  "base_edges": [
+   [
+    "amount",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "customer_id",
+    "raw_orders",
+    "customer_id"
+   ],
+   [
+    "order_id",
+    "raw_orders",
+    "order_id"
+   ],
+   [
+    "refunded",
+    "raw_orders",
+    "refunded"
+   ]
+  ],
+  "allcell_edges": [
+   [
+    "amount",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "customer_id",
+    "raw_orders",
+    "customer_id"
+   ],
+   [
+    "order_id",
+    "raw_orders",
+    "order_id"
+   ],
+   [
+    "refunded",
+    "raw_orders",
+    "refunded"
+   ]
+  ]
+ },
+ {
+  "model": "stg_customers",
+  "variant": {
+   "include_refunds": false
+  },
+  "expanded_sql": "SELECT customer_id, name, country\nFROM raw_customers",
+  "raw_static_status": "parsed",
+  "raw_static_edges": [
+   [
+    "country",
+    "raw_customers",
+    "country"
+   ],
+   [
+    "customer_id",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "name",
+    "raw_customers",
+    "name"
+   ]
+  ],
+  "expanded_static_status": "parsed",
+  "expanded_static_edges": [
+   [
+    "country",
+    "raw_customers",
+    "country"
+   ],
+   [
+    "customer_id",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "name",
+    "raw_customers",
+    "name"
+   ]
+  ],
+  "n_ref": 3,
+  "ref_edges": [
+   [
+    "country",
+    "raw_customers",
+    "country"
+   ],
+   [
+    "customer_id",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "name",
+    "raw_customers",
+    "name"
+   ]
+  ],
+  "expanded_static_precision": 1.0,
+  "expanded_static_recall": 1.0,
+  "expanded_static_f1": 1.0,
+  "base_coverage": 1.0,
+  "allcell_coverage": 1.0,
+  "base_edges": [
+   [
+    "country",
+    "raw_customers",
+    "country"
+   ],
+   [
+    "customer_id",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "name",
+    "raw_customers",
+    "name"
+   ]
+  ],
+  "allcell_edges": [
+   [
+    "country",
+    "raw_customers",
+    "country"
+   ],
+   [
+    "customer_id",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "name",
+    "raw_customers",
+    "name"
+   ]
+  ]
+ },
+ {
+  "model": "revenue_by_customer",
+  "variant": {
+   "include_refunds": false
+  },
+  "expanded_sql": "SELECT\n  c.customer_id,\n  c.name,\n  SUM(o.amount) AS revenue,\n  CASE WHEN SUM(o.amount) > 100 THEN 'high' ELSE 'low' END AS bucket\nFROM (SELECT order_id, customer_id, amount, refunded\nFROM raw_orders) AS o\nJOIN (SELECT customer_id, name, country\nFROM raw_customers) AS c\n  ON o.customer_id = c.customer_id\n\nGROUP BY c.customer_id, c.name",
+  "raw_static_status": "error: ParseError: Expected table name but got <Token token_type: TokenType.L_BRACE, text: {, line: 6, col: 6, start: 122, end: 122, comments: []>. Line 6, Col: 6.\n  ,\n  c.name,\n  SUM(o.amount) AS revenue,\n  {{ m.price_bucket('SUM(o.amount)', 100) }} AS bucket\nFROM \u001b[4m{\u001b[0m{ ref('stg_orders') }} AS o\nJOIN {{ ref('stg_customers') }} AS c\n  ON o.customer_id = c.customer_id\n",
+  "raw_static_edges": [],
+  "expanded_static_status": "parsed",
+  "expanded_static_edges": [
+   [
+    "bucket",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "customer_id",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "name",
+    "raw_customers",
+    "name"
+   ],
+   [
+    "revenue",
+    "raw_orders",
+    "amount"
+   ]
+  ],
+  "n_ref": 9,
+  "ref_edges": [
+   [
+    "bucket",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "bucket",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "bucket",
+    "raw_orders",
+    "customer_id"
+   ],
+   [
+    "customer_id",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "name",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "name",
+    "raw_customers",
+    "name"
+   ],
+   [
+    "revenue",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "revenue",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "revenue",
+    "raw_orders",
+    "customer_id"
+   ]
+  ],
+  "expanded_static_precision": 1.0,
+  "expanded_static_recall": 0.4444444444444444,
+  "expanded_static_f1": 0.6153846153846153,
+  "base_coverage": 0.8888888888888888,
+  "allcell_coverage": 1.0,
+  "base_edges": [
+   [
+    "bucket",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "bucket",
+    "raw_orders",
+    "customer_id"
+   ],
+   [
+    "customer_id",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "name",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "name",
+    "raw_customers",
+    "name"
+   ],
+   [
+    "revenue",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "revenue",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "revenue",
+    "raw_orders",
+    "customer_id"
+   ]
+  ],
+  "allcell_edges": [
+   [
+    "bucket",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "bucket",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "bucket",
+    "raw_orders",
+    "customer_id"
+   ],
+   [
+    "customer_id",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "name",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "name",
+    "raw_customers",
+    "name"
+   ],
+   [
+    "revenue",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "revenue",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "revenue",
+    "raw_orders",
+    "customer_id"
+   ]
+  ]
+ },
+ {
+  "model": "order_flags",
+  "variant": {
+   "include_refunds": false
+  },
+  "expanded_sql": "SELECT\n  order_id,\n  CASE WHEN amount > 100 THEN 'high' ELSE 'low' END AS flag\nFROM (SELECT order_id, customer_id, amount, refunded\nFROM raw_orders) AS o",
+  "raw_static_status": "error: ParseError: Expected table name but got <Token token_type: TokenType.L_BRACE, text: {, line: 4, col: 6, start: 70, end: 70, comments: []>. Line 4, Col: 6.\n  SELECT\n  order_id,\n  {{ m.price_bucket('amount', 100) }} AS flag\nFROM \u001b[4m{\u001b[0m{ ref('stg_orders') }} AS o\n",
+  "raw_static_edges": [],
+  "expanded_static_status": "parsed",
+  "expanded_static_edges": [
+   [
+    "flag",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "order_id",
+    "raw_orders",
+    "order_id"
+   ]
+  ],
+  "n_ref": 2,
+  "ref_edges": [
+   [
+    "flag",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "order_id",
+    "raw_orders",
+    "order_id"
+   ]
+  ],
+  "expanded_static_precision": 1.0,
+  "expanded_static_recall": 1.0,
+  "expanded_static_f1": 1.0,
+  "base_coverage": 1.0,
+  "allcell_coverage": 1.0,
+  "base_edges": [
+   [
+    "flag",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "order_id",
+    "raw_orders",
+    "order_id"
+   ]
+  ],
+  "allcell_edges": [
+   [
+    "flag",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "order_id",
+    "raw_orders",
+    "order_id"
+   ]
+  ]
+ },
+ {
+  "model": "stg_orders",
+  "variant": {
+   "include_refunds": true
+  },
+  "expanded_sql": "SELECT order_id, customer_id, amount, refunded\nFROM raw_orders",
+  "raw_static_status": "parsed",
+  "raw_static_edges": [
+   [
+    "amount",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "customer_id",
+    "raw_orders",
+    "customer_id"
+   ],
+   [
+    "order_id",
+    "raw_orders",
+    "order_id"
+   ],
+   [
+    "refunded",
+    "raw_orders",
+    "refunded"
+   ]
+  ],
+  "expanded_static_status": "parsed",
+  "expanded_static_edges": [
+   [
+    "amount",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "customer_id",
+    "raw_orders",
+    "customer_id"
+   ],
+   [
+    "order_id",
+    "raw_orders",
+    "order_id"
+   ],
+   [
+    "refunded",
+    "raw_orders",
+    "refunded"
+   ]
+  ],
+  "n_ref": 4,
+  "ref_edges": [
+   [
+    "amount",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "customer_id",
+    "raw_orders",
+    "customer_id"
+   ],
+   [
+    "order_id",
+    "raw_orders",
+    "order_id"
+   ],
+   [
+    "refunded",
+    "raw_orders",
+    "refunded"
+   ]
+  ],
+  "expanded_static_precision": 1.0,
+  "expanded_static_recall": 1.0,
+  "expanded_static_f1": 1.0,
+  "base_coverage": 1.0,
+  "allcell_coverage": 1.0,
+  "base_edges": [
+   [
+    "amount",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "customer_id",
+    "raw_orders",
+    "customer_id"
+   ],
+   [
+    "order_id",
+    "raw_orders",
+    "order_id"
+   ],
+   [
+    "refunded",
+    "raw_orders",
+    "refunded"
+   ]
+  ],
+  "allcell_edges": [
+   [
+    "amount",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "customer_id",
+    "raw_orders",
+    "customer_id"
+   ],
+   [
+    "order_id",
+    "raw_orders",
+    "order_id"
+   ],
+   [
+    "refunded",
+    "raw_orders",
+    "refunded"
+   ]
+  ]
+ },
+ {
+  "model": "stg_customers",
+  "variant": {
+   "include_refunds": true
+  },
+  "expanded_sql": "SELECT customer_id, name, country\nFROM raw_customers",
+  "raw_static_status": "parsed",
+  "raw_static_edges": [
+   [
+    "country",
+    "raw_customers",
+    "country"
+   ],
+   [
+    "customer_id",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "name",
+    "raw_customers",
+    "name"
+   ]
+  ],
+  "expanded_static_status": "parsed",
+  "expanded_static_edges": [
+   [
+    "country",
+    "raw_customers",
+    "country"
+   ],
+   [
+    "customer_id",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "name",
+    "raw_customers",
+    "name"
+   ]
+  ],
+  "n_ref": 3,
+  "ref_edges": [
+   [
+    "country",
+    "raw_customers",
+    "country"
+   ],
+   [
+    "customer_id",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "name",
+    "raw_customers",
+    "name"
+   ]
+  ],
+  "expanded_static_precision": 1.0,
+  "expanded_static_recall": 1.0,
+  "expanded_static_f1": 1.0,
+  "base_coverage": 1.0,
+  "allcell_coverage": 1.0,
+  "base_edges": [
+   [
+    "country",
+    "raw_customers",
+    "country"
+   ],
+   [
+    "customer_id",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "name",
+    "raw_customers",
+    "name"
+   ]
+  ],
+  "allcell_edges": [
+   [
+    "country",
+    "raw_customers",
+    "country"
+   ],
+   [
+    "customer_id",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "name",
+    "raw_customers",
+    "name"
+   ]
+  ]
+ },
+ {
+  "model": "revenue_by_customer",
+  "variant": {
+   "include_refunds": true
+  },
+  "expanded_sql": "SELECT\n  c.customer_id,\n  c.name,\n  SUM(o.amount) AS revenue,\n  CASE WHEN SUM(o.amount) > 100 THEN 'high' ELSE 'low' END AS bucket\nFROM (SELECT order_id, customer_id, amount, refunded\nFROM raw_orders) AS o\nJOIN (SELECT customer_id, name, country\nFROM raw_customers) AS c\n  ON o.customer_id = c.customer_id\n\nWHERE o.refunded = 0\n\nGROUP BY c.customer_id, c.name",
+  "raw_static_status": "error: ParseError: Expected table name but got <Token token_type: TokenType.L_BRACE, text: {, line: 6, col: 6, start: 122, end: 122, comments: []>. Line 6, Col: 6.\n  ,\n  c.name,\n  SUM(o.amount) AS revenue,\n  {{ m.price_bucket('SUM(o.amount)', 100) }} AS bucket\nFROM \u001b[4m{\u001b[0m{ ref('stg_orders') }} AS o\nJOIN {{ ref('stg_customers') }} AS c\n  ON o.customer_id = c.customer_id\n",
+  "raw_static_edges": [],
+  "expanded_static_status": "parsed",
+  "expanded_static_edges": [
+   [
+    "bucket",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "customer_id",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "name",
+    "raw_customers",
+    "name"
+   ],
+   [
+    "revenue",
+    "raw_orders",
+    "amount"
+   ]
+  ],
+  "n_ref": 15,
+  "ref_edges": [
+   [
+    "bucket",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "bucket",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "bucket",
+    "raw_orders",
+    "customer_id"
+   ],
+   [
+    "bucket",
+    "raw_orders",
+    "refunded"
+   ],
+   [
+    "customer_id",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "customer_id",
+    "raw_orders",
+    "customer_id"
+   ],
+   [
+    "customer_id",
+    "raw_orders",
+    "refunded"
+   ],
+   [
+    "name",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "name",
+    "raw_customers",
+    "name"
+   ],
+   [
+    "name",
+    "raw_orders",
+    "customer_id"
+   ],
+   [
+    "name",
+    "raw_orders",
+    "refunded"
+   ],
+   [
+    "revenue",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "revenue",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "revenue",
+    "raw_orders",
+    "customer_id"
+   ],
+   [
+    "revenue",
+    "raw_orders",
+    "refunded"
+   ]
+  ],
+  "expanded_static_precision": 1.0,
+  "expanded_static_recall": 0.26666666666666666,
+  "expanded_static_f1": 0.4210526315789474,
+  "base_coverage": 0.6666666666666666,
+  "allcell_coverage": 1.0,
+  "base_edges": [
+   [
+    "bucket",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "bucket",
+    "raw_orders",
+    "customer_id"
+   ],
+   [
+    "bucket",
+    "raw_orders",
+    "refunded"
+   ],
+   [
+    "customer_id",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "name",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "name",
+    "raw_customers",
+    "name"
+   ],
+   [
+    "revenue",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "revenue",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "revenue",
+    "raw_orders",
+    "customer_id"
+   ],
+   [
+    "revenue",
+    "raw_orders",
+    "refunded"
+   ]
+  ],
+  "allcell_edges": [
+   [
+    "bucket",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "bucket",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "bucket",
+    "raw_orders",
+    "customer_id"
+   ],
+   [
+    "bucket",
+    "raw_orders",
+    "refunded"
+   ],
+   [
+    "customer_id",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "customer_id",
+    "raw_orders",
+    "customer_id"
+   ],
+   [
+    "customer_id",
+    "raw_orders",
+    "refunded"
+   ],
+   [
+    "name",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "name",
+    "raw_customers",
+    "name"
+   ],
+   [
+    "name",
+    "raw_orders",
+    "customer_id"
+   ],
+   [
+    "name",
+    "raw_orders",
+    "refunded"
+   ],
+   [
+    "revenue",
+    "raw_customers",
+    "customer_id"
+   ],
+   [
+    "revenue",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "revenue",
+    "raw_orders",
+    "customer_id"
+   ],
+   [
+    "revenue",
+    "raw_orders",
+    "refunded"
+   ]
+  ]
+ },
+ {
+  "model": "order_flags",
+  "variant": {
+   "include_refunds": true
+  },
+  "expanded_sql": "SELECT\n  order_id,\n  CASE WHEN amount > 100 THEN 'high' ELSE 'low' END AS flag\nFROM (SELECT order_id, customer_id, amount, refunded\nFROM raw_orders) AS o",
+  "raw_static_status": "error: ParseError: Expected table name but got <Token token_type: TokenType.L_BRACE, text: {, line: 4, col: 6, start: 70, end: 70, comments: []>. Line 4, Col: 6.\n  SELECT\n  order_id,\n  {{ m.price_bucket('amount', 100) }} AS flag\nFROM \u001b[4m{\u001b[0m{ ref('stg_orders') }} AS o\n",
+  "raw_static_edges": [],
+  "expanded_static_status": "parsed",
+  "expanded_static_edges": [
+   [
+    "flag",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "order_id",
+    "raw_orders",
+    "order_id"
+   ]
+  ],
+  "n_ref": 2,
+  "ref_edges": [
+   [
+    "flag",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "order_id",
+    "raw_orders",
+    "order_id"
+   ]
+  ],
+  "expanded_static_precision": 1.0,
+  "expanded_static_recall": 1.0,
+  "expanded_static_f1": 1.0,
+  "base_coverage": 1.0,
+  "allcell_coverage": 1.0,
+  "base_edges": [
+   [
+    "flag",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "order_id",
+    "raw_orders",
+    "order_id"
+   ]
+  ],
+  "allcell_edges": [
+   [
+    "flag",
+    "raw_orders",
+    "amount"
+   ],
+   [
+    "order_id",
+    "raw_orders",
+    "order_id"
+   ]
+  ]
+ }
+]

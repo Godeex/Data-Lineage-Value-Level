@@ -1,0 +1,256 @@
+{
+ "files": {
+  "A": "annotation_A.csv",
+  "B": "annotation_B.csv",
+  "C": "annotation_C.csv"
+ },
+ "n_queries_with_no_edges": {
+  "A": [
+   "synth-case-000",
+   "synth-case-001",
+   "synth-cte-001"
+  ],
+  "B": [
+   "synth-case-000",
+   "synth-case-001",
+   "synth-cte-001"
+  ],
+  "C": [
+   "synth-case-000",
+   "synth-case-001",
+   "synth-cte-001"
+  ]
+ },
+ "pairwise": [
+  {
+   "pair": "A vs B",
+   "n_a": 96,
+   "n_b": 95,
+   "n_common_listed": 95,
+   "n_union": 96,
+   "percent_agreement_binary_union": 0.9896,
+   "pabak_binary_union": 0.9792,
+   "binary_kappa_union": 0.9416,
+   "binary_kappa_intersection": 1.0,
+   "three_class_kappa_intersection": 1.0,
+   "four_class_kappa_union": 0.9429,
+   "confusion_binary_union": {
+    "POSITIVE": {
+     "POSITIVE": 86,
+     "OTHER": 1
+    },
+    "OTHER": {
+     "POSITIVE": 0,
+     "OTHER": 9
+    }
+   },
+   "confusion_three_class_intersection": {
+    "POSITIVE": {
+     "POSITIVE": 86,
+     "NEGATIVE": 0,
+     "UNKNOWN": 0
+    },
+    "NEGATIVE": {
+     "POSITIVE": 0,
+     "NEGATIVE": 2,
+     "UNKNOWN": 0
+    },
+    "UNKNOWN": {
+     "POSITIVE": 0,
+     "NEGATIVE": 0,
+     "UNKNOWN": 7
+    }
+   },
+   "confusion_four_class_union": {
+    "POSITIVE": {
+     "POSITIVE": 86,
+     "NEGATIVE": 0,
+     "UNKNOWN": 0,
+     "ABSENT": 1
+    },
+    "NEGATIVE": {
+     "POSITIVE": 0,
+     "NEGATIVE": 2,
+     "UNKNOWN": 0,
+     "ABSENT": 0
+    },
+    "UNKNOWN": {
+     "POSITIVE": 0,
+     "NEGATIVE": 0,
+     "UNKNOWN": 7,
+     "ABSENT": 0
+    },
+    "ABSENT": {
+     "POSITIVE": 0,
+     "NEGATIVE": 0,
+     "UNKNOWN": 0,
+     "ABSENT": 0
+    }
+   },
+   "edges_only_a": [
+    "validation-00174 | countryname <- car_makers.country"
+   ],
+   "edges_only_b": [],
+   "decision_disagreements": []
+  },
+  {
+   "pair": "A vs C",
+   "n_a": 96,
+   "n_b": 96,
+   "n_common_listed": 96,
+   "n_union": 96,
+   "percent_agreement_binary_union": 1.0,
+   "pabak_binary_union": 1.0,
+   "binary_kappa_union": 1.0,
+   "binary_kappa_intersection": 1.0,
+   "three_class_kappa_intersection": 0.9396,
+   "four_class_kappa_union": 0.9396,
+   "confusion_binary_union": {
+    "POSITIVE": {
+     "POSITIVE": 87,
+     "OTHER": 0
+    },
+    "OTHER": {
+     "POSITIVE": 0,
+     "OTHER": 9
+    }
+   },
+   "confusion_three_class_intersection": {
+    "POSITIVE": {
+     "POSITIVE": 87,
+     "NEGATIVE": 0,
+     "UNKNOWN": 0
+    },
+    "NEGATIVE": {
+     "POSITIVE": 0,
+     "NEGATIVE": 1,
+     "UNKNOWN": 1
+    },
+    "UNKNOWN": {
+     "POSITIVE": 0,
+     "NEGATIVE": 0,
+     "UNKNOWN": 7
+    }
+   },
+   "confusion_four_class_union": {
+    "POSITIVE": {
+     "POSITIVE": 87,
+     "NEGATIVE": 0,
+     "UNKNOWN": 0,
+     "ABSENT": 0
+    },
+    "NEGATIVE": {
+     "POSITIVE": 0,
+     "NEGATIVE": 1,
+     "UNKNOWN": 1,
+     "ABSENT": 0
+    },
+    "UNKNOWN": {
+     "POSITIVE": 0,
+     "NEGATIVE": 0,
+     "UNKNOWN": 7,
+     "ABSENT": 0
+    },
+    "ABSENT": {
+     "POSITIVE": 0,
+     "NEGATIVE": 0,
+     "UNKNOWN": 0,
+     "ABSENT": 0
+    }
+   },
+   "edges_only_a": [],
+   "edges_only_b": [],
+   "decision_disagreements": [
+    {
+     "edge": "synth-case-018 | bucket <- pets.pet_age",
+     "A": "NEGATIVE",
+     "C": "UNKNOWN"
+    }
+   ]
+  },
+  {
+   "pair": "B vs C",
+   "n_a": 95,
+   "n_b": 96,
+   "n_common_listed": 95,
+   "n_union": 96,
+   "percent_agreement_binary_union": 0.9896,
+   "pabak_binary_union": 0.9792,
+   "binary_kappa_union": 0.9416,
+   "binary_kappa_intersection": 1.0,
+   "three_class_kappa_intersection": 0.9395,
+   "four_class_kappa_union": 0.8854,
+   "confusion_binary_union": {
+    "POSITIVE": {
+     "POSITIVE": 86,
+     "OTHER": 0
+    },
+    "OTHER": {
+     "POSITIVE": 1,
+     "OTHER": 9
+    }
+   },
+   "confusion_three_class_intersection": {
+    "POSITIVE": {
+     "POSITIVE": 86,
+     "NEGATIVE": 0,
+     "UNKNOWN": 0
+    },
+    "NEGATIVE": {
+     "POSITIVE": 0,
+     "NEGATIVE": 1,
+     "UNKNOWN": 1
+    },
+    "UNKNOWN": {
+     "POSITIVE": 0,
+     "NEGATIVE": 0,
+     "UNKNOWN": 7
+    }
+   },
+   "confusion_four_class_union": {
+    "POSITIVE": {
+     "POSITIVE": 86,
+     "NEGATIVE": 0,
+     "UNKNOWN": 0,
+     "ABSENT": 0
+    },
+    "NEGATIVE": {
+     "POSITIVE": 0,
+     "NEGATIVE": 1,
+     "UNKNOWN": 1,
+     "ABSENT": 0
+    },
+    "UNKNOWN": {
+     "POSITIVE": 0,
+     "NEGATIVE": 0,
+     "UNKNOWN": 7,
+     "ABSENT": 0
+    },
+    "ABSENT": {
+     "POSITIVE": 1,
+     "NEGATIVE": 0,
+     "UNKNOWN": 0,
+     "ABSENT": 0
+    }
+   },
+   "edges_only_a": [],
+   "edges_only_b": [
+    "validation-00174 | countryname <- car_makers.country"
+   ],
+   "decision_disagreements": [
+    {
+     "edge": "synth-case-018 | bucket <- pets.pet_age",
+     "B": "NEGATIVE",
+     "C": "UNKNOWN"
+    }
+   ]
+  }
+ ],
+ "mean_binary_kappa_union": 0.9611,
+ "min_binary_kappa_union": 0.9416,
+ "gate": {
+  "target_binary_kappa": 0.7,
+  "recalibration_threshold": 0.6,
+  "pass": true
+ }
+}

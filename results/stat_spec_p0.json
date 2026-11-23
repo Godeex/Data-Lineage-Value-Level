@@ -1,0 +1,35 @@
+{
+ "project": "AgentDB-261102-P0",
+ "correction": "none",
+ "comparisons_run": 0,
+ "comparisons_reported": 0,
+ "claims": [
+  {
+   "claim_id": "P0-coverage",
+   "text": "On 19 Spider queries with edges, single-perturbation oracle recovers on average 52.6% of static syntactic edges (descriptive pilot, not confirmatory)",
+   "effect_size": 0.526,
+   "effect_kind": "descriptive_rate",
+   "n": 19,
+   "asserted_grade": "weak",
+   "is_hypothesis": false
+  },
+  {
+   "claim_id": "P0-static-only",
+   "text": "9/19 queries have static-only edges the oracle did not observe (observability gap)",
+   "effect_size": 0.474,
+   "effect_kind": "descriptive_rate",
+   "n": 19,
+   "asserted_grade": "weak",
+   "is_hypothesis": false
+  },
+  {
+   "claim_id": "P0-oracle-only",
+   "text": "9/19 queries have oracle-only edges static lineage missed (static residual)",
+   "effect_size": 0.474,
+   "effect_kind": "descriptive_rate",
+   "n": 19,
+   "asserted_grade": "weak",
+   "is_hypothesis": false
+  }
+ ]
+}

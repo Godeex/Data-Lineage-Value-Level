@@ -1,0 +1,4918 @@
+{
+ "summary": {
+  "n_queries": 42,
+  "n_oracle_errors": 0,
+  "elapsed_seconds": 5.61,
+  "human_by_state": {
+   "POSITIVE": {
+    "POSITIVE": 137,
+    "NEGATIVE": 0,
+    "UNKNOWN": 8
+   },
+   "NEGATIVE": {
+    "POSITIVE": 0,
+    "NEGATIVE": 184,
+    "UNKNOWN": 129
+   },
+   "UNKNOWN": {
+    "POSITIVE": 0,
+    "NEGATIVE": 6,
+    "UNKNOWN": 28
+   }
+  },
+  "total_executions": 207354,
+  "mean_seconds": 0.13288095238095238
+ },
+ "per_query": [
+  {
+   "qid": "synth-case-002",
+   "db_id": "concert_singer",
+   "category": "case",
+   "guard": null,
+   "states": [
+    {
+     "edge": [
+      "age",
+      "singer",
+      "age"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "age",
+      "singer",
+      "country"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "age",
+      "singer",
+      "is_male"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "age",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "age",
+      "singer",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "age",
+      "singer",
+      "song_name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "age",
+      "singer",
+      "song_release_year"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "age",
+      "singer_in_concert",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "age",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "singer",
+      "age"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "singer",
+      "country"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "singer",
+      "is_male"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "singer",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "singer",
+      "song_name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "singer",
+      "song_release_year"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "singer_in_concert",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "age"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "country"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "is_male"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "song_name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "song_release_year"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "country",
+      "singer_in_concert",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "country",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "singer",
+      "age"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "singer",
+      "country"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "singer",
+      "is_male"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "singer",
+      "name"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "singer",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "singer",
+      "song_name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "singer",
+      "song_release_year"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "singer_in_concert",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    }
+   ],
+   "oracle_executions": 6672,
+   "oracle_seconds": 0.463,
+   "error": null
+  },
+  {
+   "qid": "synth-case-006",
+   "db_id": "concert_singer",
+   "category": "case",
+   "guard": null,
+   "states": [
+    {
+     "edge": [
+      "average",
+      "concert",
+      "stadium_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "average",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "average",
+      "stadium",
+      "average"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "average",
+      "stadium",
+      "capacity"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "average",
+      "stadium",
+      "highest"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "average",
+      "stadium",
+      "location"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "average",
+      "stadium",
+      "lowest"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "average",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "average",
+      "stadium",
+      "stadium_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "concert",
+      "stadium_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "stadium",
+      "average"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "stadium",
+      "capacity"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "stadium",
+      "highest"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "stadium",
+      "location"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "stadium",
+      "lowest"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "stadium",
+      "stadium_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "max(capacity)",
+      "concert",
+      "stadium_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "max(capacity)",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "max(capacity)",
+      "stadium",
+      "average"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "max(capacity)",
+      "stadium",
+      "capacity"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "max(capacity)",
+      "stadium",
+      "highest"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "max(capacity)",
+      "stadium",
+      "location"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "max(capacity)",
+      "stadium",
+      "lowest"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "max(capacity)",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "max(capacity)",
+      "stadium",
+      "stadium_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    }
+   ],
+   "oracle_executions": 6672,
+   "oracle_seconds": 0.113,
+   "error": null
+  },
+  {
+   "qid": "synth-case-008",
+   "db_id": "concert_singer",
+   "category": "case",
+   "guard": null,
+   "states": [
+    {
+     "edge": [
+      "bucket",
+      "concert",
+      "stadium_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "stadium",
+      "average"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "stadium",
+      "capacity"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "stadium",
+      "highest"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "stadium",
+      "location"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "stadium",
+      "lowest"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "stadium",
+      "stadium_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "capacity",
+      "concert",
+      "stadium_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "capacity",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "capacity",
+      "stadium",
+      "average"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "capacity",
+      "stadium",
+      "capacity"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "capacity",
+      "stadium",
+      "highest"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "capacity",
+      "stadium",
+      "location"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "capacity",
+      "stadium",
+      "lowest"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "capacity",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "capacity",
+      "stadium",
+      "stadium_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "concert",
+      "stadium_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "stadium",
+      "average"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "stadium",
+      "capacity"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "stadium",
+      "highest"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "stadium",
+      "location"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "stadium",
+      "lowest"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "stadium",
+      "name"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "stadium",
+      "stadium_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    }
+   ],
+   "oracle_executions": 8244,
+   "oracle_seconds": 0.157,
+   "error": null
+  },
+  {
+   "qid": "synth-case-012",
+   "db_id": "concert_singer",
+   "category": "case",
+   "guard": "grouped_aggregate",
+   "states": [
+    {
+     "edge": [
+      "bucket",
+      "concert",
+      "concert_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "concert",
+      "concert_name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "bucket",
+      "concert",
+      "stadium_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "bucket",
+      "concert",
+      "theme"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "bucket",
+      "concert",
+      "year"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "bucket",
+      "singer",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "bucket",
+      "singer_in_concert",
+      "concert_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "bucket",
+      "singer_in_concert",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "bucket",
+      "stadium",
+      "stadium_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "concert_name",
+      "concert",
+      "concert_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "concert_name",
+      "concert",
+      "concert_name"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "concert_name",
+      "concert",
+      "stadium_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "concert_name",
+      "concert",
+      "theme"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "concert_name",
+      "concert",
+      "year"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "concert_name",
+      "singer",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "concert_name",
+      "singer_in_concert",
+      "concert_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "concert_name",
+      "singer_in_concert",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "concert_name",
+      "stadium",
+      "stadium_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "concert",
+      "concert_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "concert",
+      "concert_name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "concert",
+      "stadium_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "concert",
+      "theme"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "concert",
+      "year"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer_in_concert",
+      "concert_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer_in_concert",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "stadium",
+      "stadium_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "theme",
+      "concert",
+      "concert_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "theme",
+      "concert",
+      "concert_name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "theme",
+      "concert",
+      "stadium_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "theme",
+      "concert",
+      "theme"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "theme",
+      "concert",
+      "year"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "theme",
+      "singer",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "theme",
+      "singer_in_concert",
+      "concert_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "theme",
+      "singer_in_concert",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "theme",
+      "stadium",
+      "stadium_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    }
+   ],
+   "oracle_executions": 6672,
+   "oracle_seconds": 0.268,
+   "error": null
+  },
+  {
+   "qid": "synth-case-014",
+   "db_id": "concert_singer",
+   "category": "case",
+   "guard": "subquery_candidate",
+   "states": [
+    {
+     "edge": [
+      "bucket",
+      "concert",
+      "concert_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "bucket",
+      "concert",
+      "concert_name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "bucket",
+      "concert",
+      "stadium_id"
+     ],
+     "human": "POSITIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "bucket",
+      "concert",
+      "theme"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "bucket",
+      "concert",
+      "year"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "bucket",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "bucket",
+      "singer_in_concert",
+      "concert_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "bucket",
+      "stadium",
+      "average"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "bucket",
+      "stadium",
+      "capacity"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "bucket",
+      "stadium",
+      "highest"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "bucket",
+      "stadium",
+      "location"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "bucket",
+      "stadium",
+      "lowest"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "bucket",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "bucket",
+      "stadium",
+      "stadium_id"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "concert",
+      "concert_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "concert",
+      "concert_name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "concert",
+      "stadium_id"
+     ],
+     "human": "POSITIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "concert",
+      "theme"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "concert",
+      "year"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer_in_concert",
+      "concert_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "stadium",
+      "average"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "stadium",
+      "capacity"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "stadium",
+      "highest"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "stadium",
+      "location"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "stadium",
+      "lowest"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "stadium",
+      "stadium_id"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    }
+   ],
+   "oracle_executions": 8244,
+   "oracle_seconds": 0.151,
+   "error": null
+  },
+  {
+   "qid": "synth-case-016",
+   "db_id": "pets_1",
+   "category": "case",
+   "guard": null,
+   "states": [
+    {
+     "edge": [
+      "bucket",
+      "pets",
+      "weight"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "pets",
+      "weight"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    }
+   ],
+   "oracle_executions": 5609,
+   "oracle_seconds": 0.079,
+   "error": null
+  },
+  {
+   "qid": "synth-cte-002",
+   "db_id": "concert_singer",
+   "category": "cte",
+   "guard": null,
+   "states": [
+    {
+     "edge": [
+      "age",
+      "singer",
+      "age"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "age",
+      "singer",
+      "country"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "age",
+      "singer",
+      "is_male"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "age",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "age",
+      "singer",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "age",
+      "singer",
+      "song_name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "age",
+      "singer",
+      "song_release_year"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "age",
+      "singer_in_concert",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "age",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "age"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "country"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "is_male"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "song_name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "song_release_year"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "country",
+      "singer_in_concert",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "country",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "singer",
+      "age"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "singer",
+      "country"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "singer",
+      "is_male"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "singer",
+      "name"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "singer",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "singer",
+      "song_name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "singer",
+      "song_release_year"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "singer_in_concert",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    }
+   ],
+   "oracle_executions": 4047,
+   "oracle_seconds": 0.193,
+   "error": null
+  },
+  {
+   "qid": "synth-cte-006",
+   "db_id": "concert_singer",
+   "category": "cte",
+   "guard": null,
+   "states": [
+    {
+     "edge": [
+      "song_name",
+      "singer",
+      "age"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "song_name",
+      "singer",
+      "country"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "song_name",
+      "singer",
+      "is_male"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "song_name",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "song_name",
+      "singer",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "song_name",
+      "singer",
+      "song_name"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "song_name",
+      "singer",
+      "song_release_year"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "song_name",
+      "singer_in_concert",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "song_name",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "song_release_year",
+      "singer",
+      "age"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "song_release_year",
+      "singer",
+      "country"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "song_release_year",
+      "singer",
+      "is_male"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "song_release_year",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "song_release_year",
+      "singer",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "song_release_year",
+      "singer",
+      "song_name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "song_release_year",
+      "singer",
+      "song_release_year"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "song_release_year",
+      "singer_in_concert",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "song_release_year",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    }
+   ],
+   "oracle_executions": 5619,
+   "oracle_seconds": 0.098,
+   "error": null
+  },
+  {
+   "qid": "synth-cte-010",
+   "db_id": "concert_singer",
+   "category": "cte",
+   "guard": "grouped_aggregate",
+   "states": [
+    {
+     "edge": [
+      "count(*)",
+      "singer",
+      "age"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer",
+      "country"
+     ],
+     "human": "POSITIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer",
+      "is_male"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer",
+      "song_name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer",
+      "song_release_year"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer_in_concert",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "age"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "country"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "is_male"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "song_name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "song_release_year"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "country",
+      "singer_in_concert",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "country",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    }
+   ],
+   "oracle_executions": 4047,
+   "oracle_seconds": 0.158,
+   "error": null
+  },
+  {
+   "qid": "synth-cte-012",
+   "db_id": "concert_singer",
+   "category": "cte",
+   "guard": "subquery_candidate",
+   "states": [
+    {
+     "edge": [
+      "song_name",
+      "singer",
+      "age"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "song_name",
+      "singer",
+      "country"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "song_name",
+      "singer",
+      "is_male"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "song_name",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "song_name",
+      "singer",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "song_name",
+      "singer",
+      "song_name"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "song_name",
+      "singer",
+      "song_release_year"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "song_name",
+      "singer_in_concert",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "song_name",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    }
+   ],
+   "oracle_executions": 4047,
+   "oracle_seconds": 0.081,
+   "error": null
+  },
+  {
+   "qid": "synth-cte-014",
+   "db_id": "concert_singer",
+   "category": "cte",
+   "guard": null,
+   "states": [
+    {
+     "edge": [
+      "average",
+      "concert",
+      "stadium_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "average",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "average",
+      "stadium",
+      "average"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "average",
+      "stadium",
+      "capacity"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "average",
+      "stadium",
+      "highest"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "average",
+      "stadium",
+      "location"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "average",
+      "stadium",
+      "lowest"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "average",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "average",
+      "stadium",
+      "stadium_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "max(capacity)",
+      "concert",
+      "stadium_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "max(capacity)",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "max(capacity)",
+      "stadium",
+      "average"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "max(capacity)",
+      "stadium",
+      "capacity"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "max(capacity)",
+      "stadium",
+      "highest"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "max(capacity)",
+      "stadium",
+      "location"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "max(capacity)",
+      "stadium",
+      "lowest"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "max(capacity)",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "max(capacity)",
+      "stadium",
+      "stadium_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    }
+   ],
+   "oracle_executions": 4047,
+   "oracle_seconds": 0.062,
+   "error": null
+  },
+  {
+   "qid": "validation-00000",
+   "db_id": "concert_singer",
+   "category": "aggregate",
+   "guard": null,
+   "states": [
+    {
+     "edge": [
+      "count(*)",
+      "singer",
+      "age"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer",
+      "country"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer",
+      "is_male"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer",
+      "song_name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer",
+      "song_release_year"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer_in_concert",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    }
+   ],
+   "oracle_executions": 4047,
+   "oracle_seconds": 0.046,
+   "error": null
+  },
+  {
+   "qid": "validation-00002",
+   "db_id": "concert_singer",
+   "category": "projection",
+   "guard": null,
+   "states": [
+    {
+     "edge": [
+      "age",
+      "singer",
+      "age"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "age",
+      "singer",
+      "country"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "age",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "age",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "age"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "country"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "country",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "singer",
+      "age"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "singer",
+      "country"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "singer",
+      "name"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    }
+   ],
+   "oracle_executions": 4047,
+   "oracle_seconds": 0.193,
+   "error": null
+  },
+  {
+   "qid": "validation-00004",
+   "db_id": "concert_singer",
+   "category": "aggregate",
+   "guard": "null_only_result",
+   "states": [
+    {
+     "edge": [
+      "avg(age)",
+      "singer",
+      "age"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "avg(age)",
+      "singer",
+      "country"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "max(age)",
+      "singer",
+      "age"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "max(age)",
+      "singer",
+      "country"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "min(age)",
+      "singer",
+      "age"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "min(age)",
+      "singer",
+      "country"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    }
+   ],
+   "oracle_executions": 4572,
+   "oracle_seconds": 0.075,
+   "error": null
+  },
+  {
+   "qid": "validation-00006",
+   "db_id": "concert_singer",
+   "category": "projection",
+   "guard": null,
+   "states": [
+    {
+     "edge": [
+      "song_name",
+      "singer",
+      "age"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "song_name",
+      "singer",
+      "song_name"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "song_name",
+      "singer",
+      "song_release_year"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "song_release_year",
+      "singer",
+      "age"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "song_release_year",
+      "singer",
+      "song_name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "song_release_year",
+      "singer",
+      "song_release_year"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    }
+   ],
+   "oracle_executions": 5619,
+   "oracle_seconds": 0.097,
+   "error": null
+  },
+  {
+   "qid": "validation-00008",
+   "db_id": "concert_singer",
+   "category": "projection",
+   "guard": null,
+   "states": [
+    {
+     "edge": [
+      "country",
+      "singer",
+      "age"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "country"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    }
+   ],
+   "oracle_executions": 6129,
+   "oracle_seconds": 0.114,
+   "error": null
+  },
+  {
+   "qid": "validation-00010",
+   "db_id": "concert_singer",
+   "category": "aggregate",
+   "guard": "grouped_aggregate",
+   "states": [
+    {
+     "edge": [
+      "count(*)",
+      "singer",
+      "age"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer",
+      "country"
+     ],
+     "human": "POSITIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer",
+      "is_male"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer",
+      "song_name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer",
+      "song_release_year"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer_in_concert",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "age"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "country"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "is_male"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "song_name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "country",
+      "singer",
+      "song_release_year"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "country",
+      "singer_in_concert",
+      "singer_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "country",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    }
+   ],
+   "oracle_executions": 4047,
+   "oracle_seconds": 0.152,
+   "error": null
+  },
+  {
+   "qid": "validation-00016",
+   "db_id": "concert_singer",
+   "category": "aggregate",
+   "guard": null,
+   "states": [
+    {
+     "edge": [
+      "average",
+      "stadium",
+      "average"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "average",
+      "stadium",
+      "capacity"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "max(capacity)",
+      "stadium",
+      "average"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "max(capacity)",
+      "stadium",
+      "capacity"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    }
+   ],
+   "oracle_executions": 4047,
+   "oracle_seconds": 0.067,
+   "error": null
+  },
+  {
+   "qid": "validation-00017",
+   "db_id": "concert_singer",
+   "category": "aggregate",
+   "guard": null,
+   "states": [
+    {
+     "edge": [
+      "avg(capacity)",
+      "stadium",
+      "capacity"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "max(capacity)",
+      "stadium",
+      "capacity"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    }
+   ],
+   "oracle_executions": 4047,
+   "oracle_seconds": 0.063,
+   "error": null
+  },
+  {
+   "qid": "validation-00018",
+   "db_id": "concert_singer",
+   "category": "projection",
+   "guard": null,
+   "states": [
+    {
+     "edge": [
+      "capacity",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "capacity",
+      "stadium",
+      "average"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "capacity",
+      "stadium",
+      "capacity"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "capacity",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "stadium",
+      "average"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "stadium",
+      "capacity"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "stadium",
+      "name"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    }
+   ],
+   "oracle_executions": 5619,
+   "oracle_seconds": 0.096,
+   "error": null
+  },
+  {
+   "qid": "validation-00026",
+   "db_id": "concert_singer",
+   "category": "aggregate",
+   "guard": "grouped_aggregate",
+   "states": [
+    {
+     "edge": [
+      "year",
+      "concert",
+      "concert_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "year",
+      "concert",
+      "concert_name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "year",
+      "concert",
+      "stadium_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "year",
+      "concert",
+      "theme"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "year",
+      "concert",
+      "year"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "year",
+      "singer_in_concert",
+      "concert_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "year",
+      "stadium",
+      "stadium_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    }
+   ],
+   "oracle_executions": 5619,
+   "oracle_seconds": 0.12,
+   "error": null
+  },
+  {
+   "qid": "validation-00028",
+   "db_id": "concert_singer",
+   "category": "projection",
+   "guard": "subquery_candidate",
+   "states": [
+    {
+     "edge": [
+      "name",
+      "concert",
+      "stadium_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "name",
+      "stadium",
+      "name"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "stadium",
+      "stadium_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    }
+   ],
+   "oracle_executions": 4047,
+   "oracle_seconds": 0.128,
+   "error": null
+  },
+  {
+   "qid": "validation-00043",
+   "db_id": "concert_singer",
+   "category": "aggregate",
+   "guard": "subquery_candidate",
+   "states": [
+    {
+     "edge": [
+      "count(*)",
+      "concert",
+      "concert_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "concert",
+      "concert_name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "concert",
+      "stadium_id"
+     ],
+     "human": "POSITIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "concert",
+      "theme"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "concert",
+      "year"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "singer_in_concert",
+      "concert_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "stadium",
+      "average"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "stadium",
+      "capacity"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "stadium",
+      "highest"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "stadium",
+      "location"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "stadium",
+      "lowest"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "stadium",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "stadium",
+      "stadium_id"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    }
+   ],
+   "oracle_executions": 5619,
+   "oracle_seconds": 0.09,
+   "error": null
+  },
+  {
+   "qid": "validation-00049",
+   "db_id": "pets_1",
+   "category": "aggregate",
+   "guard": "grouped_aggregate",
+   "states": [
+    {
+     "edge": [
+      "max(weight)",
+      "pets",
+      "pettype"
+     ],
+     "human": "POSITIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "max(weight)",
+      "pets",
+      "weight"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "pettype",
+      "pets",
+      "pettype"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "pettype",
+      "pets",
+      "weight"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    }
+   ],
+   "oracle_executions": 2469,
+   "oracle_seconds": 0.105,
+   "error": null
+  },
+  {
+   "qid": "validation-00053",
+   "db_id": "pets_1",
+   "category": "aggregate",
+   "guard": null,
+   "states": [
+    {
+     "edge": [
+      "count(*)",
+      "has_pet",
+      "petid"
+     ],
+     "human": "UNKNOWN",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "has_pet",
+      "stuid"
+     ],
+     "human": "UNKNOWN",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "pets",
+      "petid"
+     ],
+     "human": "UNKNOWN",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "pets",
+      "pettype"
+     ],
+     "human": "UNKNOWN",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "student",
+      "sex"
+     ],
+     "human": "UNKNOWN",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "count(*)",
+      "student",
+      "stuid"
+     ],
+     "human": "UNKNOWN",
+     "state": "NEGATIVE"
+    }
+   ],
+   "oracle_executions": 3169,
+   "oracle_seconds": 0.04,
+   "error": null
+  },
+  {
+   "qid": "validation-00061",
+   "db_id": "pets_1",
+   "category": "join",
+   "guard": "subquery_candidate",
+   "states": [
+    {
+     "edge": [
+      "age",
+      "has_pet",
+      "petid"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "age",
+      "has_pet",
+      "stuid"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "age",
+      "pets",
+      "petid"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "age",
+      "pets",
+      "pettype"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "age",
+      "student",
+      "age"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "age",
+      "student",
+      "major"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "age",
+      "student",
+      "stuid"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "major",
+      "has_pet",
+      "petid"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "major",
+      "has_pet",
+      "stuid"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "major",
+      "pets",
+      "petid"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "major",
+      "pets",
+      "pettype"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "major",
+      "student",
+      "age"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "major",
+      "student",
+      "major"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "major",
+      "student",
+      "stuid"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    }
+   ],
+   "oracle_executions": 2819,
+   "oracle_seconds": 0.101,
+   "error": null
+  },
+  {
+   "qid": "validation-00063",
+   "db_id": "pets_1",
+   "category": "join",
+   "guard": "set_difference",
+   "states": [
+    {
+     "edge": [
+      "stuid",
+      "has_pet",
+      "petid"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "stuid",
+      "has_pet",
+      "stuid"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "stuid",
+      "pets",
+      "petid"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "stuid",
+      "pets",
+      "pettype"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "stuid",
+      "student",
+      "stuid"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    }
+   ],
+   "oracle_executions": 2819,
+   "oracle_seconds": 0.071,
+   "error": null
+  },
+  {
+   "qid": "validation-00067",
+   "db_id": "pets_1",
+   "category": "projection",
+   "guard": null,
+   "states": [
+    {
+     "edge": [
+      "pettype",
+      "pets",
+      "pet_age"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "pettype",
+      "pets",
+      "pettype"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "pettype",
+      "pets",
+      "weight"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "weight",
+      "pets",
+      "pet_age"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "weight",
+      "pets",
+      "pettype"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "weight",
+      "pets",
+      "weight"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    }
+   ],
+   "oracle_executions": 3513,
+   "oracle_seconds": 0.06,
+   "error": null
+  },
+  {
+   "qid": "validation-00071",
+   "db_id": "pets_1",
+   "category": "aggregate",
+   "guard": "grouped_aggregate",
+   "states": [
+    {
+     "edge": [
+      "avg(pet_age)",
+      "pets",
+      "pet_age"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "avg(pet_age)",
+      "pets",
+      "pettype"
+     ],
+     "human": "POSITIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "max(pet_age)",
+      "pets",
+      "pet_age"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "max(pet_age)",
+      "pets",
+      "pettype"
+     ],
+     "human": "POSITIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "pettype",
+      "pets",
+      "pet_age"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "pettype",
+      "pets",
+      "pettype"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    }
+   ],
+   "oracle_executions": 2469,
+   "oracle_seconds": 0.135,
+   "error": null
+  },
+  {
+   "qid": "validation-00075",
+   "db_id": "pets_1",
+   "category": "join",
+   "guard": null,
+   "states": [
+    {
+     "edge": [
+      "age",
+      "has_pet",
+      "stuid"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "age",
+      "student",
+      "age"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "age",
+      "student",
+      "fname"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "age",
+      "student",
+      "stuid"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "fname",
+      "has_pet",
+      "stuid"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "fname",
+      "student",
+      "age"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "fname",
+      "student",
+      "fname"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "fname",
+      "student",
+      "stuid"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    }
+   ],
+   "oracle_executions": 2469,
+   "oracle_seconds": 0.085,
+   "error": null
+  },
+  {
+   "qid": "validation-00095",
+   "db_id": "car_1",
+   "category": "join",
+   "guard": null,
+   "states": [
+    {
+     "edge": [
+      "model",
+      "car_makers",
+      "id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "model",
+      "car_names",
+      "makeid"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "model",
+      "car_names",
+      "model"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "model",
+      "cars_data",
+      "horsepower"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "model",
+      "cars_data",
+      "id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "model",
+      "model_list",
+      "model"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    }
+   ],
+   "oracle_executions": 5915,
+   "oracle_seconds": 0.136,
+   "error": null
+  },
+  {
+   "qid": "validation-00133",
+   "db_id": "car_1",
+   "category": "join",
+   "guard": null,
+   "states": [
+    {
+     "edge": [
+      "model",
+      "car_makers",
+      "id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "model",
+      "car_names",
+      "makeid"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "model",
+      "car_names",
+      "model"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "model",
+      "cars_data",
+      "id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "model",
+      "cars_data",
+      "mpg"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "model",
+      "model_list",
+      "model"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    }
+   ],
+   "oracle_executions": 5915,
+   "oracle_seconds": 0.139,
+   "error": null
+  },
+  {
+   "qid": "validation-00155",
+   "db_id": "car_1",
+   "category": "projection",
+   "guard": null,
+   "states": [
+    {
+     "edge": [
+      "horsepower",
+      "cars_data",
+      "accelerate"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "horsepower",
+      "cars_data",
+      "horsepower"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    }
+   ],
+   "oracle_executions": 5915,
+   "oracle_seconds": 0.126,
+   "error": null
+  },
+  {
+   "qid": "validation-00269",
+   "db_id": "employee_hire_evaluation",
+   "category": "projection",
+   "guard": null,
+   "states": [
+    {
+     "edge": [
+      "district",
+      "shop",
+      "district"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "district",
+      "shop",
+      "manager_name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "district",
+      "shop",
+      "number_products"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "manager_name",
+      "shop",
+      "district"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "manager_name",
+      "shop",
+      "manager_name"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "manager_name",
+      "shop",
+      "number_products"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    }
+   ],
+   "oracle_executions": 4575,
+   "oracle_seconds": 0.113,
+   "error": null
+  },
+  {
+   "qid": "validation-00273",
+   "db_id": "employee_hire_evaluation",
+   "category": "projection",
+   "guard": null,
+   "states": [
+    {
+     "edge": [
+      "district",
+      "employee",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "district",
+      "shop",
+      "district"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "district",
+      "shop",
+      "location"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "district",
+      "shop",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "district",
+      "shop",
+      "number_products"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "location",
+      "employee",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "location",
+      "shop",
+      "district"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "location",
+      "shop",
+      "location"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "location",
+      "shop",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "location",
+      "shop",
+      "number_products"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "employee",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "shop",
+      "district"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "shop",
+      "location"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "shop",
+      "name"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "shop",
+      "number_products"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    }
+   ],
+   "oracle_executions": 3300,
+   "oracle_seconds": 0.169,
+   "error": null
+  },
+  {
+   "qid": "validation-00281",
+   "db_id": "employee_hire_evaluation",
+   "category": "projection",
+   "guard": "subquery_candidate",
+   "states": [
+    {
+     "edge": [
+      "name",
+      "employee",
+      "employee_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "employee",
+      "name"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "evaluation",
+      "employee_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "hiring",
+      "employee_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "name",
+      "shop",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    }
+   ],
+   "oracle_executions": 3300,
+   "oracle_seconds": 0.104,
+   "error": null
+  },
+  {
+   "qid": "validation-00353",
+   "db_id": "cre_Doc_Template_Mgt",
+   "category": "join",
+   "guard": null,
+   "states": [
+    {
+     "edge": [
+      "template_type_description",
+      "documents",
+      "template_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "template_type_description",
+      "ref_template_types",
+      "template_type_code"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "template_type_description",
+      "ref_template_types",
+      "template_type_description"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "template_type_description",
+      "templates",
+      "template_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "template_type_description",
+      "templates",
+      "template_type_code"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    }
+   ],
+   "oracle_executions": 3369,
+   "oracle_seconds": 0.101,
+   "error": null
+  },
+  {
+   "qid": "validation-00399",
+   "db_id": "course_teach",
+   "category": "join",
+   "guard": null,
+   "states": [
+    {
+     "edge": [
+      "course",
+      "course",
+      "course"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "course",
+      "course",
+      "course_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "course",
+      "course_arrange",
+      "course_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "course",
+      "course_arrange",
+      "teacher_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "course",
+      "teacher",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "course",
+      "teacher",
+      "teacher_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "course",
+      "course"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "course",
+      "course_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "course_arrange",
+      "course_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "course_arrange",
+      "teacher_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "teacher",
+      "name"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "teacher",
+      "teacher_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    }
+   ],
+   "oracle_executions": 1872,
+   "oracle_seconds": 0.067,
+   "error": null
+  },
+  {
+   "qid": "validation-00459",
+   "db_id": "wta_1",
+   "category": "join",
+   "guard": null,
+   "states": [
+    {
+     "edge": [
+      "country_code",
+      "players",
+      "country_code"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "country_code",
+      "players",
+      "first_name"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "country_code",
+      "players",
+      "player_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "country_code",
+      "rankings",
+      "player_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "country_code",
+      "rankings",
+      "tours"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "first_name",
+      "players",
+      "country_code"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "first_name",
+      "players",
+      "first_name"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "first_name",
+      "players",
+      "player_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "first_name",
+      "rankings",
+      "player_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "first_name",
+      "rankings",
+      "tours"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    }
+   ],
+   "oracle_executions": 11230,
+   "oracle_seconds": 0.301,
+   "error": null
+  },
+  {
+   "qid": "validation-00505",
+   "db_id": "battle_death",
+   "category": "join",
+   "guard": "set_difference",
+   "states": [
+    {
+     "edge": [
+      "bulgarian_commander",
+      "battle",
+      "bulgarian_commander"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "bulgarian_commander",
+      "battle",
+      "id"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "bulgarian_commander",
+      "battle",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "bulgarian_commander",
+      "battle",
+      "result"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "bulgarian_commander",
+      "death",
+      "id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "bulgarian_commander",
+      "ship",
+      "id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "bulgarian_commander",
+      "ship",
+      "location"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "bulgarian_commander",
+      "ship",
+      "lost_in_battle"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "bulgarian_commander",
+      "ship",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "name",
+      "battle",
+      "bulgarian_commander"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "name",
+      "battle",
+      "id"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "name",
+      "battle",
+      "name"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "battle",
+      "result"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "name",
+      "death",
+      "id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "name",
+      "ship",
+      "id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "name",
+      "ship",
+      "location"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "name",
+      "ship",
+      "lost_in_battle"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "name",
+      "ship",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "result",
+      "battle",
+      "bulgarian_commander"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "result",
+      "battle",
+      "id"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "result",
+      "battle",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "result",
+      "battle",
+      "result"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "result",
+      "death",
+      "id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "result",
+      "ship",
+      "id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "result",
+      "ship",
+      "location"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "result",
+      "ship",
+      "lost_in_battle"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "result",
+      "ship",
+      "name"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    }
+   ],
+   "oracle_executions": 3971,
+   "oracle_seconds": 0.201,
+   "error": null
+  },
+  {
+   "qid": "validation-00545",
+   "db_id": "student_transcripts_tracking",
+   "category": "join",
+   "guard": null,
+   "states": [
+    {
+     "edge": [
+      "course_name",
+      "courses",
+      "course_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "course_name",
+      "courses",
+      "course_name"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "course_name",
+      "sections",
+      "course_id"
+     ],
+     "human": "NEGATIVE",
+     "state": "NEGATIVE"
+    },
+    {
+     "edge": [
+      "course_name",
+      "student_enrolment_courses",
+      "course_id"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    }
+   ],
+   "oracle_executions": 11013,
+   "oracle_seconds": 0.291,
+   "error": null
+  },
+  {
+   "qid": "validation-00635",
+   "db_id": "tvshow",
+   "category": "join",
+   "guard": "set_difference",
+   "states": [
+    {
+     "edge": [
+      "country",
+      "cartoon",
+      "channel"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "country",
+      "cartoon",
+      "id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "country",
+      "cartoon",
+      "written_by"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "country",
+      "tv_channel",
+      "country"
+     ],
+     "human": "POSITIVE",
+     "state": "POSITIVE"
+    },
+    {
+     "edge": [
+      "country",
+      "tv_channel",
+      "id"
+     ],
+     "human": "UNKNOWN",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "country",
+      "tv_series",
+      "channel"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    },
+    {
+     "edge": [
+      "country",
+      "tv_series",
+      "id"
+     ],
+     "human": "NEGATIVE",
+     "state": "UNKNOWN"
+    }
+   ],
+   "oracle_executions": 5873,
+   "oracle_seconds": 0.172,
+   "error": null
+  }
+ ]
+}

@@ -1,0 +1,4398 @@
+{
+ "validation-00000": {
+  "output_columns": [
+   "count(*)"
+  ],
+  "n_rows": 1,
+  "error": null,
+  "edges": {},
+  "unreferenced": [
+   [
+    "singer",
+    "Singer_ID"
+   ],
+   [
+    "singer",
+    "Name"
+   ],
+   [
+    "singer",
+    "Country"
+   ],
+   [
+    "singer",
+    "Song_Name"
+   ],
+   [
+    "singer",
+    "Song_release_year"
+   ],
+   [
+    "singer",
+    "Age"
+   ],
+   [
+    "singer",
+    "Is_male"
+   ]
+  ],
+  "referenced_tables": [
+   "singer"
+  ]
+ },
+ "validation-00004": {
+  "output_columns": [
+   "avg(age)",
+   "min(age)",
+   "max(age)"
+  ],
+  "n_rows": 1,
+  "error": null,
+  "edges": {
+   "avg(age)\u0001singer\u0001Country": {
+    "output_column": "avg(age)",
+    "source_table": "singer",
+    "source_column": "Country",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'France'",
+      "error": null
+     }
+    ]
+   },
+   "min(age)\u0001singer\u0001Country": {
+    "output_column": "min(age)",
+    "source_table": "singer",
+    "source_column": "Country",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'France'",
+      "error": null
+     }
+    ]
+   },
+   "max(age)\u0001singer\u0001Country": {
+    "output_column": "max(age)",
+    "source_table": "singer",
+    "source_column": "Country",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'France'",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [],
+  "referenced_tables": [
+   "singer"
+  ]
+ },
+ "validation-00010": {
+  "output_columns": [
+   "Country",
+   "count(*)"
+  ],
+  "n_rows": 25,
+  "error": null,
+  "edges": {
+   "Country\u0001singer\u0001Country": {
+    "output_column": "Country",
+    "source_table": "singer",
+    "source_column": "Country",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v5_0_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v10_16'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v12_12'",
+      "error": null
+     }
+    ]
+   },
+   "count(*)\u0001singer\u0001Country": {
+    "output_column": "count(*)",
+    "source_table": "singer",
+    "source_column": "Country",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v10_16'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v12_12'",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [
+   [
+    "singer",
+    "Singer_ID"
+   ],
+   [
+    "singer",
+    "Name"
+   ],
+   [
+    "singer",
+    "Song_Name"
+   ],
+   [
+    "singer",
+    "Song_release_year"
+   ],
+   [
+    "singer",
+    "Age"
+   ],
+   [
+    "singer",
+    "Is_male"
+   ]
+  ],
+  "referenced_tables": [
+   "singer"
+  ]
+ },
+ "validation-00016": {
+  "output_columns": [
+   "max(capacity)",
+   "Average"
+  ],
+  "n_rows": 1,
+  "error": null,
+  "edges": {
+   "max(capacity)\u0001stadium\u0001Capacity": {
+    "output_column": "max(capacity)",
+    "source_table": "stadium",
+    "source_column": "Capacity",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "17.0",
+      "new": "117.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 2,
+      "old": "36.0",
+      "new": "136.0",
+      "error": null
+     }
+    ]
+   },
+   "Average\u0001stadium\u0001Capacity": {
+    "output_column": "Average",
+    "source_table": "stadium",
+    "source_column": "Capacity",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 2,
+      "old": "36.0",
+      "new": "136.0",
+      "error": null
+     }
+    ]
+   },
+   "Average\u0001stadium\u0001Average": {
+    "output_column": "Average",
+    "source_table": "stadium",
+    "source_column": "Average",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 9,
+      "old": "33.0",
+      "new": "34.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 9,
+      "old": "33.0",
+      "new": "32.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 9,
+      "old": "33.0",
+      "new": "-1000000.0",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [],
+  "referenced_tables": [
+   "stadium"
+  ]
+ },
+ "validation-00017": {
+  "output_columns": [
+   "avg(capacity)",
+   "max(capacity)"
+  ],
+  "n_rows": 1,
+  "error": null,
+  "edges": {
+   "avg(capacity)\u0001stadium\u0001Capacity": {
+    "output_column": "avg(capacity)",
+    "source_table": "stadium",
+    "source_column": "Capacity",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "17.0",
+      "new": "18.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "17.0",
+      "new": "16.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "17.0",
+      "new": "-1000000.0",
+      "error": null
+     }
+    ]
+   },
+   "max(capacity)\u0001stadium\u0001Capacity": {
+    "output_column": "max(capacity)",
+    "source_table": "stadium",
+    "source_column": "Capacity",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "17.0",
+      "new": "117.0",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [],
+  "referenced_tables": [
+   "stadium"
+  ]
+ },
+ "validation-00026": {
+  "output_columns": [
+   "Year"
+  ],
+  "n_rows": 1,
+  "error": null,
+  "edges": {
+   "Year\u0001concert\u0001Year": {
+    "output_column": "Year",
+    "source_table": "concert",
+    "source_column": "Year",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v10_0'",
+      "new": "'v2_23'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v10_0'",
+      "new": "'v10_4'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v10_0'",
+      "new": "'zzz_p'",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [
+   [
+    "concert",
+    "concert_ID"
+   ],
+   [
+    "concert",
+    "concert_Name"
+   ],
+   [
+    "concert",
+    "Theme"
+   ],
+   [
+    "concert",
+    "Stadium_ID"
+   ]
+  ],
+  "referenced_tables": [
+   "concert"
+  ]
+ },
+ "validation-00043": {
+  "output_columns": [
+   "count(*)"
+  ],
+  "n_rows": 1,
+  "error": null,
+  "edges": {},
+  "unreferenced": [
+   [
+    "stadium",
+    "Location"
+   ],
+   [
+    "stadium",
+    "Name"
+   ],
+   [
+    "stadium",
+    "Highest"
+   ],
+   [
+    "stadium",
+    "Lowest"
+   ],
+   [
+    "stadium",
+    "Average"
+   ],
+   [
+    "concert",
+    "concert_ID"
+   ],
+   [
+    "concert",
+    "concert_Name"
+   ],
+   [
+    "concert",
+    "Theme"
+   ],
+   [
+    "concert",
+    "Year"
+   ]
+  ],
+  "referenced_tables": [
+   "stadium",
+   "concert"
+  ]
+ },
+ "validation-00049": {
+  "output_columns": [
+   "max(weight)",
+   "PetType"
+  ],
+  "n_rows": 25,
+  "error": null,
+  "edges": {
+   "max(weight)\u0001Pets\u0001PetType": {
+    "output_column": "max(weight)",
+    "source_table": "Pets",
+    "source_column": "PetType",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v6_0'",
+      "new": "'v8_6'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v6_0'",
+      "new": "'v6_12'",
+      "error": null
+     }
+    ]
+   },
+   "PetType\u0001Pets\u0001PetType": {
+    "output_column": "PetType",
+    "source_table": "Pets",
+    "source_column": "PetType",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v6_0'",
+      "new": "'v6_0_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v6_0'",
+      "new": "'v8_6'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v6_0'",
+      "new": "'v6_12'",
+      "error": null
+     }
+    ]
+   },
+   "max(weight)\u0001Pets\u0001weight": {
+    "output_column": "max(weight)",
+    "source_table": "Pets",
+    "source_column": "weight",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "21.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "19.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "-1000000.0",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [],
+  "referenced_tables": [
+   "Pets"
+  ]
+ },
+ "validation-00053": {
+  "output_columns": [
+   "count(*)"
+  ],
+  "n_rows": 1,
+  "error": null,
+  "edges": {},
+  "unreferenced": [],
+  "referenced_tables": [
+   "Student",
+   "Has_Pet",
+   "Pets"
+  ]
+ },
+ "validation-00071": {
+  "output_columns": [
+   "avg(pet_age)",
+   "max(pet_age)",
+   "PetType"
+  ],
+  "n_rows": 25,
+  "error": null,
+  "edges": {
+   "avg(pet_age)\u0001Pets\u0001PetType": {
+    "output_column": "avg(pet_age)",
+    "source_table": "Pets",
+    "source_column": "PetType",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v6_0'",
+      "new": "'v8_6'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v6_0'",
+      "new": "'v6_12'",
+      "error": null
+     }
+    ]
+   },
+   "max(pet_age)\u0001Pets\u0001PetType": {
+    "output_column": "max(pet_age)",
+    "source_table": "Pets",
+    "source_column": "PetType",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v6_0'",
+      "new": "'v8_6'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v6_0'",
+      "new": "'v6_12'",
+      "error": null
+     }
+    ]
+   },
+   "PetType\u0001Pets\u0001PetType": {
+    "output_column": "PetType",
+    "source_table": "Pets",
+    "source_column": "PetType",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v6_0'",
+      "new": "'v6_0_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v6_0'",
+      "new": "'v8_6'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v6_0'",
+      "new": "'v6_12'",
+      "error": null
+     }
+    ]
+   },
+   "avg(pet_age)\u0001Pets\u0001pet_age": {
+    "output_column": "avg(pet_age)",
+    "source_table": "Pets",
+    "source_column": "pet_age",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "31.0",
+      "new": "32.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "31.0",
+      "new": "30.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "31.0",
+      "new": "-1000000.0",
+      "error": null
+     }
+    ]
+   },
+   "max(pet_age)\u0001Pets\u0001pet_age": {
+    "output_column": "max(pet_age)",
+    "source_table": "Pets",
+    "source_column": "pet_age",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "31.0",
+      "new": "32.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "31.0",
+      "new": "30.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "31.0",
+      "new": "-1000000.0",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [],
+  "referenced_tables": [
+   "Pets"
+  ]
+ },
+ "synth-case-002": {
+  "output_columns": [
+   "name",
+   "country",
+   "age",
+   "bucket"
+  ],
+  "n_rows": 25,
+  "error": null,
+  "edges": {
+   "name\u0001singer\u0001Name": {
+    "output_column": "name",
+    "source_table": "singer",
+    "source_column": "Name",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v5_0_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v7_6'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v4_20'",
+      "error": null
+     }
+    ]
+   },
+   "country\u0001singer\u0001Country": {
+    "output_column": "country",
+    "source_table": "singer",
+    "source_column": "Country",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v5_0_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v10_16'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v12_12'",
+      "error": null
+     }
+    ]
+   },
+   "age\u0001singer\u0001Age": {
+    "output_column": "age",
+    "source_table": "singer",
+    "source_column": "Age",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "21.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "19.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "0.0",
+      "error": null
+     }
+    ]
+   },
+   "bucket\u0001singer\u0001Age": {
+    "output_column": "bucket",
+    "source_table": "singer",
+    "source_column": "Age",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "0.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "-1.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "-1000000.0",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [
+   [
+    "singer",
+    "Singer_ID"
+   ],
+   [
+    "singer",
+    "Song_Name"
+   ],
+   [
+    "singer",
+    "Song_release_year"
+   ],
+   [
+    "singer",
+    "Is_male"
+   ]
+  ],
+  "referenced_tables": [
+   "singer"
+  ]
+ },
+ "synth-case-006": {
+  "output_columns": [
+   "max(capacity)",
+   "average",
+   "bucket"
+  ],
+  "n_rows": 1,
+  "error": null,
+  "edges": {
+   "max(capacity)\u0001stadium\u0001Capacity": {
+    "output_column": "max(capacity)",
+    "source_table": "stadium",
+    "source_column": "Capacity",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "17.0",
+      "new": "117.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 2,
+      "old": "36.0",
+      "new": "136.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 3,
+      "old": "14.0",
+      "new": "114.0",
+      "error": null
+     }
+    ]
+   },
+   "average\u0001stadium\u0001Capacity": {
+    "output_column": "average",
+    "source_table": "stadium",
+    "source_column": "Capacity",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 2,
+      "old": "36.0",
+      "new": "136.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 3,
+      "old": "14.0",
+      "new": "114.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 4,
+      "old": "25.0",
+      "new": "125.0",
+      "error": null
+     }
+    ]
+   },
+   "average\u0001stadium\u0001Average": {
+    "output_column": "average",
+    "source_table": "stadium",
+    "source_column": "Average",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 9,
+      "old": "33.0",
+      "new": "34.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 9,
+      "old": "33.0",
+      "new": "32.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 9,
+      "old": "33.0",
+      "new": "0.0",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [
+   [
+    "stadium",
+    "Stadium_ID"
+   ],
+   [
+    "stadium",
+    "Location"
+   ],
+   [
+    "stadium",
+    "Name"
+   ],
+   [
+    "stadium",
+    "Highest"
+   ],
+   [
+    "stadium",
+    "Lowest"
+   ]
+  ],
+  "referenced_tables": [
+   "stadium"
+  ]
+ },
+ "synth-case-008": {
+  "output_columns": [
+   "name",
+   "capacity",
+   "bucket"
+  ],
+  "n_rows": 1,
+  "error": null,
+  "edges": {
+   "name\u0001stadium\u0001Name": {
+    "output_column": "name",
+    "source_table": "stadium",
+    "source_column": "Name",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 14,
+      "old": "'v5_13'",
+      "new": "'v5_13_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 14,
+      "old": "'v5_13'",
+      "new": "'v7_19'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 14,
+      "old": "'v5_13'",
+      "new": "'v2_23'",
+      "error": null
+     }
+    ]
+   },
+   "capacity\u0001stadium\u0001Capacity": {
+    "output_column": "capacity",
+    "source_table": "stadium",
+    "source_column": "Capacity",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 14,
+      "old": "2.0",
+      "new": "3.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 14,
+      "old": "2.0",
+      "new": "1.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 14,
+      "old": "2.0",
+      "new": "0.0",
+      "error": null
+     }
+    ]
+   },
+   "bucket\u0001stadium\u0001Capacity": {
+    "output_column": "bucket",
+    "source_table": "stadium",
+    "source_column": "Capacity",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 14,
+      "old": "2.0",
+      "new": "0.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 14,
+      "old": "2.0",
+      "new": "-1.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 14,
+      "old": "2.0",
+      "new": "-1000000.0",
+      "error": null
+     }
+    ]
+   },
+   "name\u0001stadium\u0001Average": {
+    "output_column": "name",
+    "source_table": "stadium",
+    "source_column": "Average",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "33.0",
+      "new": "133.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 2,
+      "old": "31.0",
+      "new": "131.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 3,
+      "old": "3.0",
+      "new": "103.0",
+      "error": null
+     }
+    ]
+   },
+   "capacity\u0001stadium\u0001Average": {
+    "output_column": "capacity",
+    "source_table": "stadium",
+    "source_column": "Average",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "33.0",
+      "new": "133.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 2,
+      "old": "31.0",
+      "new": "131.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 3,
+      "old": "3.0",
+      "new": "103.0",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [
+   [
+    "stadium",
+    "Stadium_ID"
+   ],
+   [
+    "stadium",
+    "Location"
+   ],
+   [
+    "stadium",
+    "Highest"
+   ],
+   [
+    "stadium",
+    "Lowest"
+   ]
+  ],
+  "referenced_tables": [
+   "stadium"
+  ]
+ },
+ "synth-case-012": {
+  "output_columns": [
+   "concert_name",
+   "theme",
+   "count(*)",
+   "bucket"
+  ],
+  "n_rows": 7,
+  "error": null,
+  "edges": {
+   "concert_name\u0001concert\u0001concert_ID": {
+    "output_column": "concert_name",
+    "source_table": "concert",
+    "source_column": "concert_ID",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 2,
+      "old": "10.0",
+      "new": "9.0",
+      "error": null
+     }
+    ]
+   },
+   "theme\u0001concert\u0001concert_ID": {
+    "output_column": "theme",
+    "source_table": "concert",
+    "source_column": "concert_ID",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 2,
+      "old": "10.0",
+      "new": "9.0",
+      "error": null
+     }
+    ]
+   },
+   "count(*)\u0001concert\u0001concert_ID": {
+    "output_column": "count(*)",
+    "source_table": "concert",
+    "source_column": "concert_ID",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 2,
+      "old": "10.0",
+      "new": "9.0",
+      "error": null
+     }
+    ]
+   },
+   "bucket\u0001concert\u0001concert_ID": {
+    "output_column": "bucket",
+    "source_table": "concert",
+    "source_column": "concert_ID",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 2,
+      "old": "10.0",
+      "new": "9.0",
+      "error": null
+     }
+    ]
+   },
+   "concert_name\u0001concert\u0001concert_Name": {
+    "output_column": "concert_name",
+    "source_table": "concert",
+    "source_column": "concert_Name",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 7,
+      "old": "'v4_6'",
+      "new": "'v4_6_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 7,
+      "old": "'v4_6'",
+      "new": "'v12_19'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 7,
+      "old": "'v4_6'",
+      "new": "'v11_5'",
+      "error": null
+     }
+    ]
+   },
+   "theme\u0001concert\u0001Theme": {
+    "output_column": "theme",
+    "source_table": "concert",
+    "source_column": "Theme",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 7,
+      "old": "'v3_6'",
+      "new": "'v3_6_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 7,
+      "old": "'v3_6'",
+      "new": "'v3_10'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 7,
+      "old": "'v3_6'",
+      "new": "'v8_13'",
+      "error": null
+     }
+    ]
+   },
+   "concert_name\u0001singer_in_concert\u0001concert_ID": {
+    "output_column": "concert_name",
+    "source_table": "singer_in_concert",
+    "source_column": "concert_ID",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "18.0",
+      "new": "1.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "18.0",
+      "new": "2.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "18.0",
+      "new": "10.0",
+      "error": null
+     }
+    ]
+   },
+   "theme\u0001singer_in_concert\u0001concert_ID": {
+    "output_column": "theme",
+    "source_table": "singer_in_concert",
+    "source_column": "concert_ID",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "18.0",
+      "new": "1.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "18.0",
+      "new": "2.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "18.0",
+      "new": "10.0",
+      "error": null
+     }
+    ]
+   },
+   "count(*)\u0001singer_in_concert\u0001concert_ID": {
+    "output_column": "count(*)",
+    "source_table": "singer_in_concert",
+    "source_column": "concert_ID",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "18.0",
+      "new": "17.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "18.0",
+      "new": "0.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "18.0",
+      "new": "-1.0",
+      "error": null
+     }
+    ]
+   },
+   "bucket\u0001singer_in_concert\u0001concert_ID": {
+    "output_column": "bucket",
+    "source_table": "singer_in_concert",
+    "source_column": "concert_ID",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "18.0",
+      "new": "1.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "18.0",
+      "new": "2.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "18.0",
+      "new": "10.0",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [
+   [
+    "concert",
+    "Stadium_ID"
+   ],
+   [
+    "concert",
+    "Year"
+   ],
+   [
+    "singer_in_concert",
+    "Singer_ID"
+   ]
+  ],
+  "referenced_tables": [
+   "concert",
+   "singer_in_concert"
+  ]
+ },
+ "synth-case-014": {
+  "output_columns": [
+   "count(*)",
+   "bucket"
+  ],
+  "n_rows": 1,
+  "error": null,
+  "edges": {},
+  "unreferenced": [
+   [
+    "stadium",
+    "Location"
+   ],
+   [
+    "stadium",
+    "Name"
+   ],
+   [
+    "stadium",
+    "Highest"
+   ],
+   [
+    "stadium",
+    "Lowest"
+   ],
+   [
+    "stadium",
+    "Average"
+   ],
+   [
+    "concert",
+    "concert_ID"
+   ],
+   [
+    "concert",
+    "concert_Name"
+   ],
+   [
+    "concert",
+    "Theme"
+   ],
+   [
+    "concert",
+    "Year"
+   ]
+  ],
+  "referenced_tables": [
+   "stadium",
+   "concert"
+  ]
+ },
+ "synth-case-016": {
+  "output_columns": [
+   "count(*)",
+   "bucket"
+  ],
+  "n_rows": 1,
+  "error": null,
+  "edges": {
+   "count(*)\u0001Pets\u0001weight": {
+    "output_column": "count(*)",
+    "source_table": "Pets",
+    "source_column": "weight",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "0.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "10.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "-1.0",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [],
+  "referenced_tables": [
+   "Pets"
+  ]
+ },
+ "synth-cte-002": {
+  "output_columns": [
+   "name",
+   "country",
+   "age"
+  ],
+  "n_rows": 25,
+  "error": null,
+  "edges": {
+   "name\u0001singer\u0001Name": {
+    "output_column": "name",
+    "source_table": "singer",
+    "source_column": "Name",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v5_0_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v7_6'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v4_20'",
+      "error": null
+     }
+    ]
+   },
+   "country\u0001singer\u0001Country": {
+    "output_column": "country",
+    "source_table": "singer",
+    "source_column": "Country",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v5_0_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v10_16'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v12_12'",
+      "error": null
+     }
+    ]
+   },
+   "age\u0001singer\u0001Age": {
+    "output_column": "age",
+    "source_table": "singer",
+    "source_column": "Age",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "21.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "19.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "-1000000.0",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [
+   [
+    "singer",
+    "Singer_ID"
+   ],
+   [
+    "singer",
+    "Song_Name"
+   ],
+   [
+    "singer",
+    "Song_release_year"
+   ],
+   [
+    "singer",
+    "Is_male"
+   ]
+  ],
+  "referenced_tables": [
+   "singer"
+  ]
+ },
+ "synth-cte-006": {
+  "output_columns": [
+   "song_name",
+   "song_release_year"
+  ],
+  "n_rows": 1,
+  "error": null,
+  "edges": {
+   "song_name\u0001singer\u0001Song_Name": {
+    "output_column": "song_name",
+    "source_table": "singer",
+    "source_column": "Song_Name",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 13,
+      "old": "'v7_12'",
+      "new": "'v7_12_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 13,
+      "old": "'v7_12'",
+      "new": "'v10_16'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 13,
+      "old": "'v7_12'",
+      "new": "'v6_1'",
+      "error": null
+     }
+    ]
+   },
+   "song_release_year\u0001singer\u0001Song_release_year": {
+    "output_column": "song_release_year",
+    "source_table": "singer",
+    "source_column": "Song_release_year",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 13,
+      "old": "'v8_12'",
+      "new": "'v8_12_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 13,
+      "old": "'v8_12'",
+      "new": "'v6_1'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 13,
+      "old": "'v8_12'",
+      "new": "'v7_16'",
+      "error": null
+     }
+    ]
+   },
+   "song_name\u0001singer\u0001Age": {
+    "output_column": "song_name",
+    "source_table": "singer",
+    "source_column": "Age",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "1.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "0.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "2.0",
+      "error": null
+     }
+    ]
+   },
+   "song_release_year\u0001singer\u0001Age": {
+    "output_column": "song_release_year",
+    "source_table": "singer",
+    "source_column": "Age",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "1.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "0.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "2.0",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [
+   [
+    "singer",
+    "Singer_ID"
+   ],
+   [
+    "singer",
+    "Name"
+   ],
+   [
+    "singer",
+    "Country"
+   ],
+   [
+    "singer",
+    "Is_male"
+   ]
+  ],
+  "referenced_tables": [
+   "singer"
+  ]
+ },
+ "synth-cte-010": {
+  "output_columns": [
+   "country",
+   "count(*)"
+  ],
+  "n_rows": 25,
+  "error": null,
+  "edges": {
+   "country\u0001singer\u0001Country": {
+    "output_column": "country",
+    "source_table": "singer",
+    "source_column": "Country",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v5_0_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v10_16'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v12_12'",
+      "error": null
+     }
+    ]
+   },
+   "count(*)\u0001singer\u0001Country": {
+    "output_column": "count(*)",
+    "source_table": "singer",
+    "source_column": "Country",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v10_16'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v12_12'",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [
+   [
+    "singer",
+    "Singer_ID"
+   ],
+   [
+    "singer",
+    "Name"
+   ],
+   [
+    "singer",
+    "Song_Name"
+   ],
+   [
+    "singer",
+    "Song_release_year"
+   ],
+   [
+    "singer",
+    "Age"
+   ],
+   [
+    "singer",
+    "Is_male"
+   ]
+  ],
+  "referenced_tables": [
+   "singer"
+  ]
+ },
+ "synth-cte-012": {
+  "output_columns": [
+   "song_name"
+  ],
+  "n_rows": 13,
+  "error": null,
+  "edges": {
+   "song_name\u0001singer\u0001Song_Name": {
+    "output_column": "song_name",
+    "source_table": "singer",
+    "source_column": "Song_Name",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v8_0'",
+      "new": "'v8_0_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v8_0'",
+      "new": "'v10_16'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v8_0'",
+      "new": "'v6_1'",
+      "error": null
+     }
+    ]
+   },
+   "song_name\u0001singer\u0001Age": {
+    "output_column": "song_name",
+    "source_table": "singer",
+    "source_column": "Age",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "-1000000.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "120.0",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [
+   [
+    "singer",
+    "Singer_ID"
+   ],
+   [
+    "singer",
+    "Name"
+   ],
+   [
+    "singer",
+    "Country"
+   ],
+   [
+    "singer",
+    "Song_release_year"
+   ],
+   [
+    "singer",
+    "Is_male"
+   ]
+  ],
+  "referenced_tables": [
+   "singer"
+  ]
+ },
+ "synth-cte-014": {
+  "output_columns": [
+   "max(capacity)",
+   "average"
+  ],
+  "n_rows": 1,
+  "error": null,
+  "edges": {
+   "max(capacity)\u0001stadium\u0001Capacity": {
+    "output_column": "max(capacity)",
+    "source_table": "stadium",
+    "source_column": "Capacity",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "17.0",
+      "new": "117.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 2,
+      "old": "36.0",
+      "new": "136.0",
+      "error": null
+     }
+    ]
+   },
+   "average\u0001stadium\u0001Capacity": {
+    "output_column": "average",
+    "source_table": "stadium",
+    "source_column": "Capacity",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 2,
+      "old": "36.0",
+      "new": "136.0",
+      "error": null
+     }
+    ]
+   },
+   "average\u0001stadium\u0001Average": {
+    "output_column": "average",
+    "source_table": "stadium",
+    "source_column": "Average",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 9,
+      "old": "33.0",
+      "new": "34.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 9,
+      "old": "33.0",
+      "new": "32.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 9,
+      "old": "33.0",
+      "new": "-1000000.0",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [
+   [
+    "stadium",
+    "Stadium_ID"
+   ],
+   [
+    "stadium",
+    "Location"
+   ],
+   [
+    "stadium",
+    "Name"
+   ],
+   [
+    "stadium",
+    "Highest"
+   ],
+   [
+    "stadium",
+    "Lowest"
+   ]
+  ],
+  "referenced_tables": [
+   "stadium"
+  ]
+ },
+ "validation-00061": {
+  "output_columns": [
+   "Major",
+   "Age"
+  ],
+  "n_rows": 25,
+  "error": null,
+  "edges": {
+   "Age\u0001Student\u0001Age": {
+    "output_column": "Age",
+    "source_table": "Student",
+    "source_column": "Age",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "12.0",
+      "new": "13.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "12.0",
+      "new": "11.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "12.0",
+      "new": "-1000000.0",
+      "error": null
+     }
+    ]
+   },
+   "Major\u0001Student\u0001Major": {
+    "output_column": "Major",
+    "source_table": "Student",
+    "source_column": "Major",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "26.0",
+      "new": "27.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "26.0",
+      "new": "25.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "26.0",
+      "new": "-1000000.0",
+      "error": null
+     }
+    ]
+   },
+   "Major\u0001Pets\u0001PetType": {
+    "output_column": "Major",
+    "source_table": "Pets",
+    "source_column": "PetType",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 3,
+      "old": "'v2_2'",
+      "new": "'cat'",
+      "error": null
+     }
+    ]
+   },
+   "Age\u0001Pets\u0001PetType": {
+    "output_column": "Age",
+    "source_table": "Pets",
+    "source_column": "PetType",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 3,
+      "old": "'v2_2'",
+      "new": "'cat'",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [],
+  "referenced_tables": [
+   "Student",
+   "Has_Pet",
+   "Pets"
+  ]
+ },
+ "validation-00063": {
+  "output_columns": [
+   "StuID"
+  ],
+  "n_rows": 17,
+  "error": null,
+  "edges": {
+   "StuID\u0001Student\u0001StuID": {
+    "output_column": "StuID",
+    "source_table": "Student",
+    "source_column": "StuID",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "19.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "-1000000.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "0",
+      "error": null
+     }
+    ]
+   },
+   "StuID\u0001Pets\u0001PetType": {
+    "output_column": "StuID",
+    "source_table": "Pets",
+    "source_column": "PetType",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 3,
+      "old": "'v2_2'",
+      "new": "'cat'",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [],
+  "referenced_tables": [
+   "Student",
+   "Has_Pet",
+   "Pets"
+  ]
+ },
+ "validation-00075": {
+  "output_columns": [
+   "Fname",
+   "Age"
+  ],
+  "n_rows": 12,
+  "error": null,
+  "edges": {
+   "Fname\u0001Student\u0001StuID": {
+    "output_column": "Fname",
+    "source_table": "Student",
+    "source_column": "StuID",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "21.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "-1000000.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "0",
+      "error": null
+     }
+    ]
+   },
+   "Age\u0001Student\u0001StuID": {
+    "output_column": "Age",
+    "source_table": "Student",
+    "source_column": "StuID",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "21.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "-1000000.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "0",
+      "error": null
+     }
+    ]
+   },
+   "Fname\u0001Student\u0001Fname": {
+    "output_column": "Fname",
+    "source_table": "Student",
+    "source_column": "Fname",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v8_0'",
+      "new": "'v8_0_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v8_0'",
+      "new": "'v10_9'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v8_0'",
+      "new": "'v4_20'",
+      "error": null
+     }
+    ]
+   },
+   "Age\u0001Student\u0001Age": {
+    "output_column": "Age",
+    "source_table": "Student",
+    "source_column": "Age",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "12.0",
+      "new": "13.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "12.0",
+      "new": "11.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "12.0",
+      "new": "-1000000.0",
+      "error": null
+     }
+    ]
+   },
+   "Fname\u0001Has_Pet\u0001StuID": {
+    "output_column": "Fname",
+    "source_table": "Has_Pet",
+    "source_column": "StuID",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "27.0",
+      "new": "28.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "27.0",
+      "new": "6.0",
+      "error": null
+     }
+    ]
+   },
+   "Age\u0001Has_Pet\u0001StuID": {
+    "output_column": "Age",
+    "source_table": "Has_Pet",
+    "source_column": "StuID",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "27.0",
+      "new": "28.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "27.0",
+      "new": "6.0",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [],
+  "referenced_tables": [
+   "Student",
+   "Has_Pet"
+  ]
+ },
+ "validation-00095": {
+  "output_columns": [
+   "Model"
+  ],
+  "n_rows": 1,
+  "error": null,
+  "edges": {
+   "Model\u0001car_names\u0001MakeId": {
+    "output_column": "Model",
+    "source_table": "car_names",
+    "source_column": "MakeId",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 8,
+      "old": "18.0",
+      "new": "17.0",
+      "error": null
+     }
+    ]
+   },
+   "Model\u0001car_names\u0001Model": {
+    "output_column": "Model",
+    "source_table": "car_names",
+    "source_column": "Model",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 11,
+      "old": "'v6_10'",
+      "new": "'v6_10_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 11,
+      "old": "'v6_10'",
+      "new": "'v11_15'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 11,
+      "old": "'v6_10'",
+      "new": "'v8_24'",
+      "error": null
+     }
+    ]
+   },
+   "Model\u0001cars_data\u0001Id": {
+    "output_column": "Model",
+    "source_table": "cars_data",
+    "source_column": "Id",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 13,
+      "old": "17.0",
+      "new": "18.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 13,
+      "old": "17.0",
+      "new": "16.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 13,
+      "old": "17.0",
+      "new": "1.0",
+      "error": null
+     }
+    ]
+   },
+   "Model\u0001cars_data\u0001Horsepower": {
+    "output_column": "Model",
+    "source_table": "cars_data",
+    "source_column": "Horsepower",
+    "witnesses": [
+     {
+      "family": "VALUE_TO_NULL",
+      "rowid": 3,
+      "old": "'v2_2'",
+      "new": "None",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 3,
+      "old": "'v2_2'",
+      "new": "''",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 3,
+      "old": "'v2_2'",
+      "new": "1",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [],
+  "referenced_tables": [
+   "car_names",
+   "cars_data"
+  ]
+ },
+ "validation-00133": {
+  "output_columns": [
+   "Model"
+  ],
+  "n_rows": 1,
+  "error": null,
+  "edges": {
+   "Model\u0001car_names\u0001MakeId": {
+    "output_column": "Model",
+    "source_table": "car_names",
+    "source_column": "MakeId",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "32.0",
+      "new": "1.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "32.0",
+      "new": "2.0",
+      "error": null
+     }
+    ]
+   },
+   "Model\u0001car_names\u0001Model": {
+    "output_column": "Model",
+    "source_table": "car_names",
+    "source_column": "Model",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 6,
+      "old": "'v1_5'",
+      "new": "'v1_5_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 6,
+      "old": "'v1_5'",
+      "new": "'v11_15'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 6,
+      "old": "'v1_5'",
+      "new": "'v8_24'",
+      "error": null
+     }
+    ]
+   },
+   "Model\u0001cars_data\u0001Id": {
+    "output_column": "Model",
+    "source_table": "cars_data",
+    "source_column": "Id",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "6.0",
+      "new": "7.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "6.0",
+      "new": "32.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "6.0",
+      "new": "39.0",
+      "error": null
+     }
+    ]
+   },
+   "Model\u0001cars_data\u0001MPG": {
+    "output_column": "Model",
+    "source_table": "cars_data",
+    "source_column": "MPG",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 3,
+      "old": "'v8_2'",
+      "new": "'v4_21'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 3,
+      "old": "'v8_2'",
+      "new": "'v2_22'",
+      "error": null
+     },
+     {
+      "family": "VALUE_TO_NULL",
+      "rowid": 3,
+      "old": "'v8_2'",
+      "new": "None",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [],
+  "referenced_tables": [
+   "car_names",
+   "cars_data"
+  ]
+ },
+ "validation-00353": {
+  "output_columns": [
+   "Template_Type_Description"
+  ],
+  "n_rows": 1,
+  "error": null,
+  "edges": {
+   "Template_Type_Description\u0001Ref_Template_Types\u0001Template_Type_Code": {
+    "output_column": "Template_Type_Description",
+    "source_table": "Ref_Template_Types",
+    "source_column": "Template_Type_Code",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 10,
+      "old": "'v9_9'",
+      "new": "'v9_9_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 10,
+      "old": "'v9_9'",
+      "new": "'v2_23'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 10,
+      "old": "'v9_9'",
+      "new": "'v12_19'",
+      "error": null
+     }
+    ]
+   },
+   "Template_Type_Description\u0001Ref_Template_Types\u0001Template_Type_Description": {
+    "output_column": "Template_Type_Description",
+    "source_table": "Ref_Template_Types",
+    "source_column": "Template_Type_Description",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 10,
+      "old": "'v4_9'",
+      "new": "'v4_9_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 10,
+      "old": "'v4_9'",
+      "new": "'v8_17'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 10,
+      "old": "'v4_9'",
+      "new": "'v2_15'",
+      "error": null
+     }
+    ]
+   },
+   "Template_Type_Description\u0001Templates\u0001Template_ID": {
+    "output_column": "Template_Type_Description",
+    "source_table": "Templates",
+    "source_column": "Template_ID",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 3,
+      "old": "27.0",
+      "new": "26.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 3,
+      "old": "27.0",
+      "new": "19.0",
+      "error": null
+     }
+    ]
+   },
+   "Template_Type_Description\u0001Templates\u0001Template_Type_Code": {
+    "output_column": "Template_Type_Description",
+    "source_table": "Templates",
+    "source_column": "Template_Type_Code",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 10,
+      "old": "'v9_9'",
+      "new": "'v9_9_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 10,
+      "old": "'v9_9'",
+      "new": "'v6_3'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 10,
+      "old": "'v9_9'",
+      "new": "'v7_16'",
+      "error": null
+     }
+    ]
+   },
+   "Template_Type_Description\u0001Documents\u0001Template_ID": {
+    "output_column": "Template_Type_Description",
+    "source_table": "Documents",
+    "source_column": "Template_ID",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 12,
+      "old": "7.0",
+      "new": "8.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 12,
+      "old": "7.0",
+      "new": "6.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 12,
+      "old": "7.0",
+      "new": "-1000000.0",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [],
+  "referenced_tables": [
+   "Ref_Template_Types",
+   "Templates",
+   "Documents"
+  ]
+ },
+ "validation-00399": {
+  "output_columns": [
+   "Name",
+   "Course"
+  ],
+  "n_rows": 7,
+  "error": null,
+  "edges": {
+   "Name\u0001course\u0001Course_ID": {
+    "output_column": "Name",
+    "source_table": "course",
+    "source_column": "Course_ID",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 3,
+      "old": "7.0",
+      "new": "6.0",
+      "error": null
+     }
+    ]
+   },
+   "Course\u0001course\u0001Course_ID": {
+    "output_column": "Course",
+    "source_table": "course",
+    "source_column": "Course_ID",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 3,
+      "old": "7.0",
+      "new": "6.0",
+      "error": null
+     }
+    ]
+   },
+   "Course\u0001course\u0001Course": {
+    "output_column": "Course",
+    "source_table": "course",
+    "source_column": "Course",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 8,
+      "old": "'v3_7'",
+      "new": "'v3_7_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 8,
+      "old": "'v3_7'",
+      "new": "'v8_24'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 8,
+      "old": "'v3_7'",
+      "new": "'v3_9'",
+      "error": null
+     }
+    ]
+   },
+   "Name\u0001teacher\u0001Teacher_ID": {
+    "output_column": "Name",
+    "source_table": "teacher",
+    "source_column": "Teacher_ID",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "18.0",
+      "new": "19.0",
+      "error": null
+     }
+    ]
+   },
+   "Course\u0001teacher\u0001Teacher_ID": {
+    "output_column": "Course",
+    "source_table": "teacher",
+    "source_column": "Teacher_ID",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "18.0",
+      "new": "19.0",
+      "error": null
+     }
+    ]
+   },
+   "Name\u0001teacher\u0001Name": {
+    "output_column": "Name",
+    "source_table": "teacher",
+    "source_column": "Name",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 10,
+      "old": "'v12_9'",
+      "new": "'v12_9_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 10,
+      "old": "'v12_9'",
+      "new": "'v7_19'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 10,
+      "old": "'v12_9'",
+      "new": "'v10_17'",
+      "error": null
+     }
+    ]
+   },
+   "Name\u0001course_arrange\u0001Course_ID": {
+    "output_column": "Name",
+    "source_table": "course_arrange",
+    "source_column": "Course_ID",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "6.0",
+      "new": "7.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "6.0",
+      "new": "-1000000.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "6.0",
+      "new": "0",
+      "error": null
+     }
+    ]
+   },
+   "Course\u0001course_arrange\u0001Course_ID": {
+    "output_column": "Course",
+    "source_table": "course_arrange",
+    "source_column": "Course_ID",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "6.0",
+      "new": "7.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "6.0",
+      "new": "5.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "6.0",
+      "new": "-1000000.0",
+      "error": null
+     }
+    ]
+   },
+   "Name\u0001course_arrange\u0001Teacher_ID": {
+    "output_column": "Name",
+    "source_table": "course_arrange",
+    "source_column": "Teacher_ID",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "9.0",
+      "new": "10.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "9.0",
+      "new": "8.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "9.0",
+      "new": "-1000000.0",
+      "error": null
+     }
+    ]
+   },
+   "Course\u0001course_arrange\u0001Teacher_ID": {
+    "output_column": "Course",
+    "source_table": "course_arrange",
+    "source_column": "Teacher_ID",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "9.0",
+      "new": "8.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "9.0",
+      "new": "-1000000.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "9.0",
+      "new": "0",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [],
+  "referenced_tables": [
+   "course",
+   "teacher",
+   "course_arrange"
+  ]
+ },
+ "validation-00459": {
+  "output_columns": [
+   "country_code",
+   "first_name"
+  ],
+  "n_rows": 1,
+  "error": null,
+  "edges": {
+   "country_code\u0001players\u0001player_id": {
+    "output_column": "country_code",
+    "source_table": "players",
+    "source_column": "player_id",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 20,
+      "old": "32.0",
+      "new": "33.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 20,
+      "old": "32.0",
+      "new": "31.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 20,
+      "old": "32.0",
+      "new": "1.0",
+      "error": null
+     }
+    ]
+   },
+   "first_name\u0001players\u0001player_id": {
+    "output_column": "first_name",
+    "source_table": "players",
+    "source_column": "player_id",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 20,
+      "old": "32.0",
+      "new": "33.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 20,
+      "old": "32.0",
+      "new": "31.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 20,
+      "old": "32.0",
+      "new": "1.0",
+      "error": null
+     }
+    ]
+   },
+   "first_name\u0001players\u0001first_name": {
+    "output_column": "first_name",
+    "source_table": "players",
+    "source_column": "first_name",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 20,
+      "old": "'v2_19'",
+      "new": "'v2_19_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 20,
+      "old": "'v2_19'",
+      "new": "'v10_9'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 20,
+      "old": "'v2_19'",
+      "new": "'v2_22'",
+      "error": null
+     }
+    ]
+   },
+   "country_code\u0001players\u0001country_code": {
+    "output_column": "country_code",
+    "source_table": "players",
+    "source_column": "country_code",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 20,
+      "old": "'v11_19'",
+      "new": "'v11_19_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 20,
+      "old": "'v11_19'",
+      "new": "'v6_1'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 20,
+      "old": "'v11_19'",
+      "new": "'v11_15'",
+      "error": null
+     }
+    ]
+   },
+   "country_code\u0001rankings\u0001player_id": {
+    "output_column": "country_code",
+    "source_table": "rankings",
+    "source_column": "player_id",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 2,
+      "old": "32.0",
+      "new": "33.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 2,
+      "old": "32.0",
+      "new": "31.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 2,
+      "old": "32.0",
+      "new": "1.0",
+      "error": null
+     }
+    ]
+   },
+   "first_name\u0001rankings\u0001player_id": {
+    "output_column": "first_name",
+    "source_table": "rankings",
+    "source_column": "player_id",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 2,
+      "old": "32.0",
+      "new": "33.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 2,
+      "old": "32.0",
+      "new": "31.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 2,
+      "old": "32.0",
+      "new": "1.0",
+      "error": null
+     }
+    ]
+   },
+   "country_code\u0001rankings\u0001tours": {
+    "output_column": "country_code",
+    "source_table": "rankings",
+    "source_column": "tours",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 2,
+      "old": "39.0",
+      "new": "1.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 2,
+      "old": "39.0",
+      "new": "0.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 2,
+      "old": "39.0",
+      "new": "2.0",
+      "error": null
+     }
+    ]
+   },
+   "first_name\u0001rankings\u0001tours": {
+    "output_column": "first_name",
+    "source_table": "rankings",
+    "source_column": "tours",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 2,
+      "old": "39.0",
+      "new": "1.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 2,
+      "old": "39.0",
+      "new": "0.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 2,
+      "old": "39.0",
+      "new": "2.0",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [],
+  "referenced_tables": [
+   "players",
+   "rankings"
+  ]
+ },
+ "validation-00505": {
+  "output_columns": [
+   "name",
+   "result",
+   "bulgarian_commander"
+  ],
+  "n_rows": 25,
+  "error": null,
+  "edges": {
+   "name\u0001battle\u0001name": {
+    "output_column": "name",
+    "source_table": "battle",
+    "source_column": "name",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v6_0'",
+      "new": "'v6_0_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v6_0'",
+      "new": "'v11_23'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v6_0'",
+      "new": "'v11_12'",
+      "error": null
+     }
+    ]
+   },
+   "bulgarian_commander\u0001battle\u0001bulgarian_commander": {
+    "output_column": "bulgarian_commander",
+    "source_table": "battle",
+    "source_column": "bulgarian_commander",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v10_0'",
+      "new": "'v10_0_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v10_0'",
+      "new": "'v6_9'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v10_0'",
+      "new": "'v6_12'",
+      "error": null
+     }
+    ]
+   },
+   "result\u0001battle\u0001result": {
+    "output_column": "result",
+    "source_table": "battle",
+    "source_column": "result",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v12_0'",
+      "new": "'v12_0_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v12_0'",
+      "new": "'v7_19'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v12_0'",
+      "new": "'v10_17'",
+      "error": null
+     }
+    ]
+   },
+   "name\u0001ship\u0001location": {
+    "output_column": "name",
+    "source_table": "ship",
+    "source_column": "location",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 4,
+      "old": "'v4_3'",
+      "new": "'English Channel'",
+      "error": null
+     }
+    ]
+   },
+   "result\u0001ship\u0001location": {
+    "output_column": "result",
+    "source_table": "ship",
+    "source_column": "location",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 4,
+      "old": "'v4_3'",
+      "new": "'English Channel'",
+      "error": null
+     }
+    ]
+   },
+   "bulgarian_commander\u0001ship\u0001location": {
+    "output_column": "bulgarian_commander",
+    "source_table": "ship",
+    "source_column": "location",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 4,
+      "old": "'v4_3'",
+      "new": "'English Channel'",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [],
+  "referenced_tables": [
+   "battle",
+   "ship"
+  ]
+ },
+ "validation-00545": {
+  "output_columns": [
+   "course_name"
+  ],
+  "n_rows": 9,
+  "error": null,
+  "edges": {
+   "course_name\u0001Courses\u0001course_id": {
+    "output_column": "course_name",
+    "source_table": "Courses",
+    "source_column": "course_id",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "6.0",
+      "new": "37.0",
+      "error": null
+     }
+    ]
+   },
+   "course_name\u0001Courses\u0001course_name": {
+    "output_column": "course_name",
+    "source_table": "Courses",
+    "source_column": "course_name",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 3,
+      "old": "'v1_2'",
+      "new": "'v1_2_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 3,
+      "old": "'v1_2'",
+      "new": "'v4_21'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 3,
+      "old": "'v1_2'",
+      "new": "'v12_8'",
+      "error": null
+     }
+    ]
+   },
+   "course_name\u0001Student_Enrolment_Courses\u0001course_id": {
+    "output_column": "course_name",
+    "source_table": "Student_Enrolment_Courses",
+    "source_column": "course_id",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "14.0",
+      "new": "15.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "14.0",
+      "new": "13.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "14.0",
+      "new": "-1000000.0",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [],
+  "referenced_tables": [
+   "Courses",
+   "Student_Enrolment_Courses"
+  ]
+ },
+ "validation-00635": {
+  "output_columns": [
+   "Country"
+  ],
+  "n_rows": 25,
+  "error": null,
+  "edges": {
+   "Country\u0001TV_Channel\u0001Country": {
+    "output_column": "Country",
+    "source_table": "TV_Channel",
+    "source_column": "Country",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v1_0'",
+      "new": "'v1_0_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v1_0'",
+      "new": "'v2_23'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v1_0'",
+      "new": "'v3_4'",
+      "error": null
+     }
+    ]
+   },
+   "Country\u0001Cartoon\u0001Written_by": {
+    "output_column": "Country",
+    "source_table": "Cartoon",
+    "source_column": "Written_by",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 17,
+      "old": "'v10_16'",
+      "new": "'Todd Casey'",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [],
+  "referenced_tables": [
+   "TV_Channel",
+   "Cartoon"
+  ]
+ },
+ "validation-00002": {
+  "output_columns": [
+   "Name",
+   "Country",
+   "Age"
+  ],
+  "n_rows": 25,
+  "error": null,
+  "edges": {
+   "Name\u0001singer\u0001Name": {
+    "output_column": "Name",
+    "source_table": "singer",
+    "source_column": "Name",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v5_0_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v7_6'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v4_20'",
+      "error": null
+     }
+    ]
+   },
+   "Country\u0001singer\u0001Country": {
+    "output_column": "Country",
+    "source_table": "singer",
+    "source_column": "Country",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v5_0_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v10_16'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v12_12'",
+      "error": null
+     }
+    ]
+   },
+   "Age\u0001singer\u0001Age": {
+    "output_column": "Age",
+    "source_table": "singer",
+    "source_column": "Age",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "21.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "19.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "-1000000.0",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [],
+  "referenced_tables": [
+   "singer"
+  ]
+ },
+ "validation-00006": {
+  "output_columns": [
+   "Song_Name",
+   "Song_release_year"
+  ],
+  "n_rows": 1,
+  "error": null,
+  "edges": {
+   "Song_Name\u0001singer\u0001Song_Name": {
+    "output_column": "Song_Name",
+    "source_table": "singer",
+    "source_column": "Song_Name",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 13,
+      "old": "'v7_12'",
+      "new": "'v7_12_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 13,
+      "old": "'v7_12'",
+      "new": "'v10_16'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 13,
+      "old": "'v7_12'",
+      "new": "'v6_1'",
+      "error": null
+     }
+    ]
+   },
+   "Song_release_year\u0001singer\u0001Song_release_year": {
+    "output_column": "Song_release_year",
+    "source_table": "singer",
+    "source_column": "Song_release_year",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 13,
+      "old": "'v8_12'",
+      "new": "'v8_12_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 13,
+      "old": "'v8_12'",
+      "new": "'v6_1'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 13,
+      "old": "'v8_12'",
+      "new": "'v7_16'",
+      "error": null
+     }
+    ]
+   },
+   "Song_Name\u0001singer\u0001Age": {
+    "output_column": "Song_Name",
+    "source_table": "singer",
+    "source_column": "Age",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "1.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "0.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "2.0",
+      "error": null
+     }
+    ]
+   },
+   "Song_release_year\u0001singer\u0001Age": {
+    "output_column": "Song_release_year",
+    "source_table": "singer",
+    "source_column": "Age",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "1.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "0.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "2.0",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [],
+  "referenced_tables": [
+   "singer"
+  ]
+ },
+ "validation-00008": {
+  "output_columns": [
+   "Country"
+  ],
+  "n_rows": 9,
+  "error": null,
+  "edges": {
+   "Country\u0001singer\u0001Country": {
+    "output_column": "Country",
+    "source_table": "singer",
+    "source_column": "Country",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 2,
+      "old": "'v9_1'",
+      "new": "'v9_1_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 2,
+      "old": "'v9_1'",
+      "new": "'v10_16'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 2,
+      "old": "'v9_1'",
+      "new": "'v12_12'",
+      "error": null
+     }
+    ]
+   },
+   "Country\u0001singer\u0001Age": {
+    "output_column": "Country",
+    "source_table": "singer",
+    "source_column": "Age",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "21.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "120.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "20.0",
+      "new": "39.0",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [],
+  "referenced_tables": [
+   "singer"
+  ]
+ },
+ "validation-00018": {
+  "output_columns": [
+   "Name",
+   "Capacity"
+  ],
+  "n_rows": 1,
+  "error": null,
+  "edges": {
+   "Name\u0001stadium\u0001Name": {
+    "output_column": "Name",
+    "source_table": "stadium",
+    "source_column": "Name",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 14,
+      "old": "'v5_13'",
+      "new": "'v5_13_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 14,
+      "old": "'v5_13'",
+      "new": "'v7_19'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 14,
+      "old": "'v5_13'",
+      "new": "'v2_23'",
+      "error": null
+     }
+    ]
+   },
+   "Capacity\u0001stadium\u0001Capacity": {
+    "output_column": "Capacity",
+    "source_table": "stadium",
+    "source_column": "Capacity",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 14,
+      "old": "2.0",
+      "new": "3.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 14,
+      "old": "2.0",
+      "new": "1.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 14,
+      "old": "2.0",
+      "new": "0.0",
+      "error": null
+     }
+    ]
+   },
+   "Name\u0001stadium\u0001Average": {
+    "output_column": "Name",
+    "source_table": "stadium",
+    "source_column": "Average",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "33.0",
+      "new": "133.0",
+      "error": null
+     }
+    ]
+   },
+   "Capacity\u0001stadium\u0001Average": {
+    "output_column": "Capacity",
+    "source_table": "stadium",
+    "source_column": "Average",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "33.0",
+      "new": "133.0",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [],
+  "referenced_tables": [
+   "stadium"
+  ]
+ },
+ "validation-00028": {
+  "output_columns": [
+   "Name"
+  ],
+  "n_rows": 25,
+  "error": null,
+  "edges": {
+   "Name\u0001stadium\u0001Stadium_ID": {
+    "output_column": "Name",
+    "source_table": "stadium",
+    "source_column": "Stadium_ID",
+    "witnesses": [
+     {
+      "family": "VALUE_TO_NULL",
+      "rowid": 1,
+      "old": "32.0",
+      "new": "None",
+      "error": null
+     }
+    ]
+   },
+   "Name\u0001stadium\u0001Name": {
+    "output_column": "Name",
+    "source_table": "stadium",
+    "source_column": "Name",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v4_0'",
+      "new": "'v4_0_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v4_0'",
+      "new": "'v7_19'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v4_0'",
+      "new": "'v2_23'",
+      "error": null
+     }
+    ]
+   },
+   "Name\u0001concert\u0001Stadium_ID": {
+    "output_column": "Name",
+    "source_table": "concert",
+    "source_column": "Stadium_ID",
+    "witnesses": [
+     {
+      "family": "VALUE_TO_NULL",
+      "rowid": 1,
+      "old": "'v6_0'",
+      "new": "None",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v6_0'",
+      "new": "32",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v6_0'",
+      "new": "1",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [],
+  "referenced_tables": [
+   "stadium",
+   "concert"
+  ]
+ },
+ "validation-00067": {
+  "output_columns": [
+   "PetType",
+   "weight"
+  ],
+  "n_rows": 1,
+  "error": null,
+  "edges": {
+   "PetType\u0001Pets\u0001PetType": {
+    "output_column": "PetType",
+    "source_table": "Pets",
+    "source_column": "PetType",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 10,
+      "old": "'v5_9'",
+      "new": "'v5_9_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 10,
+      "old": "'v5_9'",
+      "new": "'v8_6'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 10,
+      "old": "'v5_9'",
+      "new": "'v6_12'",
+      "error": null
+     }
+    ]
+   },
+   "PetType\u0001Pets\u0001pet_age": {
+    "output_column": "PetType",
+    "source_table": "Pets",
+    "source_column": "pet_age",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "31.0",
+      "new": "1.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "31.0",
+      "new": "0.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "31.0",
+      "new": "2.0",
+      "error": null
+     }
+    ]
+   },
+   "weight\u0001Pets\u0001pet_age": {
+    "output_column": "weight",
+    "source_table": "Pets",
+    "source_column": "pet_age",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "31.0",
+      "new": "1.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "31.0",
+      "new": "0.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "31.0",
+      "new": "2.0",
+      "error": null
+     }
+    ]
+   },
+   "weight\u0001Pets\u0001weight": {
+    "output_column": "weight",
+    "source_table": "Pets",
+    "source_column": "weight",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 10,
+      "old": "16.0",
+      "new": "17.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 10,
+      "old": "16.0",
+      "new": "15.0",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 10,
+      "old": "16.0",
+      "new": "1.0",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [],
+  "referenced_tables": [
+   "Pets"
+  ]
+ },
+ "validation-00155": {
+  "output_columns": [
+   "Horsepower"
+  ],
+  "n_rows": 1,
+  "error": null,
+  "edges": {
+   "Horsepower\u0001cars_data\u0001Horsepower": {
+    "output_column": "Horsepower",
+    "source_table": "cars_data",
+    "source_column": "Horsepower",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 24,
+      "old": "'v2_23'",
+      "new": "'v2_23_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 24,
+      "old": "'v2_23'",
+      "new": "'v7_6'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 24,
+      "old": "'v2_23'",
+      "new": "'v9_24'",
+      "error": null
+     }
+    ]
+   },
+   "Horsepower\u0001cars_data\u0001Accelerate": {
+    "output_column": "Horsepower",
+    "source_table": "cars_data",
+    "source_column": "Accelerate",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "29.0",
+      "new": "129.0",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [],
+  "referenced_tables": [
+   "cars_data"
+  ]
+ },
+ "validation-00269": {
+  "output_columns": [
+   "Manager_name",
+   "District"
+  ],
+  "n_rows": 1,
+  "error": null,
+  "edges": {
+   "District\u0001shop\u0001District": {
+    "output_column": "District",
+    "source_table": "shop",
+    "source_column": "District",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 12,
+      "old": "'v3_11'",
+      "new": "'v3_11_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 12,
+      "old": "'v3_11'",
+      "new": "'v6_3'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 12,
+      "old": "'v3_11'",
+      "new": "'v6_1'",
+      "error": null
+     }
+    ]
+   },
+   "Manager_name\u0001shop\u0001Number_products": {
+    "output_column": "Manager_name",
+    "source_table": "shop",
+    "source_column": "Number_products",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "19.0",
+      "new": "119.0",
+      "error": null
+     }
+    ]
+   },
+   "District\u0001shop\u0001Number_products": {
+    "output_column": "District",
+    "source_table": "shop",
+    "source_column": "Number_products",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "19.0",
+      "new": "119.0",
+      "error": null
+     }
+    ]
+   },
+   "Manager_name\u0001shop\u0001Manager_name": {
+    "output_column": "Manager_name",
+    "source_table": "shop",
+    "source_column": "Manager_name",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 12,
+      "old": "'v1_11'",
+      "new": "'v1_11_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 12,
+      "old": "'v1_11'",
+      "new": "'v7_6'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 12,
+      "old": "'v1_11'",
+      "new": "'v10_17'",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [],
+  "referenced_tables": [
+   "shop"
+  ]
+ },
+ "validation-00273": {
+  "output_columns": [
+   "Name",
+   "Location",
+   "District"
+  ],
+  "n_rows": 25,
+  "error": null,
+  "edges": {
+   "Name\u0001shop\u0001Name": {
+    "output_column": "Name",
+    "source_table": "shop",
+    "source_column": "Name",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v10_0'",
+      "new": "'v10_0_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v10_0'",
+      "new": "'v12_19'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v10_0'",
+      "new": "'v11_8'",
+      "error": null
+     }
+    ]
+   },
+   "Location\u0001shop\u0001Location": {
+    "output_column": "Location",
+    "source_table": "shop",
+    "source_column": "Location",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v5_0_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v10_9'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v5_0'",
+      "new": "'v8_6'",
+      "error": null
+     }
+    ]
+   },
+   "District\u0001shop\u0001District": {
+    "output_column": "District",
+    "source_table": "shop",
+    "source_column": "District",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v3_0'",
+      "new": "'v3_0_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v3_0'",
+      "new": "'v6_3'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v3_0'",
+      "new": "'v6_1'",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [],
+  "referenced_tables": [
+   "shop"
+  ]
+ },
+ "validation-00281": {
+  "output_columns": [
+   "Name"
+  ],
+  "n_rows": 25,
+  "error": null,
+  "edges": {
+   "Name\u0001employee\u0001Employee_ID": {
+    "output_column": "Name",
+    "source_table": "employee",
+    "source_column": "Employee_ID",
+    "witnesses": [
+     {
+      "family": "VALUE_TO_NULL",
+      "rowid": 1,
+      "old": "13.0",
+      "new": "None",
+      "error": null
+     }
+    ]
+   },
+   "Name\u0001employee\u0001Name": {
+    "output_column": "Name",
+    "source_table": "employee",
+    "source_column": "Name",
+    "witnesses": [
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v11_0'",
+      "new": "'v11_0_p'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v11_0'",
+      "new": "'v7_19'",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v11_0'",
+      "new": "'v11_15'",
+      "error": null
+     }
+    ]
+   },
+   "Name\u0001evaluation\u0001Employee_ID": {
+    "output_column": "Name",
+    "source_table": "evaluation",
+    "source_column": "Employee_ID",
+    "witnesses": [
+     {
+      "family": "VALUE_TO_NULL",
+      "rowid": 1,
+      "old": "'v7_0'",
+      "new": "None",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v7_0'",
+      "new": "13",
+      "error": null
+     },
+     {
+      "family": "CELL_VALUE",
+      "rowid": 1,
+      "old": "'v7_0'",
+      "new": "7",
+      "error": null
+     }
+    ]
+   }
+  },
+  "unreferenced": [],
+  "referenced_tables": [
+   "employee",
+   "evaluation"
+  ]
+ }
+}

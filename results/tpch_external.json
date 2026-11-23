@@ -1,0 +1,266 @@
+{
+ "n_control": 8,
+ "n_data": 7,
+ "summary": {
+  "Static": {
+   "control": 0,
+   "data": 7
+  },
+  "ProvSQL": {
+   "control": 0,
+   "data": 6
+  },
+  "Cell-only": {
+   "control": 2,
+   "data": 5
+  },
+  "Literal": {
+   "control": 7,
+   "data": 5
+  },
+  "Static+Literal": {
+   "control": 7,
+   "data": 7
+  }
+ },
+ "queries": [
+  {
+   "qid": "q1",
+   "control_edges": [
+    [
+     "c_name",
+     "customer",
+     "c_nationkey"
+    ]
+   ],
+   "data_edges": [
+    [
+     "c_name",
+     "customer",
+     "c_name"
+    ]
+   ],
+   "Static": {
+    "control": 0,
+    "data": 1
+   },
+   "ProvSQL": {
+    "control": 0,
+    "data": 1
+   },
+   "Cell-only": {
+    "control": 1,
+    "data": 1
+   },
+   "Literal": {
+    "control": 1,
+    "data": 1
+   },
+   "Static+Literal": {
+    "control": 1,
+    "data": 1
+   }
+  },
+  {
+   "qid": "q2",
+   "control_edges": [
+    [
+     "c_name",
+     "customer",
+     "c_mktsegment"
+    ]
+   ],
+   "data_edges": [
+    [
+     "c_name",
+     "customer",
+     "c_name"
+    ]
+   ],
+   "Static": {
+    "control": 0,
+    "data": 1
+   },
+   "ProvSQL": {
+    "control": 0,
+    "data": 1
+   },
+   "Cell-only": {
+    "control": 1,
+    "data": 1
+   },
+   "Literal": {
+    "control": 1,
+    "data": 1
+   },
+   "Static+Literal": {
+    "control": 1,
+    "data": 1
+   }
+  },
+  {
+   "qid": "q3",
+   "control_edges": [
+    [
+     "o_orderkey",
+     "orders",
+     "o_orderdate"
+    ],
+    [
+     "o_totalprice",
+     "orders",
+     "o_orderdate"
+    ]
+   ],
+   "data_edges": [
+    [
+     "o_orderkey",
+     "orders",
+     "o_orderkey"
+    ],
+    [
+     "o_totalprice",
+     "orders",
+     "o_totalprice"
+    ]
+   ],
+   "Static": {
+    "control": 0,
+    "data": 2
+   },
+   "ProvSQL": {
+    "control": 0,
+    "data": 2
+   },
+   "Cell-only": {
+    "control": 0,
+    "data": 2
+   },
+   "Literal": {
+    "control": 2,
+    "data": 2
+   },
+   "Static+Literal": {
+    "control": 2,
+    "data": 2
+   }
+  },
+  {
+   "qid": "q4",
+   "control_edges": [
+    [
+     "sum(l_quantity)",
+     "lineitem",
+     "l_partkey"
+    ],
+    [
+     "sum(l_quantity)",
+     "lineitem",
+     "l_shipdate"
+    ]
+   ],
+   "data_edges": [
+    [
+     "sum(l_quantity)",
+     "lineitem",
+     "l_quantity"
+    ]
+   ],
+   "Static": {
+    "control": 0,
+    "data": 1
+   },
+   "ProvSQL": {
+    "control": 0,
+    "data": 0
+   },
+   "Cell-only": {
+    "control": 0,
+    "data": 0
+   },
+   "Literal": {
+    "control": 1,
+    "data": 0
+   },
+   "Static+Literal": {
+    "control": 1,
+    "data": 1
+   }
+  },
+  {
+   "qid": "q5",
+   "control_edges": [
+    [
+     "s_name",
+     "supplier",
+     "s_acctbal"
+    ]
+   ],
+   "data_edges": [
+    [
+     "s_name",
+     "supplier",
+     "s_name"
+    ]
+   ],
+   "Static": {
+    "control": 0,
+    "data": 1
+   },
+   "ProvSQL": {
+    "control": 0,
+    "data": 1
+   },
+   "Cell-only": {
+    "control": 0,
+    "data": 1
+   },
+   "Literal": {
+    "control": 1,
+    "data": 1
+   },
+   "Static+Literal": {
+    "control": 1,
+    "data": 1
+   }
+  },
+  {
+   "qid": "q6",
+   "control_edges": [
+    [
+     "p_name",
+     "part",
+     "p_size"
+    ]
+   ],
+   "data_edges": [
+    [
+     "p_name",
+     "part",
+     "p_name"
+    ]
+   ],
+   "Static": {
+    "control": 0,
+    "data": 1
+   },
+   "ProvSQL": {
+    "control": 0,
+    "data": 1
+   },
+   "Cell-only": {
+    "control": 0,
+    "data": 0
+   },
+   "Literal": {
+    "control": 1,
+    "data": 0
+   },
+   "Static+Literal": {
+    "control": 1,
+    "data": 1
+   }
+  }
+ ],
+ "note": "ProvSQL q4 aggregate where-provenance is unsupported; its DATA denominator is 7."
+}

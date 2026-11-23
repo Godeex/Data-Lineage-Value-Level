@@ -1,0 +1,27 @@
+{
+ "employee": [
+  "Employee_ID",
+  "Name",
+  "Age",
+  "City"
+ ],
+ "shop": [
+  "Shop_ID",
+  "Name",
+  "Location",
+  "District",
+  "Number_products",
+  "Manager_name"
+ ],
+ "hiring": [
+  "Shop_ID",
+  "Employee_ID",
+  "Start_from",
+  "Is_full_time"
+ ],
+ "evaluation": [
+  "Employee_ID",
+  "Year_awarded",
+  "Bonus"
+ ]
+}

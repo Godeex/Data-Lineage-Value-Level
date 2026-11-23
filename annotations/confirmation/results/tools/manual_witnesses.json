@@ -1,0 +1,38 @@
+{
+ "note": "Witnesses established by targeted manual probes (not found by the broad automated sweep because the required text value was a numeric literal of the subquery).",
+ "witnesses": [
+  {
+   "qid": "validation-00043",
+   "output_column": "count(*)",
+   "source_table": "concert",
+   "source_column": "stadium_id",
+   "db": "concert_singer",
+   "update": "UPDATE concert SET stadium_id='21' WHERE rowid=1",
+   "before": [[0]],
+   "after": [[1]],
+   "explanation": "stadium_id 为 TEXT；写入 '21' 后在比较时按数值亲和匹配 stadium 中最优 id=21，count 0→1"
+  },
+  {
+   "qid": "synth-case-014",
+   "output_column": "count(*)",
+   "source_table": "concert",
+   "source_column": "stadium_id",
+   "db": "concert_singer",
+   "update": "UPDATE concert SET stadium_id='21' WHERE rowid=1",
+   "before": [[0]],
+   "after": [[1]],
+   "explanation": "同上；count 0→1 同时使 bucket 由 nonpos 变 pos"
+  },
+  {
+   "qid": "synth-case-014",
+   "output_column": "bucket",
+   "source_table": "concert",
+   "source_column": "stadium_id",
+   "db": "concert_singer",
+   "update": "UPDATE concert SET stadium_id='21' WHERE rowid=1",
+   "before": [["nonpos"]],
+   "after": [["pos"]],
+   "explanation": "bucket 由 count>0 派生，count 0→1 时翻转"
+  }
+ ]
+}

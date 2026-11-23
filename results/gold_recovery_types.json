@@ -1,0 +1,93 @@
+{
+ "n_added": 7,
+ "counts": {
+  "POSITIVE/CONTROL": 7
+ },
+ "transitions": {
+  "TP_TP": 38,
+  "FN_TP": 17,
+  "TP_FN": 10,
+  "FN_FN": 22,
+  "TN_TN": 2,
+  "FP_FP": 0,
+  "TN_FP": 0,
+  "FP_TN": 0
+ },
+ "transition_types": {
+  "gained/CONTROL": 17,
+  "lost/DATA": 9,
+  "lost/MIXED": 1
+ },
+ "edges": [
+  {
+   "qid": "synth-case-010",
+   "category": "case",
+   "output_column": "count(*)",
+   "source_table": "concert",
+   "source_column": "year",
+   "decision": "POSITIVE",
+   "type": "CONTROL",
+   "executions": 756
+  },
+  {
+   "qid": "synth-cte-004",
+   "category": "cte",
+   "output_column": "avg(age)",
+   "source_table": "singer",
+   "source_column": "country",
+   "decision": "POSITIVE",
+   "type": "CONTROL",
+   "executions": 422
+  },
+  {
+   "qid": "synth-cte-004",
+   "category": "cte",
+   "output_column": "max(age)",
+   "source_table": "singer",
+   "source_column": "country",
+   "decision": "POSITIVE",
+   "type": "CONTROL",
+   "executions": 422
+  },
+  {
+   "qid": "synth-cte-004",
+   "category": "cte",
+   "output_column": "min(age)",
+   "source_table": "singer",
+   "source_column": "country",
+   "decision": "POSITIVE",
+   "type": "CONTROL",
+   "executions": 422
+  },
+  {
+   "qid": "synth-cte-018",
+   "category": "cte",
+   "output_column": "count(*)",
+   "source_table": "concert",
+   "source_column": "year",
+   "decision": "POSITIVE",
+   "type": "CONTROL",
+   "executions": 755
+  },
+  {
+   "qid": "validation-00020",
+   "category": "aggregate",
+   "output_column": "count(*)",
+   "source_table": "concert",
+   "source_column": "year",
+   "decision": "POSITIVE",
+   "type": "CONTROL",
+   "executions": 755
+  },
+  {
+   "qid": "validation-00174",
+   "category": "join",
+   "output_column": "countryname",
+   "source_table": "car_makers",
+   "source_column": "country",
+   "decision": "POSITIVE",
+   "type": "CONTROL",
+   "executions": 366
+  }
+ ]
+}

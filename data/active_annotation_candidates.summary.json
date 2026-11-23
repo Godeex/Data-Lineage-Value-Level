@@ -1,0 +1,12 @@
+{
+ "n_selected": 30,
+ "by_category": {
+  "aggregate": 4,
+  "case": 8,
+  "cte": 6,
+  "join": 10,
+  "projection": 2
+ },
+ "mean_score": 9.1,
+ "candidates_total": 100
+}

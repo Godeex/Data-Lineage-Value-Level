@@ -1,0 +1,10 @@
+{
+ "reference_union_static_vs_machine_reference": 0.0776,
+ "literal_union_evolving_vs_reference_union_static": 0.045028571428571425,
+ "literal_union_reference_vs_reference_union_static": 0.028266666666666666,
+ "literal_union_evolving_vs_machine_reference": 0.009600000000000001,
+ "literal_union_evolving_vs_evolving": 0.0052,
+ "literal_union_b10all_vs_b10all": 0.0026666666666666666,
+ "machine_reference_vs_static": 0.0,
+ "evolving_vs_fixed_hybrid": 0.0
+}

@@ -1,0 +1,98 @@
+﻿qid,annotator,output_column,source_table,source_column,decision,confidence,note
+synth-case-000,A,NONE,NONE,NONE,NONE,high,无边：总行数与由它派生的 CASE 都是单元格不变量
+synth-case-001,A,NONE,NONE,NONE,NONE,high,无边：与 synth-case-000 同一条 SQL
+synth-case-005,A,bucket,singer,country,POSITIVE,medium,参考建议漏掉（仅静态建议有）；单成员组消失时该 bucket 行消失，多重集改变 [machine missed]
+synth-case-005,A,country,singer,country,POSITIVE,high,被投影的分组键
+synth-case-007,A,avg(capacity),stadium,capacity,POSITIVE,high,AVG 输入
+synth-case-007,A,bucket,stadium,capacity,POSITIVE,medium,machine missed（仅静态建议）；把一格压到 -1e6 拉低 AVG<0，bucket 翻转 [machine missed]
+synth-case-007,A,max(capacity),stadium,capacity,POSITIVE,high,MAX 输入
+synth-case-010,A,bucket,concert,year,POSITIVE,high,machine missed（仅静态建议）；count 0->1 使 nonpos->pos [machine missed]
+synth-case-010,A,count(*),concert,year,POSITIVE,high,machine missed；Year 过滤决定标量 count [machine missed]
+synth-case-018,A,bucket,pets,pet_age,NEGATIVE,high,pet_age 只改选哪一行，而 D 上所有权重>0，bucket 恒为 'pos'
+synth-case-018,A,bucket,pets,weight,POSITIVE,high,bucket = CASE WHEN weight>0；符号翻转即改值
+synth-case-018,A,weight,pets,pet_age,POSITIVE,high,ORDER BY pet_age LIMIT 1 选出唯一可观测行
+synth-case-018,A,weight,pets,weight,POSITIVE,high,直接投影
+synth-cte-001,A,NONE,NONE,NONE,NONE,high,无边：整表 COUNT，没有任何单元格能改变行数
+synth-cte-004,A,avg(age),singer,age,POSITIVE,medium,过滤到 France 后 age 就是 AVG 输入；语义上必然影响（D 上过滤为空） [machine misses: UNKNOWN]
+synth-cte-004,A,avg(age),singer,country,POSITIVE,high,machine missed；Country->'France' 放进一行，聚合由 NULL 变 20 [machine missed]
+synth-cte-004,A,max(age),singer,age,POSITIVE,medium,MAX(age) 的输入列，语义上必然影响 [machine misses: UNKNOWN]
+synth-cte-004,A,max(age),singer,country,POSITIVE,high,machine missed；同一过滤列 [machine missed]
+synth-cte-004,A,min(age),singer,age,POSITIVE,medium,MIN(age) 的输入列，语义上必然影响 [machine misses: UNKNOWN]
+synth-cte-004,A,min(age),singer,country,POSITIVE,high,machine missed；同一过滤列 [machine missed]
+synth-cte-009,A,country,singer,age,POSITIVE,high,WHERE Age>20 改变 DISTINCT 集合
+synth-cte-009,A,country,singer,country,POSITIVE,high,被投影的 DISTINCT 值
+synth-cte-015,A,avg(capacity),stadium,capacity,POSITIVE,high,AVG 输入
+synth-cte-015,A,max(capacity),stadium,capacity,POSITIVE,high,MAX 输入
+synth-cte-016,A,capacity,stadium,average,POSITIVE,high,ORDER BY average DESC LIMIT 1 决定选中的行
+synth-cte-016,A,capacity,stadium,capacity,POSITIVE,high,直接投影
+synth-cte-016,A,name,stadium,average,POSITIVE,high,ORDER BY average DESC LIMIT 1 决定选中的行
+synth-cte-016,A,name,stadium,name,POSITIVE,high,直接投影
+synth-cte-018,A,count(*),concert,year,POSITIVE,high,machine missed；validation-00020 的 CTE 包装 [machine missed]
+validation-00012,A,song_name,singer,age,POSITIVE,high,Age 进入 avg(age) 子查询，阈值移动使入选集合改变
+validation-00012,A,song_name,singer,song_name,POSITIVE,high,直接投影
+validation-00020,A,count(*),concert,year,POSITIVE,high,machine missed；WHERE Year=2014/2015；探针：concert.Year 'v10_0'->'2014' 使 count 0->1 [machine missed]
+validation-00031,A,name,concert,stadium_id,POSITIVE,medium,concert.Stadium_ID 决定哪些 stadium 被排除；语义上成立 [machine misses: UNKNOWN]
+validation-00031,A,name,concert,year,POSITIVE,medium,Year=2014 过滤右表；语义上成立，只是 D 上没有 2014 [machine misses: UNKNOWN]
+validation-00031,A,name,stadium,name,POSITIVE,high,EXCEPT 左侧投影
+validation-00031,A,name,stadium,stadium_id,POSITIVE,medium,EXCEPT 右侧 join 键；原 schema 两端都是 stadium id，改了必改变被排除集合（D 上被匿名化类型遮蔽） [machine misses: UNKNOWN]
+validation-00033,A,concert_name,concert,concert_id,POSITIVE,high,GROUP BY 键：改它使分组拆分/合并，行多重集改变
+validation-00033,A,concert_name,concert,concert_name,POSITIVE,high,直接投影
+validation-00033,A,concert_name,singer_in_concert,concert_id,POSITIVE,medium,连接键重排行；单成员组消失时该组的 concert_name 行消失
+validation-00033,A,count(*),concert,concert_id,POSITIVE,high,GROUP BY 键改变各组计数
+validation-00033,A,count(*),singer_in_concert,concert_id,POSITIVE,high,连接键把行挪到别的组，组计数改变
+validation-00033,A,theme,concert,concert_id,POSITIVE,high,同上，GROUP BY 键
+validation-00033,A,theme,concert,theme,POSITIVE,high,直接投影
+validation-00046,A,count(*),pets,weight,POSITIVE,high,WHERE weight>10；探针：Pets.weight 20->9 使该行退出过滤，count 1->0
+validation-00048,A,weight,pets,pet_age,POSITIVE,medium,ORDER BY pet_age LIMIT 1：排序键决定唯一可观测行
+validation-00048,A,weight,pets,weight,POSITIVE,high,被选中行的直接投影
+validation-00051,A,count(*),has_pet,stuid,POSITIVE,high,连接键；重连改变匹配行数
+validation-00051,A,count(*),student,age,POSITIVE,high,WHERE Age>20 过滤
+validation-00051,A,count(*),student,stuid,POSITIVE,high,连接键；fan-out 改变匹配行数
+validation-00055,A,count(distinct pettype),pets,pettype,POSITIVE,high,DISTINCT 基数：置 NULL 或换成另一类型都会改变计数
+validation-00069,A,petid,pets,pet_age,POSITIVE,high,WHERE pet_age>1 改变存活行集
+validation-00069,A,petid,pets,petid,POSITIVE,high,直接投影
+validation-00069,A,weight,pets,pet_age,POSITIVE,high,过滤行集
+validation-00069,A,weight,pets,weight,POSITIVE,high,直接投影
+validation-00070,A,petid,pets,pet_age,POSITIVE,high,与 validation-00069 同一条 SQL
+validation-00070,A,petid,pets,petid,POSITIVE,high,与 validation-00069 同一条 SQL
+validation-00070,A,weight,pets,pet_age,POSITIVE,high,与 validation-00069 同一条 SQL
+validation-00070,A,weight,pets,weight,POSITIVE,high,与 validation-00069 同一条 SQL
+validation-00121,A,maker,model_list,maker,POSITIVE,high,纯投影
+validation-00121,A,model,model_list,model,POSITIVE,high,纯投影
+validation-00174,A,countryname,car_makers,country,POSITIVE,medium,machine missed；探针：Country->'5' 经 NUMERIC 亲和被强制成 5，右侧非空使 EXCEPT 缩小 [machine missed]
+validation-00174,A,countryname,countries,countryid,POSITIVE,medium,join 键 countryId=Car_Makers.Country；改 id 会改变 EXCEPT 右侧 [machine misses: UNKNOWN]
+validation-00174,A,countryname,countries,countryname,POSITIVE,high,EXCEPT 左侧投影值
+validation-00257,A,airportname,airports,airportcode,POSITIVE,high,WHERE AirportCode NOT IN (...)：反连接过滤列
+validation-00257,A,airportname,airports,airportname,POSITIVE,high,直接投影
+validation-00257,A,airportname,flights,destairport,POSITIVE,high,NOT IN 集合的 UNION 分支
+validation-00257,A,airportname,flights,sourceairport,POSITIVE,high,NOT IN 集合的子查询分支
+validation-00262,A,name,employee,age,NEGATIVE,high,只有 ORDER BY、没有 LIMIT：行序不在多重集里，输出不变
+validation-00262,A,name,employee,name,POSITIVE,high,直接投影
+validation-00345,A,template_type_code,documents,template_id,POSITIVE,high,被减侧的连接键
+validation-00345,A,template_type_code,templates,template_id,POSITIVE,high,EXCEPT 两侧共用的连接键
+validation-00345,A,template_type_code,templates,template_type_code,POSITIVE,medium,投影值；未被文档使用的 code 改值会改变左侧独有行
+validation-00346,A,template_type_code,documents,template_id,POSITIVE,high,与 validation-00345 同一条 SQL
+validation-00346,A,template_type_code,templates,template_id,POSITIVE,high,与 validation-00345 同一条 SQL
+validation-00346,A,template_type_code,templates,template_type_code,POSITIVE,medium,与 validation-00345 同一条 SQL
+validation-00402,A,course,course,course,POSITIVE,high,直接投影
+validation-00402,A,course,course,course_id,POSITIVE,medium,连接键；未匹配行会掉出结果
+validation-00402,A,course,course_arrange,course_id,POSITIVE,high,行集的连接键
+validation-00402,A,course,course_arrange,teacher_id,POSITIVE,medium,第二个连接键；行出现/消失
+validation-00402,A,course,teacher,teacher_id,POSITIVE,medium,连接键；行出现/消失
+validation-00402,A,name,course,course_id,POSITIVE,medium,"连接键改变输出的 (name, course) 行"
+validation-00402,A,name,course_arrange,course_id,POSITIVE,high,"连接键改变输出的 (name, course) 行"
+validation-00402,A,name,course_arrange,teacher_id,POSITIVE,high,"连接键改变输出的 (name, course) 行"
+validation-00402,A,name,teacher,name,POSITIVE,high,直接投影
+validation-00402,A,name,teacher,teacher_id,POSITIVE,medium,"连接键改变输出的 (name, course) 行"
+validation-00487,A,birth_date,matches,winner_id,POSITIVE,medium,连接键改变比赛集合，进而改变被选冠军
+validation-00487,A,birth_date,matches,winner_rank_points,POSITIVE,high,ORDER BY winner_rank_points DESC LIMIT 1
+validation-00487,A,birth_date,players,birth_date,POSITIVE,high,被选中冠军的直接投影
+validation-00487,A,birth_date,players,player_id,POSITIVE,medium,连接键决定选中哪个 player 行
+validation-00487,A,country_code,matches,winner_id,POSITIVE,medium,连接键改变比赛集合，进而改变被选冠军
+validation-00487,A,country_code,matches,winner_rank_points,POSITIVE,high,ORDER BY winner_rank_points DESC LIMIT 1
+validation-00487,A,country_code,players,country_code,POSITIVE,high,被选中冠军的直接投影
+validation-00487,A,country_code,players,player_id,POSITIVE,medium,连接键决定选中哪个 player 行
+validation-00487,A,first_name,matches,winner_id,POSITIVE,medium,连接键改变比赛集合，进而改变被选冠军
+validation-00487,A,first_name,matches,winner_rank_points,POSITIVE,high,ORDER BY winner_rank_points DESC LIMIT 1
+validation-00487,A,first_name,players,first_name,POSITIVE,high,被选中冠军的直接投影
+validation-00487,A,first_name,players,player_id,POSITIVE,medium,连接键决定选中哪个 player 行

@@ -1,0 +1,84 @@
+{
+ "n_rows": 5,
+ "n_failed": 0,
+ "failures": [],
+ "category": {
+  "aggregate": {
+   "n": 3,
+   "mean_ref_edges": 0.0,
+   "mean_static_f1": 0.0,
+   "b3_cell": {
+    "mean_coverage": 0.0,
+    "mean_fn": 0.0,
+    "mean_exec": 63.0
+   },
+   "b10_cell": {
+    "mean_coverage": 0.0,
+    "mean_fn": 0.0,
+    "mean_exec": 210.0
+   },
+   "b3_allcell": {
+    "mean_coverage": 0.0,
+    "mean_fn": 0.0,
+    "mean_exec": 126.0
+   },
+   "b10_allcell": {
+    "mean_coverage": 0.0,
+    "mean_fn": 0.0,
+    "mean_exec": 420.0
+   }
+  },
+  "projection": {
+   "n": 2,
+   "mean_ref_edges": 3.0,
+   "mean_static_f1": 1.0,
+   "b3_cell": {
+    "mean_coverage": 1.0,
+    "mean_fn": 0.0,
+    "mean_exec": 63.0
+   },
+   "b10_cell": {
+    "mean_coverage": 1.0,
+    "mean_fn": 0.0,
+    "mean_exec": 210.0
+   },
+   "b3_allcell": {
+    "mean_coverage": 1.0,
+    "mean_fn": 0.0,
+    "mean_exec": 126.0
+   },
+   "b10_allcell": {
+    "mean_coverage": 1.0,
+    "mean_fn": 0.0,
+    "mean_exec": 420.0
+   }
+  }
+ },
+ "stress_type": {
+  "None": {
+   "n": 5,
+   "mean_ref_edges": 1.2,
+   "mean_static_f1": 0.4,
+   "b3_cell": {
+    "mean_coverage": 1.0,
+    "mean_fn": 0.0,
+    "mean_exec": 63.0
+   },
+   "b10_cell": {
+    "mean_coverage": 1.0,
+    "mean_fn": 0.0,
+    "mean_exec": 210.0
+   },
+   "b3_allcell": {
+    "mean_coverage": 1.0,
+    "mean_fn": 0.0,
+    "mean_exec": 126.0
+   },
+   "b10_allcell": {
+    "mean_coverage": 1.0,
+    "mean_fn": 0.0,
+    "mean_exec": 420.0
+   }
+  }
+ }
+}

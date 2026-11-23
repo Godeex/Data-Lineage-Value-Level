@@ -1,0 +1,26 @@
+{
+ "battle": [
+  "id",
+  "name",
+  "date",
+  "bulgarian_commander",
+  "latin_commander",
+  "result"
+ ],
+ "ship": [
+  "lost_in_battle",
+  "id",
+  "name",
+  "tonnage",
+  "ship_type",
+  "location",
+  "disposition_of_ship"
+ ],
+ "death": [
+  "caused_by_ship_id",
+  "id",
+  "note",
+  "killed",
+  "injured"
+ ]
+}

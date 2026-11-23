@@ -1,0 +1,91 @@
+{
+ "tables": {
+  "raw_orders": {
+   "columns": {
+    "order_id": "INT",
+    "customer_id": "INT",
+    "amount": "INT",
+    "refunded": "INT"
+   },
+   "rows": [
+    [
+     1,
+     1,
+     50,
+     0
+    ],
+    [
+     2,
+     1,
+     120,
+     0
+    ],
+    [
+     3,
+     2,
+     80,
+     1
+    ],
+    [
+     4,
+     2,
+     30,
+     0
+    ],
+    [
+     5,
+     3,
+     200,
+     0
+    ],
+    [
+     6,
+     3,
+     20,
+     1
+    ],
+    [
+     7,
+     4,
+     90,
+     0
+    ],
+    [
+     8,
+     4,
+     110,
+     0
+    ]
+   ]
+  },
+  "raw_customers": {
+   "columns": {
+    "customer_id": "INT",
+    "name": "TEXT",
+    "country": "TEXT"
+   },
+   "rows": [
+    [
+     1,
+     "alice",
+     "US"
+    ],
+    [
+     2,
+     "bob",
+     "UK"
+    ],
+    [
+     3,
+     "carol",
+     "US"
+    ],
+    [
+     4,
+     "dave",
+     "DE"
+    ]
+   ]
+  }
+ }
+}

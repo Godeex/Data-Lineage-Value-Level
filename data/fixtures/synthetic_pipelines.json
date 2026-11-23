@@ -1,0 +1,66 @@
+{
+  "fixture_id": "synthetic-pipelines-v1",
+  "dialect": "duckdb",
+  "scripts": [
+    {
+      "id": "syn-01-projection",
+      "language": "sql",
+      "sql": "SELECT id, amount * 2 AS doubled FROM src_a",
+      "tables": {
+        "src_a": {
+          "columns": {"id": "INT", "amount": "INT"},
+          "rows": [[1, 10], [2, 20], [3, 30]]
+        }
+      },
+      "ground_truth": [["id", "src_a", "id"], ["doubled", "src_a", "amount"]]
+    },
+    {
+      "id": "syn-02-case",
+      "language": "sql",
+      "sql": "SELECT id, CASE WHEN amount > 10 THEN 'high' ELSE 'low' END AS bucket FROM src_a",
+      "tables": {
+        "src_a": {
+          "columns": {"id": "INT", "amount": "INT"},
+          "rows": [[1, 5], [2, 10], [3, 15]]
+        }
+      },
+      "ground_truth": [["id", "src_a", "id"], ["bucket", "src_a", "amount"]]
+    },
+    {
+      "id": "syn-03-cte",
+      "language": "sql",
+      "sql": "WITH t AS (SELECT id, amount + 1 AS a1 FROM src_a) SELECT id, a1 * 2 AS a2 FROM t",
+      "tables": {
+        "src_a": {
+          "columns": {"id": "INT", "amount": "INT"},
+          "rows": [[1, 10], [2, 20], [3, 30]]
+        }
+      },
+      "ground_truth": [["id", "src_a", "id"], ["a2", "src_a", "amount"]]
+    },
+    {
+      "id": "syn-04-coalesce",
+      "language": "sql",
+      "sql": "SELECT id, COALESCE(bonus, 0) AS b FROM src_b",
+      "tables": {
+        "src_b": {
+          "columns": {"id": "INT", "bonus": "INT"},
+          "rows": [[1, 5], [2, 0], [3, 7]]
+        }
+      },
+      "ground_truth": [["id", "src_b", "id"], ["b", "src_b", "bonus"]]
+    },
+    {
+      "id": "syn-05-aggregate",
+      "language": "sql",
+      "sql": "SELECT SUM(amount) AS total FROM src_a",
+      "tables": {
+        "src_a": {
+          "columns": {"id": "INT", "amount": "INT"},
+          "rows": [[1, 10], [2, 20], [3, 30]]
+        }
+      },
+      "ground_truth": [["total", "src_a", "amount"]]
+    }
+  ]
+}

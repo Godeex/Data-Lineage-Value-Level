@@ -1,0 +1,817 @@
+{
+ "counts": {
+  "MIXED": 8,
+  "DATA": 30,
+  "CONTROL": 49
+ },
+ "by_category": {
+  "case": {
+   "MIXED": 5,
+   "DATA": 3,
+   "CONTROL": 3
+  },
+  "cte": {
+   "CONTROL": 7,
+   "DATA": 5
+  },
+  "aggregate": {
+   "MIXED": 1,
+   "DATA": 4,
+   "CONTROL": 11
+  },
+  "join": {
+   "DATA": 9,
+   "CONTROL": 22
+  },
+  "projection": {
+   "CONTROL": 6,
+   "DATA": 9,
+   "MIXED": 2
+  }
+ },
+ "edges": [
+  {
+   "qid": "synth-case-005",
+   "output_column": "country",
+   "source_table": "singer",
+   "source_column": "country",
+   "type": "MIXED",
+   "category": "case",
+   "note": "被投影的分组键"
+  },
+  {
+   "qid": "synth-case-005",
+   "output_column": "count(*)",
+   "source_table": "singer",
+   "source_column": "country",
+   "type": "MIXED",
+   "category": "case",
+   "note": "machine missed；组合并/拆分改变各组计数"
+  },
+  {
+   "qid": "synth-case-005",
+   "output_column": "bucket",
+   "source_table": "singer",
+   "source_column": "country",
+   "type": "MIXED",
+   "category": "case",
+   "note": "参考建议漏掉（仅静态建议有）；单成员组消失时该 bucket 行消失，多重集改变"
+  },
+  {
+   "qid": "synth-case-007",
+   "output_column": "avg(capacity)",
+   "source_table": "stadium",
+   "source_column": "capacity",
+   "type": "DATA",
+   "category": "case",
+   "note": "AVG 输入"
+  },
+  {
+   "qid": "synth-case-007",
+   "output_column": "max(capacity)",
+   "source_table": "stadium",
+   "source_column": "capacity",
+   "type": "DATA",
+   "category": "case",
+   "note": "MAX 输入"
+  },
+  {
+   "qid": "synth-case-007",
+   "output_column": "bucket",
+   "source_table": "stadium",
+   "source_column": "capacity",
+   "type": "DATA",
+   "category": "case",
+   "note": "machine missed（仅静态建议）；把一格压到 -1e6 拉低 AVG<0，bucket 翻转"
+  },
+  {
+   "qid": "synth-case-010",
+   "output_column": "count(*)",
+   "source_table": "concert",
+   "source_column": "year",
+   "type": "CONTROL",
+   "category": "case",
+   "note": "machine missed；Year 过滤决定标量 count"
+  },
+  {
+   "qid": "synth-case-010",
+   "output_column": "bucket",
+   "source_table": "concert",
+   "source_column": "year",
+   "type": "CONTROL",
+   "category": "case",
+   "note": "machine missed（仅静态建议）；count 0->1 使 nonpos->pos"
+  },
+  {
+   "qid": "synth-case-018",
+   "output_column": "weight",
+   "source_table": "pets",
+   "source_column": "pet_age",
+   "type": "CONTROL",
+   "category": "case",
+   "note": "ORDER BY pet_age LIMIT 1 选出唯一可观测行"
+  },
+  {
+   "qid": "synth-case-018",
+   "output_column": "weight",
+   "source_table": "pets",
+   "source_column": "weight",
+   "type": "MIXED",
+   "category": "case",
+   "note": "直接投影"
+  },
+  {
+   "qid": "synth-case-018",
+   "output_column": "bucket",
+   "source_table": "pets",
+   "source_column": "weight",
+   "type": "MIXED",
+   "category": "case",
+   "note": "bucket = CASE WHEN weight>0；符号翻转即改值"
+  },
+  {
+   "qid": "synth-cte-004",
+   "output_column": "avg(age)",
+   "source_table": "singer",
+   "source_column": "country",
+   "type": "CONTROL",
+   "category": "cte",
+   "note": "machine missed；Country->'France' 放进一行，聚合由 NULL 变 20"
+  },
+  {
+   "qid": "synth-cte-004",
+   "output_column": "min(age)",
+   "source_table": "singer",
+   "source_column": "country",
+   "type": "CONTROL",
+   "category": "cte",
+   "note": "machine missed；同一过滤列"
+  },
+  {
+   "qid": "synth-cte-004",
+   "output_column": "max(age)",
+   "source_table": "singer",
+   "source_column": "country",
+   "type": "CONTROL",
+   "category": "cte",
+   "note": "machine missed；同一过滤列"
+  },
+  {
+   "qid": "synth-cte-009",
+   "output_column": "country",
+   "source_table": "singer",
+   "source_column": "age",
+   "type": "CONTROL",
+   "category": "cte",
+   "note": "WHERE Age>20 改变 DISTINCT 集合"
+  },
+  {
+   "qid": "synth-cte-009",
+   "output_column": "country",
+   "source_table": "singer",
+   "source_column": "country",
+   "type": "DATA",
+   "category": "cte",
+   "note": "被投影的 DISTINCT 值"
+  },
+  {
+   "qid": "synth-cte-015",
+   "output_column": "avg(capacity)",
+   "source_table": "stadium",
+   "source_column": "capacity",
+   "type": "DATA",
+   "category": "cte",
+   "note": "AVG 输入"
+  },
+  {
+   "qid": "synth-cte-015",
+   "output_column": "max(capacity)",
+   "source_table": "stadium",
+   "source_column": "capacity",
+   "type": "DATA",
+   "category": "cte",
+   "note": "MAX 输入"
+  },
+  {
+   "qid": "synth-cte-016",
+   "output_column": "name",
+   "source_table": "stadium",
+   "source_column": "average",
+   "type": "CONTROL",
+   "category": "cte",
+   "note": "ORDER BY average DESC LIMIT 1 决定选中的行"
+  },
+  {
+   "qid": "synth-cte-016",
+   "output_column": "name",
+   "source_table": "stadium",
+   "source_column": "name",
+   "type": "DATA",
+   "category": "cte",
+   "note": "直接投影"
+  },
+  {
+   "qid": "synth-cte-016",
+   "output_column": "capacity",
+   "source_table": "stadium",
+   "source_column": "average",
+   "type": "CONTROL",
+   "category": "cte",
+   "note": "ORDER BY average DESC LIMIT 1 决定选中的行"
+  },
+  {
+   "qid": "synth-cte-016",
+   "output_column": "capacity",
+   "source_table": "stadium",
+   "source_column": "capacity",
+   "type": "DATA",
+   "category": "cte",
+   "note": "直接投影"
+  },
+  {
+   "qid": "synth-cte-018",
+   "output_column": "count(*)",
+   "source_table": "concert",
+   "source_column": "year",
+   "type": "CONTROL",
+   "category": "cte",
+   "note": "machine missed；validation-00020 的 CTE 包装"
+  },
+  {
+   "qid": "validation-00012",
+   "output_column": "song_name",
+   "source_table": "singer",
+   "source_column": "age",
+   "type": "MIXED",
+   "category": "aggregate",
+   "note": "Age 进入 avg(age) 子查询，阈值移动使入选集合改变"
+  },
+  {
+   "qid": "validation-00012",
+   "output_column": "song_name",
+   "source_table": "singer",
+   "source_column": "song_name",
+   "type": "DATA",
+   "category": "aggregate",
+   "note": "直接投影"
+  },
+  {
+   "qid": "validation-00020",
+   "output_column": "count(*)",
+   "source_table": "concert",
+   "source_column": "year",
+   "type": "CONTROL",
+   "category": "aggregate",
+   "note": "machine missed；WHERE Year=2014/2015；探针：concert.Year 'v10_0'->'2014' 使 count 0->1"
+  },
+  {
+   "qid": "validation-00031",
+   "output_column": "name",
+   "source_table": "stadium",
+   "source_column": "name",
+   "type": "DATA",
+   "category": "join",
+   "note": "EXCEPT 左侧投影"
+  },
+  {
+   "qid": "validation-00033",
+   "output_column": "concert_name",
+   "source_table": "concert",
+   "source_column": "concert_id",
+   "type": "CONTROL",
+   "category": "aggregate",
+   "note": "GROUP BY 键：改它使分组拆分/合并，行多重集改变"
+  },
+  {
+   "qid": "validation-00033",
+   "output_column": "concert_name",
+   "source_table": "concert",
+   "source_column": "concert_name",
+   "type": "DATA",
+   "category": "aggregate",
+   "note": "直接投影"
+  },
+  {
+   "qid": "validation-00033",
+   "output_column": "concert_name",
+   "source_table": "singer_in_concert",
+   "source_column": "concert_id",
+   "type": "CONTROL",
+   "category": "aggregate",
+   "note": "连接键重排行；单成员组消失时该组的 concert_name 行消失"
+  },
+  {
+   "qid": "validation-00033",
+   "output_column": "count(*)",
+   "source_table": "concert",
+   "source_column": "concert_id",
+   "type": "CONTROL",
+   "category": "aggregate",
+   "note": "GROUP BY 键改变各组计数"
+  },
+  {
+   "qid": "validation-00033",
+   "output_column": "count(*)",
+   "source_table": "singer_in_concert",
+   "source_column": "concert_id",
+   "type": "CONTROL",
+   "category": "aggregate",
+   "note": "连接键把行挪到别的组，组计数改变"
+  },
+  {
+   "qid": "validation-00033",
+   "output_column": "theme",
+   "source_table": "concert",
+   "source_column": "concert_id",
+   "type": "CONTROL",
+   "category": "aggregate",
+   "note": "同上，GROUP BY 键"
+  },
+  {
+   "qid": "validation-00033",
+   "output_column": "theme",
+   "source_table": "concert",
+   "source_column": "theme",
+   "type": "DATA",
+   "category": "aggregate",
+   "note": "直接投影"
+  },
+  {
+   "qid": "validation-00033",
+   "output_column": "theme",
+   "source_table": "singer_in_concert",
+   "source_column": "concert_id",
+   "type": "CONTROL",
+   "category": "aggregate",
+   "note": "只经“组消失/新建”路径影响，本实例有见证"
+  },
+  {
+   "qid": "validation-00046",
+   "output_column": "count(*)",
+   "source_table": "pets",
+   "source_column": "weight",
+   "type": "CONTROL",
+   "category": "aggregate",
+   "note": "WHERE weight>10；探针：Pets.weight 20->9 使该行退出过滤，count 1->0"
+  },
+  {
+   "qid": "validation-00048",
+   "output_column": "weight",
+   "source_table": "pets",
+   "source_column": "pet_age",
+   "type": "CONTROL",
+   "category": "projection",
+   "note": "ORDER BY pet_age LIMIT 1：排序键决定唯一可观测行"
+  },
+  {
+   "qid": "validation-00048",
+   "output_column": "weight",
+   "source_table": "pets",
+   "source_column": "weight",
+   "type": "DATA",
+   "category": "projection",
+   "note": "被选中行的直接投影"
+  },
+  {
+   "qid": "validation-00051",
+   "output_column": "count(*)",
+   "source_table": "has_pet",
+   "source_column": "stuid",
+   "type": "CONTROL",
+   "category": "aggregate",
+   "note": "连接键；重连改变匹配行数"
+  },
+  {
+   "qid": "validation-00051",
+   "output_column": "count(*)",
+   "source_table": "student",
+   "source_column": "age",
+   "type": "CONTROL",
+   "category": "aggregate",
+   "note": "WHERE Age>20 过滤"
+  },
+  {
+   "qid": "validation-00051",
+   "output_column": "count(*)",
+   "source_table": "student",
+   "source_column": "stuid",
+   "type": "CONTROL",
+   "category": "aggregate",
+   "note": "连接键；fan-out 改变匹配行数"
+  },
+  {
+   "qid": "validation-00055",
+   "output_column": "count(distinct pettype)",
+   "source_table": "pets",
+   "source_column": "pettype",
+   "type": "DATA",
+   "category": "aggregate",
+   "note": "DISTINCT 基数：置 NULL 或换成另一类型都会改变计数"
+  },
+  {
+   "qid": "validation-00069",
+   "output_column": "petid",
+   "source_table": "pets",
+   "source_column": "pet_age",
+   "type": "CONTROL",
+   "category": "projection",
+   "note": "WHERE pet_age>1 改变存活行集"
+  },
+  {
+   "qid": "validation-00069",
+   "output_column": "petid",
+   "source_table": "pets",
+   "source_column": "petid",
+   "type": "DATA",
+   "category": "projection",
+   "note": "直接投影"
+  },
+  {
+   "qid": "validation-00069",
+   "output_column": "weight",
+   "source_table": "pets",
+   "source_column": "pet_age",
+   "type": "CONTROL",
+   "category": "projection",
+   "note": "过滤行集"
+  },
+  {
+   "qid": "validation-00069",
+   "output_column": "weight",
+   "source_table": "pets",
+   "source_column": "weight",
+   "type": "DATA",
+   "category": "projection",
+   "note": "直接投影"
+  },
+  {
+   "qid": "validation-00070",
+   "output_column": "petid",
+   "source_table": "pets",
+   "source_column": "pet_age",
+   "type": "CONTROL",
+   "category": "projection",
+   "note": "与 validation-00069 同一条 SQL"
+  },
+  {
+   "qid": "validation-00070",
+   "output_column": "petid",
+   "source_table": "pets",
+   "source_column": "petid",
+   "type": "DATA",
+   "category": "projection",
+   "note": "与 validation-00069 同一条 SQL"
+  },
+  {
+   "qid": "validation-00070",
+   "output_column": "weight",
+   "source_table": "pets",
+   "source_column": "pet_age",
+   "type": "CONTROL",
+   "category": "projection",
+   "note": "与 validation-00069 同一条 SQL"
+  },
+  {
+   "qid": "validation-00070",
+   "output_column": "weight",
+   "source_table": "pets",
+   "source_column": "weight",
+   "type": "DATA",
+   "category": "projection",
+   "note": "与 validation-00069 同一条 SQL"
+  },
+  {
+   "qid": "validation-00121",
+   "output_column": "maker",
+   "source_table": "model_list",
+   "source_column": "maker",
+   "type": "DATA",
+   "category": "projection",
+   "note": "纯投影"
+  },
+  {
+   "qid": "validation-00121",
+   "output_column": "model",
+   "source_table": "model_list",
+   "source_column": "model",
+   "type": "DATA",
+   "category": "projection",
+   "note": "纯投影"
+  },
+  {
+   "qid": "validation-00174",
+   "output_column": "countryname",
+   "source_table": "countries",
+   "source_column": "countryname",
+   "type": "DATA",
+   "category": "join",
+   "note": "EXCEPT 左侧投影值"
+  },
+  {
+   "qid": "validation-00174",
+   "output_column": "countryname",
+   "source_table": "car_makers",
+   "source_column": "country",
+   "type": "CONTROL",
+   "category": "join",
+   "note": "machine missed；探针：Country->'5' 经 NUMERIC 亲和被强制成 5，右侧非空使 EXCEPT 缩小"
+  },
+  {
+   "qid": "validation-00257",
+   "output_column": "airportname",
+   "source_table": "airports",
+   "source_column": "airportcode",
+   "type": "CONTROL",
+   "category": "projection",
+   "note": "WHERE AirportCode NOT IN (...)：反连接过滤列"
+  },
+  {
+   "qid": "validation-00257",
+   "output_column": "airportname",
+   "source_table": "airports",
+   "source_column": "airportname",
+   "type": "DATA",
+   "category": "projection",
+   "note": "直接投影"
+  },
+  {
+   "qid": "validation-00257",
+   "output_column": "airportname",
+   "source_table": "flights",
+   "source_column": "destairport",
+   "type": "MIXED",
+   "category": "projection",
+   "note": "NOT IN 集合的 UNION 分支"
+  },
+  {
+   "qid": "validation-00257",
+   "output_column": "airportname",
+   "source_table": "flights",
+   "source_column": "sourceairport",
+   "type": "MIXED",
+   "category": "projection",
+   "note": "NOT IN 集合的子查询分支"
+  },
+  {
+   "qid": "validation-00262",
+   "output_column": "name",
+   "source_table": "employee",
+   "source_column": "name",
+   "type": "DATA",
+   "category": "projection",
+   "note": "直接投影"
+  },
+  {
+   "qid": "validation-00345",
+   "output_column": "template_type_code",
+   "source_table": "documents",
+   "source_column": "template_id",
+   "type": "CONTROL",
+   "category": "join",
+   "note": "被减侧的连接键"
+  },
+  {
+   "qid": "validation-00345",
+   "output_column": "template_type_code",
+   "source_table": "templates",
+   "source_column": "template_id",
+   "type": "CONTROL",
+   "category": "join",
+   "note": "EXCEPT 两侧共用的连接键"
+  },
+  {
+   "qid": "validation-00345",
+   "output_column": "template_type_code",
+   "source_table": "templates",
+   "source_column": "template_type_code",
+   "type": "DATA",
+   "category": "join",
+   "note": "投影值；未被文档使用的 code 改值会改变左侧独有行"
+  },
+  {
+   "qid": "validation-00346",
+   "output_column": "template_type_code",
+   "source_table": "documents",
+   "source_column": "template_id",
+   "type": "CONTROL",
+   "category": "join",
+   "note": "与 validation-00345 同一条 SQL"
+  },
+  {
+   "qid": "validation-00346",
+   "output_column": "template_type_code",
+   "source_table": "templates",
+   "source_column": "template_id",
+   "type": "CONTROL",
+   "category": "join",
+   "note": "与 validation-00345 同一条 SQL"
+  },
+  {
+   "qid": "validation-00346",
+   "output_column": "template_type_code",
+   "source_table": "templates",
+   "source_column": "template_type_code",
+   "type": "DATA",
+   "category": "join",
+   "note": "与 validation-00345 同一条 SQL"
+  },
+  {
+   "qid": "validation-00402",
+   "output_column": "course",
+   "source_table": "course",
+   "source_column": "course",
+   "type": "DATA",
+   "category": "join",
+   "note": "直接投影"
+  },
+  {
+   "qid": "validation-00402",
+   "output_column": "course",
+   "source_table": "course",
+   "source_column": "course_id",
+   "type": "CONTROL",
+   "category": "join",
+   "note": "连接键；未匹配行会掉出结果"
+  },
+  {
+   "qid": "validation-00402",
+   "output_column": "course",
+   "source_table": "course_arrange",
+   "source_column": "course_id",
+   "type": "CONTROL",
+   "category": "join",
+   "note": "行集的连接键"
+  },
+  {
+   "qid": "validation-00402",
+   "output_column": "course",
+   "source_table": "course_arrange",
+   "source_column": "teacher_id",
+   "type": "CONTROL",
+   "category": "join",
+   "note": "第二个连接键；行出现/消失"
+  },
+  {
+   "qid": "validation-00402",
+   "output_column": "course",
+   "source_table": "teacher",
+   "source_column": "teacher_id",
+   "type": "CONTROL",
+   "category": "join",
+   "note": "连接键；行出现/消失"
+  },
+  {
+   "qid": "validation-00402",
+   "output_column": "name",
+   "source_table": "course",
+   "source_column": "course_id",
+   "type": "CONTROL",
+   "category": "join",
+   "note": "连接键改变输出的 (name, course) 行"
+  },
+  {
+   "qid": "validation-00402",
+   "output_column": "name",
+   "source_table": "course_arrange",
+   "source_column": "course_id",
+   "type": "CONTROL",
+   "category": "join",
+   "note": "连接键改变输出的 (name, course) 行"
+  },
+  {
+   "qid": "validation-00402",
+   "output_column": "name",
+   "source_table": "course_arrange",
+   "source_column": "teacher_id",
+   "type": "CONTROL",
+   "category": "join",
+   "note": "连接键改变输出的 (name, course) 行"
+  },
+  {
+   "qid": "validation-00402",
+   "output_column": "name",
+   "source_table": "teacher",
+   "source_column": "name",
+   "type": "DATA",
+   "category": "join",
+   "note": "直接投影"
+  },
+  {
+   "qid": "validation-00402",
+   "output_column": "name",
+   "source_table": "teacher",
+   "source_column": "teacher_id",
+   "type": "CONTROL",
+   "category": "join",
+   "note": "连接键改变输出的 (name, course) 行"
+  },
+  {
+   "qid": "validation-00487",
+   "output_column": "first_name",
+   "source_table": "players",
+   "source_column": "first_name",
+   "type": "DATA",
+   "category": "join",
+   "note": "被选中冠军的直接投影"
+  },
+  {
+   "qid": "validation-00487",
+   "output_column": "country_code",
+   "source_table": "players",
+   "source_column": "country_code",
+   "type": "DATA",
+   "category": "join",
+   "note": "被选中冠军的直接投影"
+  },
+  {
+   "qid": "validation-00487",
+   "output_column": "birth_date",
+   "source_table": "players",
+   "source_column": "birth_date",
+   "type": "DATA",
+   "category": "join",
+   "note": "被选中冠军的直接投影"
+  },
+  {
+   "qid": "validation-00487",
+   "output_column": "first_name",
+   "source_table": "players",
+   "source_column": "player_id",
+   "type": "CONTROL",
+   "category": "join",
+   "note": "连接键决定选中哪个 player 行"
+  },
+  {
+   "qid": "validation-00487",
+   "output_column": "country_code",
+   "source_table": "players",
+   "source_column": "player_id",
+   "type": "CONTROL",
+   "category": "join",
+   "note": "连接键决定选中哪个 player 行"
+  },
+  {
+   "qid": "validation-00487",
+   "output_column": "birth_date",
+   "source_table": "players",
+   "source_column": "player_id",
+   "type": "CONTROL",
+   "category": "join",
+   "note": "连接键决定选中哪个 player 行"
+  },
+  {
+   "qid": "validation-00487",
+   "output_column": "first_name",
+   "source_table": "matches",
+   "source_column": "winner_id",
+   "type": "CONTROL",
+   "category": "join",
+   "note": "连接键改变比赛集合，进而改变被选冠军"
+  },
+  {
+   "qid": "validation-00487",
+   "output_column": "country_code",
+   "source_table": "matches",
+   "source_column": "winner_id",
+   "type": "CONTROL",
+   "category": "join",
+   "note": "连接键改变比赛集合，进而改变被选冠军"
+  },
+  {
+   "qid": "validation-00487",
+   "output_column": "birth_date",
+   "source_table": "matches",
+   "source_column": "winner_id",
+   "type": "CONTROL",
+   "category": "join",
+   "note": "连接键改变比赛集合，进而改变被选冠军"
+  },
+  {
+   "qid": "validation-00487",
+   "output_column": "first_name",
+   "source_table": "matches",
+   "source_column": "winner_rank_points",
+   "type": "CONTROL",
+   "category": "join",
+   "note": "ORDER BY winner_rank_points DESC LIMIT 1"
+  },
+  {
+   "qid": "validation-00487",
+   "output_column": "country_code",
+   "source_table": "matches",
+   "source_column": "winner_rank_points",
+   "type": "CONTROL",
+   "category": "join",
+   "note": "ORDER BY winner_rank_points DESC LIMIT 1"
+  },
+  {
+   "qid": "validation-00487",
+   "output_column": "birth_date",
+   "source_table": "matches",
+   "source_column": "winner_rank_points",
+   "type": "CONTROL",
+   "category": "join",
+   "note": "ORDER BY winner_rank_points DESC LIMIT 1"
+  }
+ ]
+}

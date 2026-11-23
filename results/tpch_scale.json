@@ -1,0 +1,194 @@
+{
+ "db": "data/tpch_sf01.sqlite",
+ "lineitem_rows": 600572,
+ "budget": 3,
+ "max_candidates": 12,
+ "queries": [
+  {
+   "qid": "q1",
+   "sql": "SELECT c_name FROM customer WHERE c_nationkey = 1",
+   "expected_control": [
+    [
+     "c_name",
+     "customer",
+     "c_nationkey"
+    ]
+   ],
+   "cell_recovered": [
+    [
+     "c_name",
+     "customer",
+     "c_nationkey"
+    ]
+   ],
+   "literal_recovered": [
+    [
+     "c_name",
+     "customer",
+     "c_nationkey"
+    ]
+   ],
+   "cell_recall": 1.0,
+   "literal_recall": 1.0,
+   "cell_executions": 183,
+   "literal_executions": 1617,
+   "cell_seconds": 2.941,
+   "literal_seconds": 17.269
+  },
+  {
+   "qid": "q2",
+   "sql": "SELECT c_name FROM customer WHERE c_mktsegment = 'BUILDING'",
+   "expected_control": [
+    [
+     "c_name",
+     "customer",
+     "c_mktsegment"
+    ]
+   ],
+   "cell_recovered": [
+    [
+     "c_name",
+     "customer",
+     "c_mktsegment"
+    ]
+   ],
+   "literal_recovered": [
+    [
+     "c_name",
+     "customer",
+     "c_mktsegment"
+    ]
+   ],
+   "cell_recall": 1.0,
+   "literal_recall": 1.0,
+   "cell_executions": 183,
+   "literal_executions": 1268,
+   "cell_seconds": 3.119,
+   "literal_seconds": 14.038
+  },
+  {
+   "qid": "q3",
+   "sql": "SELECT o_orderkey, o_totalprice FROM orders WHERE o_orderdate >= '1995-01-01'",
+   "expected_control": [
+    [
+     "o_orderkey",
+     "orders",
+     "o_orderdate"
+    ],
+    [
+     "o_totalprice",
+     "orders",
+     "o_orderdate"
+    ]
+   ],
+   "cell_recovered": [],
+   "literal_recovered": [
+    [
+     "o_orderkey",
+     "orders",
+     "o_orderdate"
+    ],
+    [
+     "o_totalprice",
+     "orders",
+     "o_orderdate"
+    ]
+   ],
+   "cell_recall": 0.0,
+   "literal_recall": 1.0,
+   "cell_executions": 183,
+   "literal_executions": 1269,
+   "cell_seconds": 21.901,
+   "literal_seconds": 151.539
+  },
+  {
+   "qid": "q4",
+   "sql": "SELECT SUM(l_quantity) FROM lineitem WHERE l_shipdate >= '1995-01-01' AND l_partkey = 1",
+   "expected_control": [
+    [
+     "sum(l_quantity)",
+     "lineitem",
+     "l_partkey"
+    ],
+    [
+     "sum(l_quantity)",
+     "lineitem",
+     "l_shipdate"
+    ]
+   ],
+   "cell_recovered": [],
+   "literal_recovered": [
+    [
+     "sum(l_quantity)",
+     "lineitem",
+     "l_partkey"
+    ]
+   ],
+   "cell_recall": 0.0,
+   "literal_recall": 0.5,
+   "cell_executions": 183,
+   "literal_executions": 1800,
+   "cell_seconds": 10.065,
+   "literal_seconds": 96.672
+  },
+  {
+   "qid": "q5",
+   "sql": "SELECT s_name FROM supplier WHERE s_acctbal > 5000",
+   "expected_control": [
+    [
+     "s_name",
+     "supplier",
+     "s_acctbal"
+    ]
+   ],
+   "cell_recovered": [],
+   "literal_recovered": [
+    [
+     "s_name",
+     "supplier",
+     "s_acctbal"
+    ]
+   ],
+   "cell_recall": 0.0,
+   "literal_recall": 1.0,
+   "cell_executions": 183,
+   "literal_executions": 1818,
+   "cell_seconds": 1.767,
+   "literal_seconds": 15.265
+  },
+  {
+   "qid": "q6",
+   "sql": "SELECT p_name FROM part WHERE p_size = 15",
+   "expected_control": [
+    [
+     "p_name",
+     "part",
+     "p_size"
+    ]
+   ],
+   "cell_recovered": [],
+   "literal_recovered": [
+    [
+     "p_name",
+     "part",
+     "p_size"
+    ]
+   ],
+   "cell_recall": 0.0,
+   "literal_recall": 1.0,
+   "cell_executions": 183,
+   "literal_executions": 1816,
+   "cell_seconds": 1.987,
+   "literal_seconds": 20.772
+  }
+ ],
+ "summary": {
+  "cell_recovered": 2,
+  "literal_recovered": 7,
+  "n_expected": 8,
+  "cell_seconds_mean": 6.963333333333334,
+  "literal_seconds_mean": 52.5925,
+  "cell_executions_mean": 183.0,
+  "literal_executions_mean": 1598.0
+ }
+}

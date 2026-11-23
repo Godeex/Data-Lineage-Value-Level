@@ -1,0 +1,47 @@
+{
+ "literal_union_evolving_vs_machine_reference": {
+  "observed": {
+   "n": 30,
+   "mean_diff": 0.15000000000000002,
+   "sd": 0.35609095226293647,
+   "cohen_dz": 0.42124069439776296,
+   "p_signflip": 0.02
+  },
+  "power_projection": {
+   "30": 0.584,
+   "50": 0.916,
+   "80": 0.988,
+   "100": 0.998
+  }
+ },
+ "evolving_vs_fixed_hybrid": {
+  "observed": {
+   "n": 30,
+   "mean_diff": 0.18094516594516596,
+   "sd": 0.3151155909152213,
+   "cohen_dz": 0.5742183857664074,
+   "p_signflip": 0.0
+  },
+  "power_projection": {
+   "30": 0.982,
+   "50": 1.0,
+   "80": 1.0,
+   "100": 1.0
+  }
+ },
+ "literal_union_evolving_vs_reference_union_static": {
+  "observed": {
+   "n": 30,
+   "mean_diff": 0.11111111111111112,
+   "sd": 0.31964220099025614,
+   "cohen_dz": 0.3476108935769035,
+   "p_signflip": 0.1025
+  },
+  "power_projection": {
+   "30": 0.334,
+   "50": 0.688,
+   "80": 0.938,
+   "100": 0.974
+  }
+ }
+}

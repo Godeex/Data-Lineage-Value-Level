@@ -1,0 +1,70 @@
+{
+ "reference_edges_suggestion": {
+  "suggested": 76,
+  "gold_POSITIVE": 76,
+  "gold_NEGATIVE": 0,
+  "gold_UNKNOWN": 0,
+  "not_in_gold": 0,
+  "precision": 1.0,
+  "recall": 0.8736
+ },
+ "static_edges_suggestion": {
+  "suggested": 21,
+  "gold_POSITIVE": 21,
+  "gold_NEGATIVE": 0,
+  "gold_UNKNOWN": 0,
+  "not_in_gold": 0,
+  "precision": 1.0,
+  "recall": 0.2414
+ },
+ "union(reference, static)": {
+  "suggested": 79,
+  "gold_POSITIVE": 79,
+  "gold_NEGATIVE": 0,
+  "gold_UNKNOWN": 0,
+  "not_in_gold": 0,
+  "precision": 1.0,
+  "recall": 0.908
+ },
+ "static_positional_naming_unresolved": {
+  "edges": 7,
+  "note": "_col_0/_col_1 这类位置式列名无法与 gold 的 avg(age)/max(capacity) 对齐，评测前必须规范化"
+ },
+ "gold_POSITIVE_total": {
+  "edges": 87
+ },
+ "missed_by_both": [
+  {
+   "qid": "synth-case-005",
+   "edge": "count(*) <- singer.country"
+  },
+  {
+   "qid": "synth-case-010",
+   "edge": "count(*) <- concert.year"
+  },
+  {
+   "qid": "synth-cte-004",
+   "edge": "avg(age) <- singer.country"
+  },
+  {
+   "qid": "synth-cte-004",
+   "edge": "max(age) <- singer.country"
+  },
+  {
+   "qid": "synth-cte-004",
+   "edge": "min(age) <- singer.country"
+  },
+  {
+   "qid": "synth-cte-018",
+   "edge": "count(*) <- concert.year"
+  },
+  {
+   "qid": "validation-00020",
+   "edge": "count(*) <- concert.year"
+  },
+  {
+   "qid": "validation-00174",
+   "edge": "countryname <- car_makers.country"
+  }
+ ]
+}

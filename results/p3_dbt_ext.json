@@ -1,0 +1,1574 @@
+{
+ "summary": {
+  "expanded_static": {
+   "n": 30,
+   "macro_f1": 0.6958241320083425,
+   "macro_recall": 0.6024287749287749,
+   "mean_executions": 0.0,
+   "micro_tp": 91,
+   "micro_outside": 5,
+   "micro_missing": 100
+  },
+  "static_plus_oracle": {
+   "n": 30,
+   "macro_f1": 0.9796536796536797,
+   "macro_recall": 1.0,
+   "mean_executions": 142.0,
+   "micro_tp": 191,
+   "micro_outside": 5,
+   "micro_missing": 0
+  },
+  "static_plus_literal": {
+   "n": 30,
+   "macro_f1": 0.9517953157953158,
+   "macro_recall": 0.9550854700854701,
+   "mean_executions": 292.9,
+   "micro_tp": 176,
+   "micro_outside": 5,
+   "micro_missing": 15
+  },
+  "static_plus_literal_oracle": {
+   "n": 30,
+   "macro_f1": 0.9796536796536797,
+   "macro_recall": 1.0,
+   "mean_executions": 434.9,
+   "micro_tp": 191,
+   "micro_outside": 5,
+   "micro_missing": 0
+  },
+  "raw_static_errors": 24,
+  "n_records": 30
+ },
+ "records": [
+  {
+   "model": "stg_orders",
+   "config": {
+    "include_refunds": false,
+    "region": "US",
+    "include_tax": false
+   },
+   "expanded_sql": "SELECT order_id, customer_id, amount, refunded, order_date\nFROM raw_orders",
+   "raw_static_status": "parsed",
+   "raw_static_edges": 5,
+   "expanded_static_status": "parsed",
+   "silver_edges": 5,
+   "methods": {
+    "expanded_static": {
+     "tp": 5,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 5,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 5,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 149
+    },
+    "static_plus_literal_oracle": {
+     "tp": 5,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 291
+    }
+   }
+  },
+  {
+   "model": "stg_customers",
+   "config": {
+    "include_refunds": false,
+    "region": "US",
+    "include_tax": false
+   },
+   "expanded_sql": "SELECT customer_id, name, country\nFROM raw_customers",
+   "raw_static_status": "parsed",
+   "raw_static_edges": 3,
+   "expanded_static_status": "parsed",
+   "silver_edges": 3,
+   "methods": {
+    "expanded_static": {
+     "tp": 3,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 3,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 3,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 149
+    },
+    "static_plus_literal_oracle": {
+     "tp": 3,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 291
+    }
+   }
+  },
+  {
+   "model": "revenue_by_customer",
+   "config": {
+    "include_refunds": false,
+    "region": "US",
+    "include_tax": false
+   },
+   "expanded_sql": "SELECT\n  c.customer_id,\n  c.name,\n  SUM(o.amount) AS revenue,\n  CASE WHEN SUM(o.amount) > 100 THEN 'high' ELSE 'low' END AS bucket\nFROM (SELECT order_id, customer_id, amount, refunded, order_date\nFROM raw_orders) AS o\nJOIN (SELECT customer_id, name, country\nFROM raw_customers) AS c\n  ON o.customer_id = c.customer_id\n\nGROUP BY c.customer_id, c.name",
+   "raw_static_status": "error: ParseError",
+   "raw_static_edges": 0,
+   "expanded_static_status": "parsed",
+   "silver_edges": 9,
+   "methods": {
+    "expanded_static": {
+     "tp": 4,
+     "outside": 0,
+     "missing": 5,
+     "precision": 1.0,
+     "recall": 0.4444444444444444,
+     "f1": 0.6153846153846153,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 9,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 9,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 317
+    },
+    "static_plus_literal_oracle": {
+     "tp": 9,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 459
+    }
+   }
+  },
+  {
+   "model": "order_flags",
+   "config": {
+    "include_refunds": false,
+    "region": "US",
+    "include_tax": false
+   },
+   "expanded_sql": "SELECT\n  order_id,\n  CASE WHEN amount > 100 THEN 'high' ELSE 'low' END AS flag\nFROM (SELECT order_id, customer_id, amount, refunded, order_date\nFROM raw_orders) AS o",
+   "raw_static_status": "error: ParseError",
+   "raw_static_edges": 0,
+   "expanded_static_status": "parsed",
+   "silver_edges": 2,
+   "methods": {
+    "expanded_static": {
+     "tp": 2,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 2,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 2,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 317
+    },
+    "static_plus_literal_oracle": {
+     "tp": 2,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 459
+    }
+   }
+  },
+  {
+   "model": "revenue_by_country",
+   "config": {
+    "include_refunds": false,
+    "region": "US",
+    "include_tax": false
+   },
+   "expanded_sql": "SELECT\n  c.country,\n  SUM(o.amount) AS revenue,\n  CASE WHEN SUM(o.amount) > 100 THEN 'high' ELSE 'low' END AS bucket\nFROM (SELECT order_id, customer_id, amount, refunded, order_date\nFROM raw_orders) AS o\nJOIN (SELECT customer_id, name, country\nFROM raw_customers) AS c ON o.customer_id = c.customer_id\nWHERE c.country = 'US'\nGROUP BY c.country",
+   "raw_static_status": "error: ParseError",
+   "raw_static_edges": 0,
+   "expanded_static_status": "parsed",
+   "silver_edges": 5,
+   "methods": {
+    "expanded_static": {
+     "tp": 2,
+     "outside": 1,
+     "missing": 3,
+     "precision": 0.6666666666666666,
+     "recall": 0.4,
+     "f1": 0.5,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 5,
+     "outside": 1,
+     "missing": 0,
+     "precision": 0.8333333333333334,
+     "recall": 1.0,
+     "f1": 0.9090909090909091,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 5,
+     "outside": 1,
+     "missing": 0,
+     "precision": 0.8333333333333334,
+     "recall": 1.0,
+     "f1": 0.9090909090909091,
+     "executions": 332
+    },
+    "static_plus_literal_oracle": {
+     "tp": 5,
+     "outside": 1,
+     "missing": 0,
+     "precision": 0.8333333333333334,
+     "recall": 1.0,
+     "f1": 0.9090909090909091,
+     "executions": 474
+    }
+   }
+  },
+  {
+   "model": "customer_segments",
+   "config": {
+    "include_refunds": false,
+    "region": "US",
+    "include_tax": false
+   },
+   "expanded_sql": "SELECT\n  c.customer_id,\n  c.name,\n  CASE\n    WHEN SUM(o.amount) > 200 THEN 'high'\n    WHEN SUM(o.amount) > 50 THEN 'mid'\n    ELSE 'low'\n  END AS segment\nFROM (SELECT order_id, customer_id, amount, refunded, order_date\nFROM raw_orders) AS o\nJOIN (SELECT customer_id, name, country\nFROM raw_customers) AS c ON o.customer_id = c.customer_id\nGROUP BY c.customer_id, c.name",
+   "raw_static_status": "error: ParseError",
+   "raw_static_edges": 0,
+   "expanded_static_status": "parsed",
+   "silver_edges": 6,
+   "methods": {
+    "expanded_static": {
+     "tp": 3,
+     "outside": 0,
+     "missing": 3,
+     "precision": 1.0,
+     "recall": 0.5,
+     "f1": 0.6666666666666666,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 6,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 6,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 358
+    },
+    "static_plus_literal_oracle": {
+     "tp": 6,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 500
+    }
+   }
+  },
+  {
+   "model": "refund_rate",
+   "config": {
+    "include_refunds": false,
+    "region": "US",
+    "include_tax": false
+   },
+   "expanded_sql": "SELECT\n  c.country,\n  SUM(CASE WHEN o.refunded = 1 THEN 1 ELSE 0 END) AS refunds,\n  COUNT(*) AS n,\n  CASE WHEN COUNT(*) = 0 THEN NULL ELSE SUM(CASE WHEN o.refunded = 1 THEN 1 ELSE 0 END) * 1.0 / COUNT(*) END AS refund_rate\nFROM (SELECT order_id, customer_id, amount, refunded, order_date\nFROM raw_orders) AS o\nJOIN (SELECT customer_id, name, country\nFROM raw_customers) AS c ON o.customer_id = c.customer_id\nGROUP BY c.country",
+   "raw_static_status": "error: ParseError",
+   "raw_static_edges": 0,
+   "expanded_static_status": "parsed",
+   "silver_edges": 13,
+   "methods": {
+    "expanded_static": {
+     "tp": 3,
+     "outside": 0,
+     "missing": 10,
+     "precision": 1.0,
+     "recall": 0.23076923076923078,
+     "f1": 0.375,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 13,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 12,
+     "outside": 0,
+     "missing": 1,
+     "precision": 1.0,
+     "recall": 0.9230769230769231,
+     "f1": 0.9600000000000001,
+     "executions": 310
+    },
+    "static_plus_literal_oracle": {
+     "tp": 13,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 452
+    }
+   }
+  },
+  {
+   "model": "top_orders",
+   "config": {
+    "include_refunds": false,
+    "region": "US",
+    "include_tax": false
+   },
+   "expanded_sql": "SELECT\n  order_id,\n  amount,\n  CASE WHEN amount > 100 THEN 'high' ELSE 'low' END AS flag\nFROM (SELECT order_id, customer_id, amount, refunded, order_date\nFROM raw_orders) AS o\nORDER BY amount DESC\nLIMIT 3",
+   "raw_static_status": "error: ParseError",
+   "raw_static_edges": 0,
+   "expanded_static_status": "parsed",
+   "silver_edges": 3,
+   "methods": {
+    "expanded_static": {
+     "tp": 2,
+     "outside": 1,
+     "missing": 1,
+     "precision": 0.6666666666666666,
+     "recall": 0.6666666666666666,
+     "f1": 0.6666666666666666,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 3,
+     "outside": 1,
+     "missing": 0,
+     "precision": 0.75,
+     "recall": 1.0,
+     "f1": 0.8571428571428571,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 3,
+     "outside": 1,
+     "missing": 0,
+     "precision": 0.75,
+     "recall": 1.0,
+     "f1": 0.8571428571428571,
+     "executions": 356
+    },
+    "static_plus_literal_oracle": {
+     "tp": 3,
+     "outside": 1,
+     "missing": 0,
+     "precision": 0.75,
+     "recall": 1.0,
+     "f1": 0.8571428571428571,
+     "executions": 498
+    }
+   }
+  },
+  {
+   "model": "taxed_revenue",
+   "config": {
+    "include_refunds": false,
+    "region": "US",
+    "include_tax": false
+   },
+   "expanded_sql": "SELECT\n  c.country,\n  SUM(o.amount * (1 + COALESCE(t.rate, 0))) AS revenue\nFROM (SELECT order_id, customer_id, amount, refunded, order_date\nFROM raw_orders) AS o\nJOIN (SELECT customer_id, name, country\nFROM raw_customers) AS c ON o.customer_id = c.customer_id\nLEFT JOIN raw_tax AS t ON c.country = t.country\n",
+   "raw_static_status": "error: ParseError",
+   "raw_static_edges": 0,
+   "expanded_static_status": "parsed",
+   "silver_edges": 8,
+   "methods": {
+    "expanded_static": {
+     "tp": 3,
+     "outside": 0,
+     "missing": 5,
+     "precision": 1.0,
+     "recall": 0.375,
+     "f1": 0.5454545454545454,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 8,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 8,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 310
+    },
+    "static_plus_literal_oracle": {
+     "tp": 8,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 452
+    }
+   }
+  },
+  {
+   "model": "order_summary",
+   "config": {
+    "include_refunds": false,
+    "region": "US",
+    "include_tax": false
+   },
+   "expanded_sql": "WITH base AS (\n  SELECT customer_id, amount, refunded\n  FROM (SELECT order_id, customer_id, amount, refunded, order_date\nFROM raw_orders)\n)\nSELECT\n  customer_id,\n  COUNT(*) AS n,\n  SUM(amount) AS total,\n  CASE WHEN SUM(amount) > 150 THEN 'high' ELSE 'low' END AS bucket\nFROM base\nGROUP BY customer_id",
+   "raw_static_status": "error: ParseError",
+   "raw_static_edges": 0,
+   "expanded_static_status": "parsed",
+   "silver_edges": 6,
+   "methods": {
+    "expanded_static": {
+     "tp": 3,
+     "outside": 0,
+     "missing": 3,
+     "precision": 1.0,
+     "recall": 0.5,
+     "f1": 0.6666666666666666,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 6,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 6,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 317
+    },
+    "static_plus_literal_oracle": {
+     "tp": 6,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 459
+    }
+   }
+  },
+  {
+   "model": "stg_orders",
+   "config": {
+    "include_refunds": true,
+    "region": "UK",
+    "include_tax": true
+   },
+   "expanded_sql": "SELECT order_id, customer_id, amount, refunded, order_date\nFROM raw_orders",
+   "raw_static_status": "parsed",
+   "raw_static_edges": 5,
+   "expanded_static_status": "parsed",
+   "silver_edges": 5,
+   "methods": {
+    "expanded_static": {
+     "tp": 5,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 5,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 5,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 149
+    },
+    "static_plus_literal_oracle": {
+     "tp": 5,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 291
+    }
+   }
+  },
+  {
+   "model": "stg_customers",
+   "config": {
+    "include_refunds": true,
+    "region": "UK",
+    "include_tax": true
+   },
+   "expanded_sql": "SELECT customer_id, name, country\nFROM raw_customers",
+   "raw_static_status": "parsed",
+   "raw_static_edges": 3,
+   "expanded_static_status": "parsed",
+   "silver_edges": 3,
+   "methods": {
+    "expanded_static": {
+     "tp": 3,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 3,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 3,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 149
+    },
+    "static_plus_literal_oracle": {
+     "tp": 3,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 291
+    }
+   }
+  },
+  {
+   "model": "revenue_by_customer",
+   "config": {
+    "include_refunds": true,
+    "region": "UK",
+    "include_tax": true
+   },
+   "expanded_sql": "SELECT\n  c.customer_id,\n  c.name,\n  SUM(o.amount) AS revenue,\n  CASE WHEN SUM(o.amount) > 100 THEN 'high' ELSE 'low' END AS bucket\nFROM (SELECT order_id, customer_id, amount, refunded, order_date\nFROM raw_orders) AS o\nJOIN (SELECT customer_id, name, country\nFROM raw_customers) AS c\n  ON o.customer_id = c.customer_id\n\nWHERE o.refunded = 0\n\nGROUP BY c.customer_id, c.name",
+   "raw_static_status": "error: ParseError",
+   "raw_static_edges": 0,
+   "expanded_static_status": "parsed",
+   "silver_edges": 15,
+   "methods": {
+    "expanded_static": {
+     "tp": 4,
+     "outside": 0,
+     "missing": 11,
+     "precision": 1.0,
+     "recall": 0.26666666666666666,
+     "f1": 0.4210526315789474,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 15,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 11,
+     "outside": 0,
+     "missing": 4,
+     "precision": 1.0,
+     "recall": 0.7333333333333333,
+     "f1": 0.846153846153846,
+     "executions": 356
+    },
+    "static_plus_literal_oracle": {
+     "tp": 15,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 498
+    }
+   }
+  },
+  {
+   "model": "order_flags",
+   "config": {
+    "include_refunds": true,
+    "region": "UK",
+    "include_tax": true
+   },
+   "expanded_sql": "SELECT\n  order_id,\n  CASE WHEN amount > 100 THEN 'high' ELSE 'low' END AS flag\nFROM (SELECT order_id, customer_id, amount, refunded, order_date\nFROM raw_orders) AS o",
+   "raw_static_status": "error: ParseError",
+   "raw_static_edges": 0,
+   "expanded_static_status": "parsed",
+   "silver_edges": 2,
+   "methods": {
+    "expanded_static": {
+     "tp": 2,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 2,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 2,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 317
+    },
+    "static_plus_literal_oracle": {
+     "tp": 2,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 459
+    }
+   }
+  },
+  {
+   "model": "revenue_by_country",
+   "config": {
+    "include_refunds": true,
+    "region": "UK",
+    "include_tax": true
+   },
+   "expanded_sql": "SELECT\n  c.country,\n  SUM(o.amount) AS revenue,\n  CASE WHEN SUM(o.amount) > 100 THEN 'high' ELSE 'low' END AS bucket\nFROM (SELECT order_id, customer_id, amount, refunded, order_date\nFROM raw_orders) AS o\nJOIN (SELECT customer_id, name, country\nFROM raw_customers) AS c ON o.customer_id = c.customer_id\nWHERE c.country = 'UK'\nGROUP BY c.country",
+   "raw_static_status": "error: ParseError",
+   "raw_static_edges": 0,
+   "expanded_static_status": "parsed",
+   "silver_edges": 5,
+   "methods": {
+    "expanded_static": {
+     "tp": 2,
+     "outside": 1,
+     "missing": 3,
+     "precision": 0.6666666666666666,
+     "recall": 0.4,
+     "f1": 0.5,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 5,
+     "outside": 1,
+     "missing": 0,
+     "precision": 0.8333333333333334,
+     "recall": 1.0,
+     "f1": 0.9090909090909091,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 5,
+     "outside": 1,
+     "missing": 0,
+     "precision": 0.8333333333333334,
+     "recall": 1.0,
+     "f1": 0.9090909090909091,
+     "executions": 333
+    },
+    "static_plus_literal_oracle": {
+     "tp": 5,
+     "outside": 1,
+     "missing": 0,
+     "precision": 0.8333333333333334,
+     "recall": 1.0,
+     "f1": 0.9090909090909091,
+     "executions": 475
+    }
+   }
+  },
+  {
+   "model": "customer_segments",
+   "config": {
+    "include_refunds": true,
+    "region": "UK",
+    "include_tax": true
+   },
+   "expanded_sql": "SELECT\n  c.customer_id,\n  c.name,\n  CASE\n    WHEN SUM(o.amount) > 200 THEN 'high'\n    WHEN SUM(o.amount) > 50 THEN 'mid'\n    ELSE 'low'\n  END AS segment\nFROM (SELECT order_id, customer_id, amount, refunded, order_date\nFROM raw_orders) AS o\nJOIN (SELECT customer_id, name, country\nFROM raw_customers) AS c ON o.customer_id = c.customer_id\nGROUP BY c.customer_id, c.name",
+   "raw_static_status": "error: ParseError",
+   "raw_static_edges": 0,
+   "expanded_static_status": "parsed",
+   "silver_edges": 6,
+   "methods": {
+    "expanded_static": {
+     "tp": 3,
+     "outside": 0,
+     "missing": 3,
+     "precision": 1.0,
+     "recall": 0.5,
+     "f1": 0.6666666666666666,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 6,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 6,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 358
+    },
+    "static_plus_literal_oracle": {
+     "tp": 6,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 500
+    }
+   }
+  },
+  {
+   "model": "refund_rate",
+   "config": {
+    "include_refunds": true,
+    "region": "UK",
+    "include_tax": true
+   },
+   "expanded_sql": "SELECT\n  c.country,\n  SUM(CASE WHEN o.refunded = 1 THEN 1 ELSE 0 END) AS refunds,\n  COUNT(*) AS n,\n  CASE WHEN COUNT(*) = 0 THEN NULL ELSE SUM(CASE WHEN o.refunded = 1 THEN 1 ELSE 0 END) * 1.0 / COUNT(*) END AS refund_rate\nFROM (SELECT order_id, customer_id, amount, refunded, order_date\nFROM raw_orders) AS o\nJOIN (SELECT customer_id, name, country\nFROM raw_customers) AS c ON o.customer_id = c.customer_id\nGROUP BY c.country",
+   "raw_static_status": "error: ParseError",
+   "raw_static_edges": 0,
+   "expanded_static_status": "parsed",
+   "silver_edges": 13,
+   "methods": {
+    "expanded_static": {
+     "tp": 3,
+     "outside": 0,
+     "missing": 10,
+     "precision": 1.0,
+     "recall": 0.23076923076923078,
+     "f1": 0.375,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 13,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 12,
+     "outside": 0,
+     "missing": 1,
+     "precision": 1.0,
+     "recall": 0.9230769230769231,
+     "f1": 0.9600000000000001,
+     "executions": 310
+    },
+    "static_plus_literal_oracle": {
+     "tp": 13,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 452
+    }
+   }
+  },
+  {
+   "model": "top_orders",
+   "config": {
+    "include_refunds": true,
+    "region": "UK",
+    "include_tax": true
+   },
+   "expanded_sql": "SELECT\n  order_id,\n  amount,\n  CASE WHEN amount > 100 THEN 'high' ELSE 'low' END AS flag\nFROM (SELECT order_id, customer_id, amount, refunded, order_date\nFROM raw_orders) AS o\nORDER BY amount DESC\nLIMIT 3",
+   "raw_static_status": "error: ParseError",
+   "raw_static_edges": 0,
+   "expanded_static_status": "parsed",
+   "silver_edges": 3,
+   "methods": {
+    "expanded_static": {
+     "tp": 2,
+     "outside": 1,
+     "missing": 1,
+     "precision": 0.6666666666666666,
+     "recall": 0.6666666666666666,
+     "f1": 0.6666666666666666,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 3,
+     "outside": 1,
+     "missing": 0,
+     "precision": 0.75,
+     "recall": 1.0,
+     "f1": 0.8571428571428571,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 3,
+     "outside": 1,
+     "missing": 0,
+     "precision": 0.75,
+     "recall": 1.0,
+     "f1": 0.8571428571428571,
+     "executions": 356
+    },
+    "static_plus_literal_oracle": {
+     "tp": 3,
+     "outside": 1,
+     "missing": 0,
+     "precision": 0.75,
+     "recall": 1.0,
+     "f1": 0.8571428571428571,
+     "executions": 498
+    }
+   }
+  },
+  {
+   "model": "taxed_revenue",
+   "config": {
+    "include_refunds": true,
+    "region": "UK",
+    "include_tax": true
+   },
+   "expanded_sql": "SELECT\n  c.country,\n  SUM(o.amount * (1 + COALESCE(t.rate, 0))) AS revenue\nFROM (SELECT order_id, customer_id, amount, refunded, order_date\nFROM raw_orders) AS o\nJOIN (SELECT customer_id, name, country\nFROM raw_customers) AS c ON o.customer_id = c.customer_id\nLEFT JOIN raw_tax AS t ON c.country = t.country\n\nGROUP BY c.country\n",
+   "raw_static_status": "error: ParseError",
+   "raw_static_edges": 0,
+   "expanded_static_status": "parsed",
+   "silver_edges": 8,
+   "methods": {
+    "expanded_static": {
+     "tp": 3,
+     "outside": 0,
+     "missing": 5,
+     "precision": 1.0,
+     "recall": 0.375,
+     "f1": 0.5454545454545454,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 8,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 7,
+     "outside": 0,
+     "missing": 1,
+     "precision": 1.0,
+     "recall": 0.875,
+     "f1": 0.9333333333333333,
+     "executions": 310
+    },
+    "static_plus_literal_oracle": {
+     "tp": 8,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 452
+    }
+   }
+  },
+  {
+   "model": "order_summary",
+   "config": {
+    "include_refunds": true,
+    "region": "UK",
+    "include_tax": true
+   },
+   "expanded_sql": "WITH base AS (\n  SELECT customer_id, amount, refunded\n  FROM (SELECT order_id, customer_id, amount, refunded, order_date\nFROM raw_orders)\n)\nSELECT\n  customer_id,\n  COUNT(*) AS n,\n  SUM(amount) AS total,\n  CASE WHEN SUM(amount) > 150 THEN 'high' ELSE 'low' END AS bucket\nFROM base\nGROUP BY customer_id",
+   "raw_static_status": "error: ParseError",
+   "raw_static_edges": 0,
+   "expanded_static_status": "parsed",
+   "silver_edges": 6,
+   "methods": {
+    "expanded_static": {
+     "tp": 3,
+     "outside": 0,
+     "missing": 3,
+     "precision": 1.0,
+     "recall": 0.5,
+     "f1": 0.6666666666666666,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 6,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 6,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 317
+    },
+    "static_plus_literal_oracle": {
+     "tp": 6,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 459
+    }
+   }
+  },
+  {
+   "model": "stg_orders",
+   "config": {
+    "include_refunds": false,
+    "region": "DE",
+    "include_tax": true
+   },
+   "expanded_sql": "SELECT order_id, customer_id, amount, refunded, order_date\nFROM raw_orders",
+   "raw_static_status": "parsed",
+   "raw_static_edges": 5,
+   "expanded_static_status": "parsed",
+   "silver_edges": 5,
+   "methods": {
+    "expanded_static": {
+     "tp": 5,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 5,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 5,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 149
+    },
+    "static_plus_literal_oracle": {
+     "tp": 5,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 291
+    }
+   }
+  },
+  {
+   "model": "stg_customers",
+   "config": {
+    "include_refunds": false,
+    "region": "DE",
+    "include_tax": true
+   },
+   "expanded_sql": "SELECT customer_id, name, country\nFROM raw_customers",
+   "raw_static_status": "parsed",
+   "raw_static_edges": 3,
+   "expanded_static_status": "parsed",
+   "silver_edges": 3,
+   "methods": {
+    "expanded_static": {
+     "tp": 3,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 3,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 3,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 149
+    },
+    "static_plus_literal_oracle": {
+     "tp": 3,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 291
+    }
+   }
+  },
+  {
+   "model": "revenue_by_customer",
+   "config": {
+    "include_refunds": false,
+    "region": "DE",
+    "include_tax": true
+   },
+   "expanded_sql": "SELECT\n  c.customer_id,\n  c.name,\n  SUM(o.amount) AS revenue,\n  CASE WHEN SUM(o.amount) > 100 THEN 'high' ELSE 'low' END AS bucket\nFROM (SELECT order_id, customer_id, amount, refunded, order_date\nFROM raw_orders) AS o\nJOIN (SELECT customer_id, name, country\nFROM raw_customers) AS c\n  ON o.customer_id = c.customer_id\n\nGROUP BY c.customer_id, c.name",
+   "raw_static_status": "error: ParseError",
+   "raw_static_edges": 0,
+   "expanded_static_status": "parsed",
+   "silver_edges": 9,
+   "methods": {
+    "expanded_static": {
+     "tp": 4,
+     "outside": 0,
+     "missing": 5,
+     "precision": 1.0,
+     "recall": 0.4444444444444444,
+     "f1": 0.6153846153846153,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 9,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 9,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 317
+    },
+    "static_plus_literal_oracle": {
+     "tp": 9,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 459
+    }
+   }
+  },
+  {
+   "model": "order_flags",
+   "config": {
+    "include_refunds": false,
+    "region": "DE",
+    "include_tax": true
+   },
+   "expanded_sql": "SELECT\n  order_id,\n  CASE WHEN amount > 100 THEN 'high' ELSE 'low' END AS flag\nFROM (SELECT order_id, customer_id, amount, refunded, order_date\nFROM raw_orders) AS o",
+   "raw_static_status": "error: ParseError",
+   "raw_static_edges": 0,
+   "expanded_static_status": "parsed",
+   "silver_edges": 2,
+   "methods": {
+    "expanded_static": {
+     "tp": 2,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 2,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 2,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 317
+    },
+    "static_plus_literal_oracle": {
+     "tp": 2,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 459
+    }
+   }
+  },
+  {
+   "model": "revenue_by_country",
+   "config": {
+    "include_refunds": false,
+    "region": "DE",
+    "include_tax": true
+   },
+   "expanded_sql": "SELECT\n  c.country,\n  SUM(o.amount) AS revenue,\n  CASE WHEN SUM(o.amount) > 100 THEN 'high' ELSE 'low' END AS bucket\nFROM (SELECT order_id, customer_id, amount, refunded, order_date\nFROM raw_orders) AS o\nJOIN (SELECT customer_id, name, country\nFROM raw_customers) AS c ON o.customer_id = c.customer_id\nWHERE c.country = 'DE'\nGROUP BY c.country",
+   "raw_static_status": "error: ParseError",
+   "raw_static_edges": 0,
+   "expanded_static_status": "parsed",
+   "silver_edges": 10,
+   "methods": {
+    "expanded_static": {
+     "tp": 3,
+     "outside": 0,
+     "missing": 7,
+     "precision": 1.0,
+     "recall": 0.3,
+     "f1": 0.4615384615384615,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 10,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 4,
+     "outside": 0,
+     "missing": 6,
+     "precision": 1.0,
+     "recall": 0.4,
+     "f1": 0.5714285714285715,
+     "executions": 334
+    },
+    "static_plus_literal_oracle": {
+     "tp": 10,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 476
+    }
+   }
+  },
+  {
+   "model": "customer_segments",
+   "config": {
+    "include_refunds": false,
+    "region": "DE",
+    "include_tax": true
+   },
+   "expanded_sql": "SELECT\n  c.customer_id,\n  c.name,\n  CASE\n    WHEN SUM(o.amount) > 200 THEN 'high'\n    WHEN SUM(o.amount) > 50 THEN 'mid'\n    ELSE 'low'\n  END AS segment\nFROM (SELECT order_id, customer_id, amount, refunded, order_date\nFROM raw_orders) AS o\nJOIN (SELECT customer_id, name, country\nFROM raw_customers) AS c ON o.customer_id = c.customer_id\nGROUP BY c.customer_id, c.name",
+   "raw_static_status": "error: ParseError",
+   "raw_static_edges": 0,
+   "expanded_static_status": "parsed",
+   "silver_edges": 6,
+   "methods": {
+    "expanded_static": {
+     "tp": 3,
+     "outside": 0,
+     "missing": 3,
+     "precision": 1.0,
+     "recall": 0.5,
+     "f1": 0.6666666666666666,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 6,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 6,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 358
+    },
+    "static_plus_literal_oracle": {
+     "tp": 6,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 500
+    }
+   }
+  },
+  {
+   "model": "refund_rate",
+   "config": {
+    "include_refunds": false,
+    "region": "DE",
+    "include_tax": true
+   },
+   "expanded_sql": "SELECT\n  c.country,\n  SUM(CASE WHEN o.refunded = 1 THEN 1 ELSE 0 END) AS refunds,\n  COUNT(*) AS n,\n  CASE WHEN COUNT(*) = 0 THEN NULL ELSE SUM(CASE WHEN o.refunded = 1 THEN 1 ELSE 0 END) * 1.0 / COUNT(*) END AS refund_rate\nFROM (SELECT order_id, customer_id, amount, refunded, order_date\nFROM raw_orders) AS o\nJOIN (SELECT customer_id, name, country\nFROM raw_customers) AS c ON o.customer_id = c.customer_id\nGROUP BY c.country",
+   "raw_static_status": "error: ParseError",
+   "raw_static_edges": 0,
+   "expanded_static_status": "parsed",
+   "silver_edges": 13,
+   "methods": {
+    "expanded_static": {
+     "tp": 3,
+     "outside": 0,
+     "missing": 10,
+     "precision": 1.0,
+     "recall": 0.23076923076923078,
+     "f1": 0.375,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 13,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 12,
+     "outside": 0,
+     "missing": 1,
+     "precision": 1.0,
+     "recall": 0.9230769230769231,
+     "f1": 0.9600000000000001,
+     "executions": 310
+    },
+    "static_plus_literal_oracle": {
+     "tp": 13,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 452
+    }
+   }
+  },
+  {
+   "model": "top_orders",
+   "config": {
+    "include_refunds": false,
+    "region": "DE",
+    "include_tax": true
+   },
+   "expanded_sql": "SELECT\n  order_id,\n  amount,\n  CASE WHEN amount > 100 THEN 'high' ELSE 'low' END AS flag\nFROM (SELECT order_id, customer_id, amount, refunded, order_date\nFROM raw_orders) AS o\nORDER BY amount DESC\nLIMIT 3",
+   "raw_static_status": "error: ParseError",
+   "raw_static_edges": 0,
+   "expanded_static_status": "parsed",
+   "silver_edges": 3,
+   "methods": {
+    "expanded_static": {
+     "tp": 2,
+     "outside": 1,
+     "missing": 1,
+     "precision": 0.6666666666666666,
+     "recall": 0.6666666666666666,
+     "f1": 0.6666666666666666,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 3,
+     "outside": 1,
+     "missing": 0,
+     "precision": 0.75,
+     "recall": 1.0,
+     "f1": 0.8571428571428571,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 3,
+     "outside": 1,
+     "missing": 0,
+     "precision": 0.75,
+     "recall": 1.0,
+     "f1": 0.8571428571428571,
+     "executions": 356
+    },
+    "static_plus_literal_oracle": {
+     "tp": 3,
+     "outside": 1,
+     "missing": 0,
+     "precision": 0.75,
+     "recall": 1.0,
+     "f1": 0.8571428571428571,
+     "executions": 498
+    }
+   }
+  },
+  {
+   "model": "taxed_revenue",
+   "config": {
+    "include_refunds": false,
+    "region": "DE",
+    "include_tax": true
+   },
+   "expanded_sql": "SELECT\n  c.country,\n  SUM(o.amount * (1 + COALESCE(t.rate, 0))) AS revenue\nFROM (SELECT order_id, customer_id, amount, refunded, order_date\nFROM raw_orders) AS o\nJOIN (SELECT customer_id, name, country\nFROM raw_customers) AS c ON o.customer_id = c.customer_id\nLEFT JOIN raw_tax AS t ON c.country = t.country\n\nGROUP BY c.country\n",
+   "raw_static_status": "error: ParseError",
+   "raw_static_edges": 0,
+   "expanded_static_status": "parsed",
+   "silver_edges": 8,
+   "methods": {
+    "expanded_static": {
+     "tp": 3,
+     "outside": 0,
+     "missing": 5,
+     "precision": 1.0,
+     "recall": 0.375,
+     "f1": 0.5454545454545454,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 8,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 7,
+     "outside": 0,
+     "missing": 1,
+     "precision": 1.0,
+     "recall": 0.875,
+     "f1": 0.9333333333333333,
+     "executions": 310
+    },
+    "static_plus_literal_oracle": {
+     "tp": 8,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 452
+    }
+   }
+  },
+  {
+   "model": "order_summary",
+   "config": {
+    "include_refunds": false,
+    "region": "DE",
+    "include_tax": true
+   },
+   "expanded_sql": "WITH base AS (\n  SELECT customer_id, amount, refunded\n  FROM (SELECT order_id, customer_id, amount, refunded, order_date\nFROM raw_orders)\n)\nSELECT\n  customer_id,\n  COUNT(*) AS n,\n  SUM(amount) AS total,\n  CASE WHEN SUM(amount) > 150 THEN 'high' ELSE 'low' END AS bucket\nFROM base\nGROUP BY customer_id",
+   "raw_static_status": "error: ParseError",
+   "raw_static_edges": 0,
+   "expanded_static_status": "parsed",
+   "silver_edges": 6,
+   "methods": {
+    "expanded_static": {
+     "tp": 3,
+     "outside": 0,
+     "missing": 3,
+     "precision": 1.0,
+     "recall": 0.5,
+     "f1": 0.6666666666666666,
+     "executions": 0
+    },
+    "static_plus_oracle": {
+     "tp": 6,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 142
+    },
+    "static_plus_literal": {
+     "tp": 6,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 317
+    },
+    "static_plus_literal_oracle": {
+     "tp": 6,
+     "outside": 0,
+     "missing": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "executions": 459
+    }
+   }
+  }
+ ]
+}
