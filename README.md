@@ -4,7 +4,7 @@ Artifact for the PVLDB 2027 submission:
 
 > **When Execution Evidence Is Incomplete: Measuring and Repairing Observability in Value-Level Data Lineage**
 
-Xu Gao, Sai Wu, Xiu Tang, Chang Yao, and Gang Chen — Zhejiang University
+Zhejiang University
 
 This repository contains the code, annotations, result files, and supplementary material for the study. Experimental outputs under `results/` let the reported numbers be traced without rerunning every job.
 
